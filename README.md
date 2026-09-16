@@ -2,6 +2,10 @@
 
 **[Live case study →](https://mmh5429.github.io/toolkit-recon/)**
 
+Machine-readable from the same origin, no scraping:
+[`apps.json`](https://mmh5429.github.io/toolkit-recon/apps.json) (all 100 records) ·
+[`summary.json`](https://mmh5429.github.io/toolkit-recon/summary.json) (every figure on the page)
+
 100 apps researched by an agent pipeline for one question: *could Composio ship an agent
 toolkit for this tomorrow, and if not, what is actually in the way?*
 
@@ -62,7 +66,8 @@ Joined to the live catalog (1,543 toolkits) to turn the survey into a decision:
 ```bash
 pip install -r requirements.txt
 
-# verification stages only - deterministic, no API key needed
+# verification stages only - deterministic, no API key needed.
+# Reproduces data/apps.json byte-identically from data/raw/.
 python agent/run_pipeline.py
 
 # re-run the research and blind verification too
@@ -85,7 +90,7 @@ Individual stages:
 | 6. Score pass 1 vs pass 2 | `agent/score.py` | no |
 | 7. Apply adjudications, compute accuracy | `agent/apply_adjudications.py` | no |
 | 8. Composio catalog coverage → build queue + auth cross-check | `agent/composio_coverage.py` | Composio key |
-| 9. Build the page | `site/build.py` | no |
+| 9. Build the page + machine-readable JSON | `site/build.py` | no |
 
 `agent/prompts.py` holds the exact prompts used — including the per-category briefs, which
 are where most of the first-pass accuracy comes from, and the honesty rules that make

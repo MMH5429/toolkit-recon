@@ -618,6 +618,8 @@ footer{{padding:34px 0 56px;color:var(--muted);font-size:13px;border-top:1px sol
 <footer class="wrap">
   <p>Every figure on this page is computed from <span class="mono">data/apps.json</span> at build time, not typed by hand.
   Research and verification run: 16 September 2026.</p>
+  <p>Machine-readable: <a href="apps.json">apps.json</a> (all {N} records) &middot;
+     <a href="summary.json">summary.json</a> (every figure on this page) &mdash; same origin, no scraping needed.</p>
   <p><a href="https://github.com/MMH5429/toolkit-recon">Source and README</a> &middot;
      <a href="https://github.com/MMH5429/toolkit-recon/blob/main/data/apps.json">Raw dataset</a> &middot;
      <a href="https://github.com/MMH5429/toolkit-recon/blob/main/data/verify/adjudications.json">Adjudication ledger</a></p>
@@ -649,6 +651,32 @@ footer{{padding:34px 0 56px;color:var(--muted);font-size:13px;border-top:1px sol
 </body></html>"""
 
 OUT.write_text(HTML, encoding="utf-8")
+
+# Machine-readable siblings, served from the same origin as the page, so an agent
+# can consume the findings without scraping the HTML.
+DOCS = ROOT / "docs"
+(DOCS / "apps.json").write_text(json.dumps(apps, indent=1, ensure_ascii=False), encoding="utf-8")
+(DOCS / "summary.json").write_text(json.dumps({
+    "generated": "2026-09-16",
+    "source": "https://github.com/MMH5429/toolkit-recon",
+    "n_apps": N,
+    "buildability": dict(build),
+    "access_tier": dict(tier),
+    "auth_methods": dict(auth),
+    "api_protocols": dict(proto),
+    "mcp_status": dict(mcp),
+    "confidence": dict(conf),
+    "blockers_by_theme": dict(theme),
+    "buildability_by_category": {c: dict(by_cat[c]) for c in cats},
+    "accuracy": acc,
+    "evidence_links": {"checked": len(links), "resolving": live_links,
+                       "dead": len(dead_now), "bot_blocked_but_live": len(blocked)},
+    "mcp_claim_check": {"claims": mcp_claims, "resolving": mcp_resolved},
+    "composio": {"catalog_size": catalog_size, "covered": len(covered),
+                 "uncovered": len(uncovered), "build_queue": [c["app"] for c in queue],
+                 "blocked_on_a_human": [c["app"] for c in blocked_apps],
+                 "auth_cross_check": {"compared": len(auth_cmp), "agree": auth_ok}},
+}, indent=1, ensure_ascii=False), encoding="utf-8")
 print(f"wrote {OUT}  ({OUT.stat().st_size/1024:.0f} KB)")
 print(f"  build-now={build['build-now']} self-serve={self_serve} official-mcp={mcp['official']} "
       f"links={live_links}/{len(links)} dead={len(dead_now)}")

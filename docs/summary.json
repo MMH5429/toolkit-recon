@@ -1,0 +1,171 @@
+{
+ "generated": "2026-09-16",
+ "source": "https://github.com/MMH5429/toolkit-recon",
+ "n_apps": 100,
+ "buildability": {
+  "build-now": 56,
+  "build-with-caveats": 34,
+  "needs-outreach": 7,
+  "not-buildable-today": 3
+ },
+ "access_tier": {
+  "self-serve-free": 52,
+  "self-serve-trial": 17,
+  "partner-gated": 3,
+  "admin-approval": 4,
+  "paid-plan-required": 12,
+  "contact-sales": 3,
+  "app-review": 7,
+  "not-public": 2
+ },
+ "auth_methods": {
+  "OAuth2": 68,
+  "JWT": 7,
+  "Bearer/PAT": 46,
+  "API key": 46,
+  "Basic": 14,
+  "HMAC-signed": 6,
+  "other": 8,
+  "none": 4
+ },
+ "api_protocols": {
+  "REST": 92,
+  "SOAP": 2,
+  "GraphQL": 11,
+  "Webhooks": 78,
+  "SDK-only": 19,
+  "gRPC": 1,
+  "none": 3,
+  "CLI-only": 6
+ },
+ "mcp_status": {
+  "official": 72,
+  "community": 17,
+  "unknown": 9,
+  "none": 2
+ },
+ "confidence": {
+  "high": 58,
+  "medium": 39,
+  "low": 3
+ },
+ "blockers_by_theme": {
+  "other": 9,
+  "approval / app review": 15,
+  "partner, sales or licence": 10,
+  "plan or spend gate": 5,
+  "needs an existing account": 2,
+  "no public API surface": 3
+ },
+ "buildability_by_category": {
+  "AI, Research and Media-native": {
+   "build-with-caveats": 2,
+   "build-now": 8
+  },
+  "Developer, Infra and Data platforms": {
+   "build-now": 8,
+   "build-with-caveats": 2
+  },
+  "Productivity and Project Management": {
+   "build-now": 8,
+   "build-with-caveats": 2
+  },
+  "CRM and Sales": {
+   "build-now": 7,
+   "build-with-caveats": 2,
+   "needs-outreach": 1
+  },
+  "Data, SEO and Scraping": {
+   "build-now": 5,
+   "build-with-caveats": 3,
+   "not-buildable-today": 1,
+   "needs-outreach": 1
+  },
+  "Support and Helpdesk": {
+   "build-with-caveats": 4,
+   "build-now": 5,
+   "needs-outreach": 1
+  },
+  "Communications and Messaging": {
+   "build-with-caveats": 6,
+   "build-now": 4
+  },
+  "Ecommerce": {
+   "build-now": 4,
+   "needs-outreach": 2,
+   "build-with-caveats": 3,
+   "not-buildable-today": 1
+  },
+  "Marketing, Ads, Email and Social": {
+   "build-with-caveats": 5,
+   "needs-outreach": 1,
+   "build-now": 4
+  },
+  "Finance and Fintech": {
+   "build-now": 3,
+   "build-with-caveats": 5,
+   "not-buildable-today": 1,
+   "needs-outreach": 1
+  }
+ },
+ "accuracy": {
+  "sample_size": 20,
+  "field_decisions": 100,
+  "pass1_exact_agreement_pct": 57.0,
+  "pass1_overlap_tolerant_pct": 72.0,
+  "pass1_survived_adjudication_pct": 83.0,
+  "corrections_applied": 17,
+  "disagreements": 28,
+  "adjudication": {
+   "pass1_right": 7,
+   "pass2_right": 17,
+   "both_defensible": 4
+  },
+  "shipped_adjudicated_pct": 100.0,
+  "caveat": "4 of 28 disagreements are rubric ambiguity, not factual error: two defensible readings of the same documented reality. Counted in pass 1's favour because its value is what ships."
+ },
+ "evidence_links": {
+  "checked": 385,
+  "resolving": 382,
+  "dead": 3,
+  "bot_blocked_but_live": 11
+ },
+ "mcp_claim_check": {
+  "claims": 89,
+  "resolving": 88
+ },
+ "composio": {
+  "catalog_size": 1543,
+  "covered": 66,
+  "uncovered": 34,
+  "build_queue": [
+   "Podio",
+   "Front",
+   "Twilio",
+   "Vonage",
+   "WooCommerce",
+   "BigCommerce",
+   "MongoDB Atlas",
+   "Grain",
+   "Zoho Cliq",
+   "systeme.io",
+   "Reducto",
+   "Mermaid CLI"
+  ],
+  "blocked_on_a_human": [
+   "DealCloud",
+   "Gladly",
+   "Salesforce Commerce Cloud",
+   "Amazon Selling Partner",
+   "fanbasis",
+   "Sherlock",
+   "Waterfall.io",
+   "Paygent Connect",
+   "PitchBook"
+  ],
+  "auth_cross_check": {
+   "compared": 60,
+   "agree": 59
+  }
+ }
+}
