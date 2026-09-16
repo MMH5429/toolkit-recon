@@ -1,0 +1,311 @@
+[
+  {
+    "id": 21,
+    "app": "Slack",
+    "category": "Communications and Messaging",
+    "hint": "slack.com",
+    "one_liner": "Team messaging platform with channels, bots, and a deep Web API.",
+    "auth_methods": ["OAuth2", "Bearer/PAT", "HMAC-signed"],
+    "auth_notes": "OAuth v2 issues bot (xoxb) and user (xoxp) tokens; inbound Events/Interactivity requests verified via signing-secret HMAC.",
+    "access_tier": "self-serve-free",
+    "credential_path": "Create app at api.slack.com/apps, add bot/user scopes, install to your workspace, copy bot token; enable distribution for multi-workspace OAuth.",
+    "api_protocols": ["REST", "Webhooks"],
+    "api_breadth": "broad",
+    "breadth_note": "200+ Web API methods: chat, conversations, users, files, canvases, lists, admin, workflows.",
+    "mcp": {
+      "status": "official",
+      "url": "https://docs.slack.dev/ai/slack-mcp-server/",
+      "note": "Slack-hosted remote MCP at mcp.slack.com/mcp, GA 17 Feb 2026; workspace admins approve which MCP clients connect."
+    },
+    "webhooks": "yes",
+    "rate_limits": "Per-method tiers; non-Marketplace apps 1 req/min on conversations.history",
+    "buildability": "build-with-caveats",
+    "blocker": "Distributed non-Marketplace apps throttled to 1 req/min and 15 objects on conversations.history/replies.",
+    "evidence": [
+      "https://docs.slack.dev/authentication/installing-with-oauth/",
+      "https://api.slack.com/apis/rate-limits",
+      "https://docs.slack.dev/changelog/2025/05/29/rate-limit-changes-for-non-marketplace-apps/",
+      "https://docs.slack.dev/ai/slack-mcp-server/"
+    ],
+    "confidence": "high",
+    "notes": "Credentials are free and instant. Real gate is Marketplace review, which restores normal history rate limits; internal custom apps exempt."
+  },
+  {
+    "id": 22,
+    "app": "Twilio",
+    "category": "Communications and Messaging",
+    "hint": "twilio.com",
+    "one_liner": "Programmable SMS, voice, video, and verification APIs for developers.",
+    "auth_methods": ["Basic", "API key", "JWT", "HMAC-signed"],
+    "auth_notes": "HTTP Basic using Account SID plus Auth Token, or API Key SID/secret; JWT access tokens for client SDKs; signed webhooks.",
+    "access_tier": "self-serve-trial",
+    "credential_path": "Sign up at twilio.com, verify email and phone; Account SID and Auth Token appear in Console; create API keys under Account settings.",
+    "api_protocols": ["REST", "Webhooks"],
+    "api_breadth": "broad",
+    "breadth_note": "Roughly 1,800 endpoints across 30+ products: Messaging, Voice, Verify, Lookup, Studio, Serverless.",
+    "mcp": {
+      "status": "official",
+      "url": "https://www.twilio.com/docs/ai/mcp",
+      "note": "twilio-labs/mcp, public beta, generated from Twilio OpenAPI specs; runs via npx with Account SID and API key."
+    },
+    "webhooks": "yes",
+    "rate_limits": "Per-product concurrency and throughput caps; documented per product",
+    "buildability": "build-now",
+    "blocker": "none",
+    "evidence": [
+      "https://www.twilio.com/docs/usage/requests-to-twilio",
+      "https://www.twilio.com/docs/iam/api-keys/key-resource-v2010",
+      "https://www.twilio.com/docs/ai/mcp",
+      "https://github.com/twilio-labs/mcp"
+    ],
+    "confidence": "high",
+    "notes": "Trial account works immediately; production US SMS additionally needs A2P 10DLC brand/campaign registration, which was not re-verified in this pass."
+  },
+  {
+    "id": 23,
+    "app": "Zoho Cliq",
+    "category": "Communications and Messaging",
+    "hint": "zoho.com/cliq",
+    "one_liner": "Zoho's team chat app with channels, bots, and REST APIs.",
+    "auth_methods": ["OAuth2"],
+    "auth_notes": "OAuth 2.0 only; access token sent as bearer. Self Client option generates tokens for your own account without a user flow.",
+    "access_tier": "self-serve-free",
+    "credential_path": "Register a client (or Self Client) in Zoho API Console, choose scopes, generate grant code, exchange for access and refresh tokens.",
+    "api_protocols": ["REST", "Webhooks"],
+    "api_breadth": "moderate",
+    "breadth_note": "Chats, channels, messages, users, buddies, files, bots; plus Cliq Platform bots, widgets, commands.",
+    "mcp": {
+      "status": "official",
+      "url": "https://www.zoho.com/cliq/mcp-server.html",
+      "note": "Zoho markets an official Cliq MCP server exposing channels, threads, users and history; endpoint URL and auth details not published on the public help page."
+    },
+    "webhooks": "yes",
+    "rate_limits": "undocumented",
+    "buildability": "build-now",
+    "blocker": "none",
+    "evidence": [
+      "https://www.zoho.com/cliq/help/restapi/v3/oauth/",
+      "https://www.zoho.com/cliq/help/restapi/v2/",
+      "https://www.zoho.com/cliq/mcp-server.html",
+      "https://www.zoho.com/cliq/help/platform/zoho-cliq-mcp.html"
+    ],
+    "confidence": "medium",
+    "notes": "Unconfirmed: Cliq-specific rate limits and MCP endpoint/auth. Also must handle per-data-center domains (.com, .eu, .in) when exchanging tokens."
+  },
+  {
+    "id": 24,
+    "app": "Lark (Larksuite)",
+    "category": "Communications and Messaging",
+    "hint": "open.larksuite.com",
+    "one_liner": "Lark collaboration suite: messaging, docs, calendar, Base, broad open APIs.",
+    "auth_methods": ["OAuth2", "Bearer/PAT"],
+    "auth_notes": "App ID and secret exchange for app_access_token and tenant_access_token; user OAuth yields user_access_token. All sent as bearer.",
+    "access_tier": "admin-approval",
+    "credential_path": "Create a custom app in the open.larksuite.com developer console, request permission scopes, submit for tenant admin review, then release.",
+    "api_protocols": ["REST", "Webhooks"],
+    "api_breadth": "broad",
+    "breadth_note": "Messaging, contacts, calendar, Docs, Base/Bitable, Drive, approval, attendance, meeting rooms.",
+    "mcp": {
+      "status": "official",
+      "url": "https://github.com/larksuite/lark-openapi-mcp",
+      "note": "Official @larksuiteoapi/lark-mcp wraps nearly the whole OpenAPI surface; file upload/download and direct doc editing unsupported."
+    },
+    "webhooks": "yes",
+    "rate_limits": "Per-endpoint frequency limits documented per API; specific values unverified",
+    "buildability": "build-with-caveats",
+    "blocker": "Tenant admin must approve requested scopes and release the app before any API call succeeds.",
+    "evidence": [
+      "https://open.larksuite.com/document/ukTMukTMukTM/ukDNz4SO0MjL5QzM/auth-v3/auth/tenant_access_token_internal",
+      "https://open.larksuite.com/document/server-docs/getting-started/terminology",
+      "https://github.com/larksuite/lark-openapi-mcp",
+      "https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/mcp_integration/quick-start-guides/quick-integration-with-openapi-mcp"
+    ],
+    "confidence": "medium",
+    "notes": "Lark (international) and Feishu (China) are separate tenants with separate consoles and domains. Store-listed apps face an additional Lark review."
+  },
+  {
+    "id": 25,
+    "app": "Pumble",
+    "category": "Communications and Messaging",
+    "hint": "pumble.com",
+    "one_liner": "CAKE.com's Slack alternative, with API exposed through an API Keys addon.",
+    "auth_methods": ["API key"],
+    "auth_notes": "Workspace API key passed in the ApiKey request header; generated in the API sidebar or via the /api-keys generate slash command.",
+    "access_tier": "self-serve-free",
+    "credential_path": "Enable the API Keys addon, open API in the left sidebar, click Add API key, name it, Generate; or run /api-keys generate.",
+    "api_protocols": ["REST"],
+    "api_breadth": "narrow",
+    "breadth_note": "Send/delete messages, reactions, replies, create and list channels, DMs, history, users.",
+    "mcp": {
+      "status": "community",
+      "url": "https://github.com/infralayers/pumble-mcp",
+      "note": "Community wrappers only (infralayers/pumble-mcp, apet97/pumble-python-sdk); no MCP server published by Pumble or CAKE.com."
+    },
+    "webhooks": "unknown",
+    "rate_limits": "1000 requests per minute per user",
+    "buildability": "build-with-caveats",
+    "blocker": "Narrow endpoint surface, addon must be enabled, and no documented events or webhooks for inbound triggers.",
+    "evidence": [
+      "https://pumble.com/help/integrations/automation-workflow-integrations/api-keys-integration/",
+      "https://pumble-api-keys.addons.marketplace.cake.com/api-docs/",
+      "https://github.com/infralayers/pumble-mcp",
+      "https://pumble.com/learn/pumble/ai-automation-guide/"
+    ],
+    "confidence": "medium",
+    "notes": "Help page says the addon is available on all plans. Unconfirmed: webhook/event support and whether OAuth exists for multi-tenant installs."
+  },
+  {
+    "id": 26,
+    "app": "Discord",
+    "category": "Communications and Messaging",
+    "hint": "discord.com",
+    "one_liner": "Community chat platform with bot, OAuth2, gateway, and interactions APIs.",
+    "auth_methods": ["OAuth2", "Bearer/PAT", "other"],
+    "auth_notes": "Bot token in Authorization: Bot header; OAuth2 authorization code for user scopes; interaction endpoints verified with Ed25519 signatures.",
+    "access_tier": "self-serve-free",
+    "credential_path": "Create an application at discord.com/developers/applications, add a Bot, reset and copy the token, configure OAuth2 redirect and scopes.",
+    "api_protocols": ["REST", "Webhooks"],
+    "api_breadth": "broad",
+    "breadth_note": "Guilds, channels, messages, threads, members, roles, interactions, webhooks, voice, scheduled events.",
+    "mcp": {
+      "status": "community",
+      "url": "https://github.com/SaseQ/discord-mcp",
+      "note": "Numerous community servers (SaseQ, hanweg, v-3, Docker MCP catalog); no Discord-operated official MCP server found."
+    },
+    "webhooks": "yes",
+    "rate_limits": "Per-route buckets via X-RateLimit headers; global ~50 requests/second",
+    "buildability": "build-with-caveats",
+    "blocker": "Message Content and other privileged intents need verification approval once the bot exceeds 100 guilds.",
+    "evidence": [
+      "https://discord.com/developers/docs/topics/oauth2",
+      "https://github.com/SaseQ/discord-mcp",
+      "https://mcpservers.org/servers/v-3/discordmcp",
+      "https://hub.docker.com/mcp/server/mcp-discord/tools"
+    ],
+    "confidence": "high",
+    "notes": "Token is instant and free. Growth gate: unverified bots stop joining new servers at 100 guilds, and privileged intents then require ID verification."
+  },
+  {
+    "id": 27,
+    "app": "Telegram",
+    "category": "Communications and Messaging",
+    "hint": "core.telegram.org",
+    "one_liner": "Messaging app with a free token-based Bot API and MTProto client API.",
+    "auth_methods": ["API key", "other"],
+    "auth_notes": "Bot token from @BotFather embedded in the request URL path, not a header; MTProto client API needs api_id/api_hash from my.telegram.org.",
+    "access_tier": "self-serve-free",
+    "credential_path": "Message @BotFather in any Telegram client, send /newbot, pick a name and username, receive the HTTP API token immediately.",
+    "api_protocols": ["REST", "Webhooks"],
+    "api_breadth": "broad",
+    "breadth_note": "Full Bot API: messages, media, chats, inline mode, payments, forums, stickers, business accounts.",
+    "mcp": {
+      "status": "community",
+      "url": "https://github.com/FantomaSkaRus1/telegram-bot-mcp",
+      "note": "Several community Bot API MCP servers (one exposes 174 tools); nothing official from Telegram."
+    },
+    "webhooks": "yes",
+    "rate_limits": "~30 msgs/sec global, 1/sec per chat, 20/min per group",
+    "buildability": "build-now",
+    "blocker": "none",
+    "evidence": [
+      "https://core.telegram.org/bots/api",
+      "https://github.com/FantomaSkaRus1/telegram-bot-mcp",
+      "https://github.com/node2flow-th/telegram-bot-mcp-community"
+    ],
+    "confidence": "high",
+    "notes": "Lowest-friction app in this set. Bots cannot initiate chats with users, and Paid Broadcasts in BotFather raises the ceiling to 1000 msgs/sec."
+  },
+  {
+    "id": 28,
+    "app": "WhatsApp Business",
+    "category": "Communications and Messaging",
+    "hint": "developers.facebook.com/docs/whatsapp",
+    "one_liner": "Meta's business messaging platform, delivered via Cloud API on Graph API.",
+    "auth_methods": ["Bearer/PAT", "OAuth2", "HMAC-signed"],
+    "auth_notes": "Graph bearer tokens: 24-hour temp token, then permanent system user token; tech providers use OAuth Embedded Signup. Webhooks signed X-Hub-Signature-256.",
+    "access_tier": "app-review",
+    "credential_path": "Create a Meta app with the WhatsApp use case, link a Business portfolio, use the test number, then system user token plus verification.",
+    "api_protocols": ["REST", "Webhooks"],
+    "api_breadth": "moderate",
+    "breadth_note": "Send messages, templates, media, flows, phone number and WABA management; no general inbox history read.",
+    "mcp": {
+      "status": "official",
+      "url": null,
+      "note": "Meta announced a WhatsApp Business Tools MCP in September 2026 for setup, templates and webhooks, positioned for dev/testing not production scale. Exact endpoint URL not verified."
+    },
+    "webhooks": "yes",
+    "rate_limits": "Tiered 24h messaging limits (1K/10K/100K+) tied to verification and quality",
+    "buildability": "build-with-caveats",
+    "blocker": "Business Verification plus App Review for Advanced Access on whatsapp_business_messaging; dedicated phone number required.",
+    "evidence": [
+      "https://developers.facebook.com/documentation/business-messaging/whatsapp/get-started",
+      "https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/app-review",
+      "https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/get-started-for-tech-providers",
+      "https://techcrunch.com/2026/09/15/meta-now-lets-ai-agents-handle-the-boring-parts-of-whatsapp-business-setup/"
+    ],
+    "confidence": "medium",
+    "notes": "Cloud API is the practical path. Direct (own-business) use skips App Review; multi-tenant Tech Provider use does not. On-prem API status not re-verified."
+  },
+  {
+    "id": 29,
+    "app": "Aircall",
+    "category": "Communications and Messaging",
+    "hint": "aircall.io",
+    "one_liner": "Cloud phone system for sales and support with a public REST API.",
+    "auth_methods": ["Basic", "OAuth2"],
+    "auth_notes": "HTTP Basic using api_id as username and api_token as password; OAuth2 authorization_code with a single public_api scope for partner apps.",
+    "access_tier": "paid-plan-required",
+    "credential_path": "As an admin, open Aircall Dashboard > Integrations & API > API keys, click Generate an API key, copy api_id and api_token immediately.",
+    "api_protocols": ["REST", "Webhooks"],
+    "api_breadth": "moderate",
+    "breadth_note": "Calls, users, teams, numbers, contacts, tags, SMS/messaging, AI insights, webhooks.",
+    "mcp": {
+      "status": "community",
+      "url": "https://github.com/themobilefirstco/aircall-mcp-server",
+      "note": "Unofficial servers only (themobilefirstco ~73 tools, RosenAdvertising, plus Zapier/Pipedream hosted MCP); none from Aircall."
+    },
+    "webhooks": "yes",
+    "rate_limits": "~60 requests/minute per token; some sources cite 100/min",
+    "buildability": "build-with-caveats",
+    "blocker": "Requires a paid Aircall account and admin role; OAuth apps need Aircall Technology Partner onboarding.",
+    "evidence": [
+      "https://developers.aircall.io/api-references",
+      "https://developer.aircall.io/tutorials/how-aircall-oauth-flow-works",
+      "https://support.aircall.io/hc/en-gb/articles/10375395181853-Where-to-find-my-Aircall-API-Key",
+      "https://github.com/themobilefirstco/aircall-mcp-server"
+    ],
+    "confidence": "medium",
+    "notes": "Conflicting sources on whether API access is all-plans or Professional-only, and on the exact rate limit. api_id is shown once and unrecoverable."
+  },
+  {
+    "id": 30,
+    "app": "Vonage",
+    "category": "Communications and Messaging",
+    "hint": "developer.vonage.com",
+    "one_liner": "Programmable voice, SMS, messaging, and verification APIs from Ericsson.",
+    "auth_methods": ["API key", "Basic", "JWT"],
+    "auth_notes": "API key and secret (Basic) at account level; RS256 JWT signed with an Application private key, with application_id, iat, exp, jti claims.",
+    "access_tier": "self-serve-trial",
+    "credential_path": "Sign up for a Vonage account; API key and secret appear in the Dashboard; create an Application to generate a public/private key pair.",
+    "api_protocols": ["REST", "Webhooks"],
+    "api_breadth": "broad",
+    "breadth_note": "SMS, Messages (WhatsApp/Viber/MMS), Voice with NCCO, Verify, Video, Numbers, Reports.",
+    "mcp": {
+      "status": "official",
+      "url": "https://developer.vonage.com/en/blog/introducing-the-vonage-documentation-mcp-server",
+      "note": "Vonage ships a Documentation MCP server plus an API Bindings MCP server covering reports, number management and application creation."
+    },
+    "webhooks": "yes",
+    "rate_limits": "Messages API 75 requests/second per API key; other products vary",
+    "buildability": "build-now",
+    "blocker": "none",
+    "evidence": [
+      "https://developer.vonage.com/en/getting-started/concepts/authentication",
+      "https://developer.vonage.com/en/messages/technical-details",
+      "https://developer.vonage.com/en/voice/voice-api/getting-started",
+      "https://developer.vonage.com/en/blog/introducing-the-vonage-documentation-mcp-server"
+    ],
+    "confidence": "high",
+    "notes": "JWT auth is recommended for production and is required for Voice and most Messages features; Basic auth alone is account-level only."
+  }
+]

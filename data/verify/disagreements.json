@@ -1,0 +1,350 @@
+[
+ {
+  "id": 5,
+  "app": "Twenty",
+  "hint": "twenty.com (open-source CRM)",
+  "field": "buildability",
+  "pass1": "build-with-caveats",
+  "pass2": "build-now",
+  "source": "https://docs.twenty.com/developers/extend/api",
+  "quote": "Authorization: Bearer YOUR_API_KEY is the required header format; Twenty implements OAuth 2.0 with authorization code + PKCE and client credentials for server-to-server access.",
+  "pass2_confidence": "high",
+  "pass2_uncertainty": "No vendor MCP page found; MCP servers are third-party GitHub repos. Twenty Cloud paid-tier limits on API not verified."
+ },
+ {
+  "id": 14,
+  "app": "Front",
+  "hint": "front.com",
+  "field": "access_tier",
+  "pass1": "self-serve-trial",
+  "pass2": "self-serve-free",
+  "source": "https://dev.frontapp.com/docs/authentication",
+  "quote": "You'll get access to a free developer environment that will provide everything you need to begin building with our APIs.",
+  "pass2_confidence": "medium",
+  "pass2_uncertainty": "Docs also say 'You must be an admin to create or manage API tokens'; Front has no free production plan, only the free developer environment."
+ },
+ {
+  "id": 14,
+  "app": "Front",
+  "hint": "front.com",
+  "field": "buildability",
+  "pass1": "build-with-caveats",
+  "pass2": "build-now",
+  "source": "https://dev.frontapp.com/docs/authentication",
+  "quote": "You MUST send the token for each request in the Authorization header. The token MUST be preceded by Bearer. Front supports OAuth2.0 as well as API Tokens.",
+  "pass2_confidence": "medium",
+  "pass2_uncertainty": "Docs also say 'You must be an admin to create or manage API tokens'; Front has no free production plan, only the free developer environment."
+ },
+ {
+  "id": 19,
+  "app": "Gorgias",
+  "hint": "gorgias.com",
+  "field": "access_tier",
+  "pass1": "self-serve-trial",
+  "pass2": "paid-plan-required",
+  "source": "https://developers.gorgias.com/reference/authentication",
+  "quote": "You don't need to follow any special process to create a private app... Public apps: you need to follow a specific process which includes a review from the Gorgias team.",
+  "pass2_confidence": "medium",
+  "pass2_uncertainty": "No vendor page confirmed plan gating or a free tier; tier inferred from Gorgias having no free plan. Outbound webhooks not found in docs."
+ },
+ {
+  "id": 19,
+  "app": "Gorgias",
+  "hint": "gorgias.com",
+  "field": "buildability",
+  "pass1": "build-now",
+  "pass2": "build-with-caveats",
+  "source": "https://developers.gorgias.com/reference/authentication",
+  "quote": "The Gorgias API supports two authentication methods: Private app -> API key; Public app -> OAuth2. Use your email (username) and your API key.",
+  "pass2_confidence": "medium",
+  "pass2_uncertainty": "No vendor page confirmed plan gating or a free tier; tier inferred from Gorgias having no free plan. Outbound webhooks not found in docs."
+ },
+ {
+  "id": 19,
+  "app": "Gorgias",
+  "hint": "gorgias.com",
+  "field": "mcp_status",
+  "pass1": "official",
+  "pass2": "community",
+  "source": "https://developers.gorgias.com/reference/authentication",
+  "quote": "https://updates.gorgias.com/publications/gorgias-mcp-is-now-in-open-beta",
+  "pass2_confidence": "medium",
+  "pass2_uncertainty": "No vendor page confirmed plan gating or a free tier; tier inferred from Gorgias having no free plan. Outbound webhooks not found in docs."
+ },
+ {
+  "id": 23,
+  "app": "Zoho Cliq",
+  "hint": "zoho.com/cliq",
+  "field": "mcp_status",
+  "pass1": "official",
+  "pass2": "community",
+  "source": "https://www.zoho.com/cliq/help/restapi/v2/",
+  "quote": "https://www.zoho.com/cliq/mcp-server.html",
+  "pass2_confidence": "medium",
+  "pass2_uncertainty": "Could not load a Cliq webhooks doc (404/403), so outbound webhooks unconfirmed; pricing page lists 'API support' ambiguously across Free vs paid."
+ },
+ {
+  "id": 34,
+  "app": "GoHighLevel",
+  "hint": "highlevel.stoplight.io",
+  "field": "mcp_status",
+  "pass1": "official",
+  "pass2": "community",
+  "source": "https://marketplace.gohighlevel.com/docs",
+  "quote": "https://marketplace.gohighlevel.com/docs/other/mcp",
+  "pass2_confidence": "medium",
+  "pass2_uncertainty": "highlevel.stoplight.io is a SPA and returned empty; quote_access is from gohighlevel.com/pricing. Marketplace app public listing likely needs HighLevel review - unconfirmed."
+ },
+ {
+  "id": 41,
+  "app": "Shopify",
+  "hint": "shopify.dev",
+  "field": "access_tier",
+  "pass1": "self-serve-free",
+  "pass2": "admin-approval",
+  "source": "https://shopify.dev/docs/apps/launch/distribution",
+  "quote": "Custom distribution: \"Installed on a single Shopify store\", approval required \"No\". Public distribution: \"Can be installed on multiple Shopify stores\", approval \"Yes\".",
+  "pass2_confidence": "high",
+  "pass2_uncertainty": "Public/App Store apps are app-review + Partner account. Docs now say \"You can no longer create new admin-created custom apps\" - use Dev Dashboard/CLI with custom distribution."
+ },
+ {
+  "id": 50,
+  "app": "fanbasis",
+  "hint": "fanbasis.com",
+  "field": "buildability",
+  "pass1": "build-with-caveats",
+  "pass2": "not-buildable-today",
+  "source": "https://commas.com/",
+  "quote": "No auth or developer docs found. Homepage marketing only: \"Embedded checkouts, multi-rail payouts, APIs and SDKs.\" and \"The API is clean, payouts just run\".",
+  "pass2_confidence": "medium",
+  "pass2_uncertainty": "fanbasis.com 301-redirects to commas.com. docs/developers/api.commas.com all NXDOMAIN; /docs, /developers, /faq, /pricing return 404. WebSearch budget exhausted."
+ },
+ {
+  "id": 50,
+  "app": "fanbasis",
+  "hint": "fanbasis.com",
+  "field": "auth_methods",
+  "pass1": [
+   "API key"
+  ],
+  "pass2": [
+   "none"
+  ],
+  "source": "https://commas.com/",
+  "quote": "No auth or developer docs found. Homepage marketing only: \"Embedded checkouts, multi-rail payouts, APIs and SDKs.\" and \"The API is clean, payouts just run\".",
+  "pass2_confidence": "medium",
+  "pass2_uncertainty": "fanbasis.com 301-redirects to commas.com. docs/developers/api.commas.com all NXDOMAIN; /docs, /developers, /faq, /pricing return 404. WebSearch budget exhausted."
+ },
+ {
+  "id": 50,
+  "app": "fanbasis",
+  "hint": "fanbasis.com",
+  "field": "api_protocols",
+  "pass1": [
+   "REST",
+   "SDK-only",
+   "Webhooks"
+  ],
+  "pass2": [
+   "none"
+  ],
+  "source": "https://commas.com/",
+  "quote": "No auth or developer docs found. Homepage marketing only: \"Embedded checkouts, multi-rail payouts, APIs and SDKs.\" and \"The API is clean, payouts just run\".",
+  "pass2_confidence": "medium",
+  "pass2_uncertainty": "fanbasis.com 301-redirects to commas.com. docs/developers/api.commas.com all NXDOMAIN; /docs, /developers, /faq, /pricing return 404. WebSearch budget exhausted."
+ },
+ {
+  "id": 52,
+  "app": "SE Ranking",
+  "hint": "seranking.com/api",
+  "field": "access_tier",
+  "pass1": "self-serve-trial",
+  "pass2": "paid-plan-required",
+  "source": "https://seranking.com/api.html",
+  "quote": "API is included with every SE Ranking subscription. The API Add-On starts at $149/month and can be added to any existing subscription. Pay-as-you-go is also available with a $50 minimum deposit.",
+  "pass2_confidence": "medium",
+  "pass2_uncertainty": "No dedicated auth-reference page loaded (api-quick-start/api-authorization 404); exact header format and credit metering rules unconfirmed. Free trial reportedly allows testing."
+ },
+ {
+  "id": 52,
+  "app": "SE Ranking",
+  "hint": "seranking.com/api",
+  "field": "buildability",
+  "pass1": "build-now",
+  "pass2": "build-with-caveats",
+  "source": "https://seranking.com/api.html",
+  "quote": "To get your key, log in to your SE Ranking account, go to the API section. From there, you can copy your API key and use it to integrate SE Ranking's data",
+  "pass2_confidence": "medium",
+  "pass2_uncertainty": "No dedicated auth-reference page loaded (api-quick-start/api-authorization 404); exact header format and credit metering rules unconfirmed. Free trial reportedly allows testing."
+ },
+ {
+  "id": 52,
+  "app": "SE Ranking",
+  "hint": "seranking.com/api",
+  "field": "mcp_status",
+  "pass1": "official",
+  "pass2": "unknown",
+  "source": "https://seranking.com/api.html",
+  "quote": "https://seranking.com/api/integrations/mcp/",
+  "pass2_confidence": "medium",
+  "pass2_uncertainty": "No dedicated auth-reference page loaded (api-quick-start/api-authorization 404); exact header format and credit metering rules unconfirmed. Free trial reportedly allows testing."
+ },
+ {
+  "id": 67,
+  "app": "Snowflake",
+  "hint": "docs.snowflake.com",
+  "field": "buildability",
+  "pass1": "build-with-caveats",
+  "pass2": "build-now",
+  "source": "https://docs.snowflake.com/en/developer-guide/sql-api/authenticating",
+  "quote": "To use key pair authentication, follow these steps: 1. Set up key-pair authentication. ... PROGRAMMATIC_ACCESS_TOKEN (for programmatic access tokens) ... To use OAuth, follow these steps.",
+  "pass2_confidence": "high",
+  "pass2_uncertainty": "Trial is 30 days / limited credits, then paid. Workload identity federation also supported ('other'). Webhook notification integrations not counted as API webhooks."
+ },
+ {
+  "id": 80,
+  "app": "Harvest",
+  "hint": "harvestapp.com (help.getharvest.com/api-v2)",
+  "field": "access_tier",
+  "pass1": "self-serve-trial",
+  "pass2": "self-serve-free",
+  "source": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/",
+  "quote": "Personal Access Tokens are the preferred method when you want to write your own scripts that consume our API.",
+  "pass2_confidence": "high",
+  "pass2_uncertainty": "Docs never state a plan gate; free-tier API access inferred from pricing page ($0 Free plan), not explicitly documented. Webhooks unverified."
+ },
+ {
+  "id": 80,
+  "app": "Harvest",
+  "hint": "harvestapp.com (help.getharvest.com/api-v2)",
+  "field": "buildability",
+  "pass1": "build-with-caveats",
+  "pass2": "build-now",
+  "source": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/",
+  "quote": "The API can be accessed by creating a Personal Access Token from the Developers section of Harvest ID.",
+  "pass2_confidence": "high",
+  "pass2_uncertainty": "Docs never state a plan gate; free-tier API access inferred from pricing page ($0 Free plan), not explicitly documented. Webhooks unverified."
+ },
+ {
+  "id": 80,
+  "app": "Harvest",
+  "hint": "harvestapp.com (help.getharvest.com/api-v2)",
+  "field": "mcp_status",
+  "pass1": "community",
+  "pass2": "none",
+  "source": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/",
+  "quote": "https://github.com/southleft/harvest-mcp",
+  "pass2_confidence": "high",
+  "pass2_uncertainty": "Docs never state a plan gate; free-tier API access inferred from pricing page ($0 Free plan), not explicitly documented. Webhooks unverified."
+ },
+ {
+  "id": 82,
+  "app": "Plaid",
+  "hint": "plaid.com/docs",
+  "field": "access_tier",
+  "pass1": "self-serve-trial",
+  "pass2": "app-review",
+  "source": "https://plaid.com/docs/api/",
+  "quote": "You can request Production API access via the Dashboard.",
+  "pass2_confidence": "high",
+  "pass2_uncertainty": "Sandbox keys are instant self-serve at signup; Production requires a Dashboard request Plaid reviews. Tier reflects shipping real integration. Review SLA unconfirmed."
+ },
+ {
+  "id": 82,
+  "app": "Plaid",
+  "hint": "plaid.com/docs",
+  "field": "mcp_status",
+  "pass1": "official",
+  "pass2": "unknown",
+  "source": "https://plaid.com/docs/api/",
+  "quote": "https://github.com/plaid/ai-coding-toolkit",
+  "pass2_confidence": "high",
+  "pass2_uncertainty": "Sandbox keys are instant self-serve at signup; Production requires a Dashboard request Plaid reviews. Tier reflects shipping real integration. Review SLA unconfirmed."
+ },
+ {
+  "id": 84,
+  "app": "Paygent Connect",
+  "hint": "paygent (NMI-powered)",
+  "field": "buildability",
+  "pass1": "needs-outreach",
+  "pass2": "not-buildable-today",
+  "source": null,
+  "quote": "no public docs found",
+  "pass2_confidence": "low",
+  "pass2_uncertainty": "No product 'Paygent Connect' confirmed anywhere; three unrelated Paygent entities found instead, none NMI-linked. See notes."
+ },
+ {
+  "id": 84,
+  "app": "Paygent Connect",
+  "hint": "paygent (NMI-powered)",
+  "field": "mcp_status",
+  "pass1": "none",
+  "pass2": "unknown",
+  "source": null,
+  "quote": null,
+  "pass2_confidence": "low",
+  "pass2_uncertainty": "No product 'Paygent Connect' confirmed anywhere; three unrelated Paygent entities found instead, none NMI-linked. See notes."
+ },
+ {
+  "id": 84,
+  "app": "Paygent Connect",
+  "hint": "paygent (NMI-powered)",
+  "field": "auth_methods",
+  "pass1": [
+   "other"
+  ],
+  "pass2": [],
+  "source": null,
+  "quote": "no public docs found",
+  "pass2_confidence": "low",
+  "pass2_uncertainty": "No product 'Paygent Connect' confirmed anywhere; three unrelated Paygent entities found instead, none NMI-linked. See notes."
+ },
+ {
+  "id": 91,
+  "app": "NotebookLM",
+  "hint": "cloud.google.com/gemini (Enterprise API)",
+  "field": "access_tier",
+  "pass1": "contact-sales",
+  "pass2": "paid-plan-required",
+  "source": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks",
+  "quote": "A subscription contains at least 15 licenses and can contain up to 5,000 licenses.",
+  "pass2_confidence": "high",
+  "pass2_uncertainty": "Consumer NotebookLM (notebook.google.com) has no public API; only the paid Gemini Notebook Enterprise SKU exposes Discovery Engine v1alpha endpoints."
+ },
+ {
+  "id": 91,
+  "app": "NotebookLM",
+  "hint": "cloud.google.com/gemini (Enterprise API)",
+  "field": "buildability",
+  "pass1": "needs-outreach",
+  "pass2": "build-with-caveats",
+  "source": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks",
+  "quote": "curl -X POST -H \"Authorization:Bearer $(gcloud auth print-access-token)\" \"https://ENDPOINT_LOCATION-discoveryengine.googleapis.com/v1alpha/projects/PROJECT_NUMBER/locations/LOCATION/notebooks\"",
+  "pass2_confidence": "high",
+  "pass2_uncertainty": "Consumer NotebookLM (notebook.google.com) has no public API; only the paid Gemini Notebook Enterprise SKU exposes Discovery Engine v1alpha endpoints."
+ },
+ {
+  "id": 91,
+  "app": "NotebookLM",
+  "hint": "cloud.google.com/gemini (Enterprise API)",
+  "field": "mcp_status",
+  "pass1": "none",
+  "pass2": "unknown",
+  "source": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks",
+  "quote": null,
+  "pass2_confidence": "high",
+  "pass2_uncertainty": "Consumer NotebookLM (notebook.google.com) has no public API; only the paid Gemini Notebook Enterprise SKU exposes Discovery Engine v1alpha endpoints."
+ },
+ {
+  "id": 92,
+  "app": "Otter AI",
+  "hint": "help.otter.ai (MCP server)",
+  "field": "access_tier",
+  "pass1": "paid-plan-required",
+  "pass2": "contact-sales",
+  "source": "https://help.otter.ai/hc/en-us/articles/35287607569687-Otter-MCP-Server",
+  "quote": "\"Otter API & Webhooks\" is listed only under Enterprise; \"Otter MCP server\" is listed under Basic (free).",
+  "pass2_confidence": "medium",
+  "pass2_uncertainty": "No public REST API reference exists; REST shape inferred from pricing label. Help article read via Zendesk JSON API (HTML returned 403)."
+ }
+]

@@ -1,0 +1,13 @@
+[
+ {"id": 45, "field": "evidence", "from": "https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-oauth/",
+  "to": "https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-oauth",
+  "found_by": "link-check", "why": "Trailing slash 404s on Adobe's docs router; canonical path has no trailing slash."},
+ {"id": 65, "field": "evidence", "from": "https://supabase.com/docs/reference/api/management-api",
+  "to": "https://supabase.com/docs/reference/api/introduction",
+  "found_by": "link-check", "why": "Agent guessed a plausible-but-nonexistent slug. Real Management API reference lives at /reference/api/introduction."},
+ {"id": 66, "field": "evidence", "from": "https://neo4j.com/docs/aura/platform/api/authentication/",
+  "to": "https://neo4j.com/docs/aura/api/authentication/",
+  "found_by": "link-check", "why": "Agent inserted a '/platform' segment that does not exist in the Aura API docs tree."},
+ {"id": 28, "field": "mcp.verified", "from": "(unset)", "to": "false",
+  "found_by": "mcp-check", "why": "Only official-MCP claim with no endpoint URL. Sourced from a 1-day-old press report of a Meta announcement; the WhatsApp docs do not mention MCP. Kept as official, flagged unverified."}
+]

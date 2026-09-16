@@ -1,0 +1,141 @@
+[
+ {"id": 5, "app": "Twenty", "field": "buildability", "pass1": "build-with-caveats", "pass2": "build-now",
+  "winner": "both-defensible", "ship": "build-with-caveats",
+  "reason": "Both true. API is documented and self-serve, but Twenty's object schema is per-workspace, so a static toolkit's tool surface varies by tenant. That caveat is real for Composio specifically.",
+  "source": "https://docs.twenty.com/developers/extend/api"},
+
+ {"id": 14, "app": "Front", "field": "access_tier", "pass1": "self-serve-trial", "pass2": "self-serve-free",
+  "winner": "pass2", "ship": "self-serve-free",
+  "reason": "Front publishes a free developer environment that issues API tokens without a paid plan. Pass 1 conflated 'no free production plan' with 'no free credentials'.",
+  "source": "https://dev.frontapp.com/docs/authentication"},
+
+ {"id": 14, "app": "Front", "field": "buildability", "pass1": "build-with-caveats", "pass2": "build-now",
+  "winner": "pass2", "ship": "build-now",
+  "reason": "OAuth2 and API tokens are both documented and obtainable in the free dev environment. Needing OAuth for multi-tenant apps is the norm, not a blocker.",
+  "source": "https://dev.frontapp.com/docs/authentication"},
+
+ {"id": 19, "app": "Gorgias", "field": "access_tier", "pass1": "self-serve-trial", "pass2": "paid-plan-required",
+  "winner": "pass1", "ship": "self-serve-trial",
+  "reason": "The verifier's own quote is about private vs public apps, not plan gating, and it recorded that it could not confirm plan gating from any vendor page. Unsupported by its own evidence.",
+  "source": "https://developers.gorgias.com/reference/authentication"},
+
+ {"id": 19, "app": "Gorgias", "field": "buildability", "pass1": "build-now", "pass2": "build-with-caveats",
+  "winner": "pass2", "ship": "build-with-caveats",
+  "reason": "A private app is a frictionless API key, but Composio ships multi-tenant toolkits, and the public-app path requires OAuth2 plus a Gorgias review and sandbox approval.",
+  "source": "https://developers.gorgias.com/reference/authentication"},
+
+ {"id": 19, "app": "Gorgias", "field": "mcp_status", "pass1": "official", "pass2": "community",
+  "winner": "pass1", "ship": "official",
+  "reason": "Announced on Gorgias's own product-updates domain, so it is vendor-operated. The verifier downgraded it without checking the cited URL.",
+  "source": "https://updates.gorgias.com/publications/gorgias-mcp-is-now-in-open-beta"},
+
+ {"id": 23, "app": "Zoho Cliq", "field": "mcp_status", "pass1": "official", "pass2": "community",
+  "winner": "pass1", "ship": "official",
+  "reason": "The MCP server is documented on zoho.com itself. Vendor domain, vendor operated.",
+  "source": "https://www.zoho.com/cliq/mcp-server.html"},
+
+ {"id": 34, "app": "GoHighLevel", "field": "mcp_status", "pass1": "official", "pass2": "community",
+  "winner": "pass1", "ship": "official",
+  "reason": "Documented on marketplace.gohighlevel.com, the vendor's own developer marketplace. The verifier could not render the Stoplight SPA and defaulted to 'community'.",
+  "source": "https://marketplace.gohighlevel.com/docs/other/mcp"},
+
+ {"id": 41, "app": "Shopify", "field": "access_tier", "pass1": "self-serve-free", "pass2": "admin-approval",
+  "winner": "both-defensible", "ship": "self-serve-free",
+  "reason": "Custom distribution needs no Shopify approval and a Partner account is free, so credentials are self-serve. A store admin must still install the app. Verified separately: admin-created custom apps can no longer be created, which pass 1 missed; credential_path corrected.",
+  "source": "https://shopify.dev/docs/apps/launch/distribution"},
+
+ {"id": 50, "app": "fanbasis", "field": "buildability", "pass1": "build-with-caveats", "pass2": "not-buildable-today",
+  "winner": "pass2", "ship": "not-buildable-today",
+  "reason": "fanbasis.com 301-redirects to commas.com (rebrand, confirmed by hand). No developer docs, portal or key-issuance flow exists. Pass 1 read homepage marketing copy as an API surface.",
+  "source": "https://commas.com/"},
+
+ {"id": 50, "app": "fanbasis", "field": "auth_methods", "pass1": ["API key"], "pass2": ["none"],
+  "winner": "pass2", "ship": ["none"],
+  "reason": "No authentication scheme is published anywhere reachable. 'API key' was inferred from the phrase 'APIs and SDKs' in marketing copy.",
+  "source": "https://commas.com/"},
+
+ {"id": 50, "app": "fanbasis", "field": "api_protocols", "pass1": ["REST", "SDK-only", "Webhooks"], "pass2": ["none"],
+  "winner": "pass2", "ship": ["none"],
+  "reason": "Same root cause: protocols were inferred from marketing language, not from documentation. Nothing is documented.",
+  "source": "https://commas.com/"},
+
+ {"id": 52, "app": "SE Ranking", "field": "access_tier", "pass1": "self-serve-trial", "pass2": "paid-plan-required",
+  "winner": "pass2", "ship": "paid-plan-required",
+  "reason": "The vendor page contradicts itself ('included with every subscription' vs 'API Add-On starts at $149/month'). There is no free tier, so paid-plan-required is the safer reading.",
+  "source": "https://seranking.com/api.html"},
+
+ {"id": 52, "app": "SE Ranking", "field": "buildability", "pass1": "build-now", "pass2": "build-with-caveats",
+  "winner": "pass2", "ship": "build-with-caveats",
+  "reason": "Paid add-on plus credit metering means a toolkit cannot be exercised without spend. That is a caveat worth flagging.",
+  "source": "https://seranking.com/api.html"},
+
+ {"id": 52, "app": "SE Ranking", "field": "mcp_status", "pass1": "official", "pass2": "unknown",
+  "winner": "pass1", "ship": "official",
+  "reason": "The MCP page is on seranking.com and resolves (confirmed by the automated MCP check). The verifier answered 'unknown' after a failed fetch.",
+  "source": "https://seranking.com/api/integrations/mcp/"},
+
+ {"id": 67, "app": "Snowflake", "field": "buildability", "pass1": "build-with-caveats", "pass2": "build-now",
+  "winner": "both-defensible", "ship": "build-with-caveats",
+  "reason": "Nothing is gated and a trial is self-serve, but a toolkit needs an account-scoped host, key-pair setup and a role/warehouse per tenant. That onboarding is heavier than a bearer token.",
+  "source": "https://docs.snowflake.com/en/developer-guide/sql-api/authenticating"},
+
+ {"id": 80, "app": "Harvest", "field": "access_tier", "pass1": "self-serve-trial", "pass2": "self-serve-free",
+  "winner": "pass2", "ship": "self-serve-free",
+  "reason": "Personal access tokens are created from Harvest ID with no paid plan required. Pass 1 assumed a trial gate that the docs do not state.",
+  "source": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/"},
+
+ {"id": 80, "app": "Harvest", "field": "buildability", "pass1": "build-with-caveats", "pass2": "build-now",
+  "winner": "pass2", "ship": "build-now",
+  "reason": "Absence of webhooks is a design constraint (poll with updated_since), not a blocker to building the toolkit. Kept in notes rather than as a blocker.",
+  "source": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/"},
+
+ {"id": 80, "app": "Harvest", "field": "mcp_status", "pass1": "community", "pass2": "none",
+  "winner": "pass1", "ship": "community",
+  "reason": "A third-party MCP server exists and the cited repo resolves. 'none' would be a stronger claim than the evidence supports.",
+  "source": "https://github.com/southleft/harvest-mcp"},
+
+ {"id": 82, "app": "Plaid", "field": "access_tier", "pass1": "self-serve-trial", "pass2": "app-review",
+  "winner": "pass2", "ship": "app-review",
+  "reason": "Sandbox keys are instant, but Production access is requested through the Dashboard and reviewed by Plaid. Shipping a real integration is gated on that review.",
+  "source": "https://plaid.com/docs/api/"},
+
+ {"id": 82, "app": "Plaid", "field": "mcp_status", "pass1": "official", "pass2": "unknown",
+  "winner": "pass1", "ship": "official",
+  "reason": "plaid/ai-coding-toolkit is Plaid's own GitHub org and ships an MCP. Note retained that it is an integration-building MCP, not an account-data one.",
+  "source": "https://github.com/plaid/ai-coding-toolkit"},
+
+ {"id": 84, "app": "Paygent Connect", "field": "buildability", "pass1": "needs-outreach", "pass2": "not-buildable-today",
+  "winner": "pass2", "ship": "not-buildable-today",
+  "reason": "Both passes independently failed to identify the product. You cannot do outreach to a vendor you cannot name, so 'not buildable today' is the honest verdict.",
+  "source": null},
+
+ {"id": 84, "app": "Paygent Connect", "field": "mcp_status", "pass1": "none", "pass2": "unknown",
+  "winner": "pass2", "ship": "unknown",
+  "reason": "'none' asserts a checked absence. Nothing was checkable, so 'unknown' is the truthful value.",
+  "source": null},
+
+ {"id": 84, "app": "Paygent Connect", "field": "auth_methods", "pass1": ["other"], "pass2": [],
+  "winner": "pass2", "ship": [],
+  "reason": "No auth surface was found for any candidate entity. An empty list renders as unknown rather than implying a scheme exists.",
+  "source": null},
+
+ {"id": 91, "app": "NotebookLM", "field": "access_tier", "pass1": "contact-sales", "pass2": "paid-plan-required",
+  "winner": "pass2", "ship": "paid-plan-required",
+  "reason": "Gemini Notebook Enterprise requires purchased licenses, but it is a purchasable subscription rather than a bespoke sales gate. The 15-license minimum the verifier cited is NOT on the API page and stays unconfirmed.",
+  "source": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks"},
+
+ {"id": 91, "app": "NotebookLM", "field": "buildability", "pass1": "needs-outreach", "pass2": "build-with-caveats",
+  "winner": "pass2", "ship": "build-with-caveats",
+  "reason": "Verified by hand: a callable REST API exists (Discovery Engine v1alpha notebooks, gcloud bearer token). Pass 1 concluded no API existed and was wrong. Consumer NotebookLM still has none.",
+  "source": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks"},
+
+ {"id": 91, "app": "NotebookLM", "field": "mcp_status", "pass1": "none", "pass2": "unknown",
+  "winner": "pass2", "ship": "unknown",
+  "reason": "Neither pass checked for an MCP against a vendor source. 'unknown' does not overstate what was verified.",
+  "source": null},
+
+ {"id": 92, "app": "Otter AI", "field": "access_tier", "pass1": "paid-plan-required", "pass2": "contact-sales",
+  "winner": "both-defensible", "ship": "paid-plan-required",
+  "reason": "The REST API is Enterprise-only, which reads either way. Kept as paid-plan-required and recorded the inversion worth knowing: Otter's official MCP server ships on the free Basic plan while its REST API does not.",
+  "source": "https://help.otter.ai/hc/en-us/articles/35287607569687-Otter-MCP-Server"}
+]

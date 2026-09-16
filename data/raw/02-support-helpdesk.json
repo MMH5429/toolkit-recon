@@ -1,0 +1,312 @@
+[
+  {
+    "id": 11,
+    "app": "Zendesk",
+    "category": "Support and Helpdesk",
+    "hint": "zendesk.com",
+    "one_liner": "Enterprise ticketing and omnichannel customer service suite with a large marketplace.",
+    "auth_methods": ["OAuth2", "API key", "Basic"],
+    "auth_notes": "OAuth2 bearer is recommended; API tokens use Basic as email/token:token and are scheduled for deactivation on 30 April 2027.",
+    "access_tier": "self-serve-trial",
+    "credential_path": "Sign up for a trial, then Admin Center > Apps and integrations > APIs > Zendesk API to create a token or OAuth client.",
+    "api_protocols": ["REST", "Webhooks"],
+    "api_breadth": "broad",
+    "breadth_note": "Tickets, users, orgs, Help Center, Talk, Chat, views, triggers, macros, custom objects, Sunshine.",
+    "mcp": {
+      "status": "community",
+      "url": "https://github.com/reminia/zendesk-mcp-server",
+      "note": "Zendesk officially ships an MCP client for action flows. Several blogs claim a first-party per-tenant MCP server at <subdomain>.zendesk.com/api/mcp, but other sources deny it and I found no official Zendesk doc confirming it."
+    },
+    "webhooks": "yes",
+    "rate_limits": "200-700 req/min by plan; 2500 with High Volume API add-on",
+    "buildability": "build-with-caveats",
+    "blocker": "Multi-tenant distribution needs a global OAuth client granted by Zendesk; API tokens deactivate April 2027.",
+    "evidence": [
+      "https://developer.zendesk.com/api-reference/introduction/security-and-auth/",
+      "https://developer.zendesk.com/documentation/api-basics/best-practices/best-practices-for-avoiding-rate-limiting/",
+      "https://developer.zendesk.com/documentation/authentication/oauth-migration/",
+      "https://support.zendesk.com/hc/en-us/articles/10497779528730-Connecting-to-MCP-servers-and-using-MCP-tools-in-action-flows"
+    ],
+    "confidence": "medium",
+    "notes": "Apps distributed via the Zendesk Marketplace go through app review; global OAuth clients require a Zendesk request. MCP server status unconfirmed."
+  },
+  {
+    "id": 12,
+    "app": "Intercom",
+    "category": "Support and Helpdesk",
+    "hint": "intercom.com",
+    "one_liner": "Messenger-first support platform with Fin AI agent, inbox, and help center.",
+    "auth_methods": ["OAuth2", "Bearer/PAT"],
+    "auth_notes": "Access token issued instantly when you create an app in Developer Hub; OAuth2 for public apps, no refresh tokens.",
+    "access_tier": "self-serve-trial",
+    "credential_path": "Create a free development workspace, create an app in Developer Hub, copy the token from Configure > Authentication, or enable OAuth.",
+    "api_protocols": ["REST", "Webhooks"],
+    "api_breadth": "broad",
+    "breadth_note": "Conversations, contacts, companies, tickets, articles, events, data attributes, tags, admins, notes.",
+    "mcp": {
+      "status": "official",
+      "url": "https://mcp.intercom.com/mcp",
+      "note": "First-party hosted server (EU at mcp.eu.intercom.com/mcp, AU unsupported), OAuth2 or bearer token, ~14 tools across conversations, contacts, companies, and articles."
+    },
+    "webhooks": "yes",
+    "rate_limits": "~10,000 calls/min per private app; 25,000/min per workspace",
+    "buildability": "build-now",
+    "blocker": "none",
+    "evidence": [
+      "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication",
+      "https://developers.intercom.com/docs/guides/mcp",
+      "https://developers.intercom.com/docs/publish-to-the-app-store/review-publish-your-app",
+      "https://developers.intercom.com/docs/build-an-integration/getting-started"
+    ],
+    "confidence": "high",
+    "notes": "Private apps need no review but require a paid workspace; public App Store apps require Intercom review and App Partner Program pages."
+  },
+  {
+    "id": 13,
+    "app": "Freshdesk",
+    "category": "Support and Helpdesk",
+    "hint": "freshdesk.com",
+    "one_liner": "Freshworks cloud helpdesk with ticketing, automations, and a free starter tier.",
+    "auth_methods": ["API key", "Basic"],
+    "auth_notes": "v2 REST API uses HTTP Basic with the API key as username and any string as password; no OAuth2 on v2.",
+    "access_tier": "self-serve-free",
+    "credential_path": "Sign up (free tier available), open your agent profile settings, and copy the API key shown on the profile page.",
+    "api_protocols": ["REST", "Webhooks"],
+    "api_breadth": "broad",
+    "breadth_note": "Tickets, conversations, contacts, companies, agents, groups, solutions/KB, surveys, time entries, products.",
+    "mcp": {
+      "status": "official",
+      "url": "https://support.freshdesk.com/support/solutions/articles/50000012670-model-context-protocol-mcp-integration-in-freshdesk-eap-",
+      "note": "Freshworks MCP integration reported generally available from 10 September 2026; authenticates via API key only. Multiple community servers also exist (e.g. NeuraLegion/freshdesk_mcp)."
+    },
+    "webhooks": "limited",
+    "rate_limits": "100-700 req/min per account by plan; 429 with Retry-After",
+    "buildability": "build-now",
+    "blocker": "none",
+    "evidence": [
+      "https://support.freshdesk.com/support/solutions/articles/225439-what-are-the-rate-limits-for-the-api-calls-to-freshdesk-",
+      "https://developers.freshdesk.com/",
+      "https://support.freshdesk.com/support/solutions/articles/50000012670-model-context-protocol-mcp-integration-in-freshdesk-eap-",
+      "https://github.com/NeuraLegion/freshdesk_mcp"
+    ],
+    "confidence": "high",
+    "notes": "Webhooks are fired from automation/observer rules rather than a first-class subscription API, and cover ticket events more than contact/agent lifecycle."
+  },
+  {
+    "id": 14,
+    "app": "Front",
+    "category": "Support and Helpdesk",
+    "hint": "front.com",
+    "one_liner": "Shared inbox and customer operations platform built around team email collaboration.",
+    "auth_methods": ["OAuth2", "Bearer/PAT"],
+    "auth_notes": "API tokens sent as Bearer; OAuth2 required for public integrations on the App Store unless Front grants an exception.",
+    "access_tier": "self-serve-trial",
+    "credential_path": "Company settings > Developers > API tokens to create a token; or register an OAuth app in the developer portal for public apps.",
+    "api_protocols": ["REST", "Webhooks"],
+    "api_breadth": "broad",
+    "breadth_note": "Conversations, messages, comments, drafts, contacts, accounts, inboxes, teammates, tags, rules, analytics.",
+    "mcp": {
+      "status": "official",
+      "url": "https://dev.frontapp.com/docs/mcp-server",
+      "note": "Front's hosted MCP server at mcp.frontapp.com/mcp (open beta since mid-2026), OAuth-authenticated, ~18 tools over conversations, messages, tags, and contacts."
+    },
+    "webhooks": "yes",
+    "rate_limits": "50/100/200 req/min by plan; 120 rpm for partner OAuth apps",
+    "buildability": "build-with-caveats",
+    "blocker": "Multi-tenant/public integrations must use OAuth via Front's app framework unless Front grants a written exception.",
+    "evidence": [
+      "https://dev.frontapp.com/docs/authentication",
+      "https://dev.frontapp.com/docs/rate-limiting",
+      "https://dev.frontapp.com/docs/create-and-revoke-api-tokens",
+      "https://dev.frontapp.com/docs/mcp-server"
+    ],
+    "confidence": "high",
+    "notes": "Front requires partner OAuth for anything acting on another company's Front account, so production multi-tenant use is effectively partner-gated."
+  },
+  {
+    "id": 15,
+    "app": "Pylon",
+    "category": "Support and Helpdesk",
+    "hint": "usepylon.com",
+    "one_liner": "B2B support platform centered on Slack, Teams, and shared customer channels.",
+    "auth_methods": ["Bearer/PAT", "OAuth2"],
+    "auth_notes": "REST API uses Bearer token generated in the dashboard; the hosted MCP server uses OAuth 2.0 via AuthKit.",
+    "access_tier": "self-serve-trial",
+    "credential_path": "Start a paid plan or trial, then go to app.usepylon.com/settings/api-tokens and generate an API token.",
+    "api_protocols": ["REST", "Webhooks"],
+    "api_breadth": "moderate",
+    "breadth_note": "Issues, accounts, contacts, teams, users, custom fields, knowledge base, and webhook configuration.",
+    "mcp": {
+      "status": "official",
+      "url": "https://docs.usepylon.com/pylon-docs/integrations/pylon-mcp",
+      "note": "Pylon hosts mcp.usepylon.com over Streamable HTTP with OAuth 2.0; enabled from Settings > AI Controls > MCP Server; reads and updates issues, accounts, contacts."
+    },
+    "webhooks": "yes",
+    "rate_limits": "undocumented",
+    "buildability": "build-now",
+    "blocker": "none",
+    "evidence": [
+      "https://docs.usepylon.com/pylon-docs/developer/api/authentication",
+      "https://docs.usepylon.com/pylon-docs/integrations/pylon-mcp",
+      "https://www.usepylon.com/pricing",
+      "https://www.pulsemcp.com/servers/pylon"
+    ],
+    "confidence": "medium",
+    "notes": "Rate limits not found in public docs. Pricing appears self-serve from ~$59/seat/month with seat minimums; free-tier availability is inconsistent across sources."
+  },
+  {
+    "id": 16,
+    "app": "LiveAgent",
+    "category": "Support and Helpdesk",
+    "hint": "liveagent.com",
+    "one_liner": "Omnichannel helpdesk from Quality Unit with ticketing, live chat, and call center.",
+    "auth_methods": ["API key"],
+    "auth_notes": "API v3 uses per-key API keys created in Configuration > System > API, with per-key permission scoping.",
+    "access_tier": "self-serve-trial",
+    "credential_path": "Start a 30-day trial, then in the agent panel go to Configuration > System > API and add a new API key with permissions.",
+    "api_protocols": ["REST", "Webhooks"],
+    "api_breadth": "moderate",
+    "breadth_note": "Tickets, messages, contacts, agents, departments, companies, chats, calls, knowledge base.",
+    "mcp": {
+      "status": "official",
+      "url": "https://github.com/QualityUnit/liveagent-mcp-server",
+      "note": "Quality Unit (LiveAgent's vendor) publishes a built-in MCP server documented at support.liveagent.com/647358; connects Claude/Cursor using the agent's own identity and permissions."
+    },
+    "webhooks": "limited",
+    "rate_limits": "180 requests per minute per API key",
+    "buildability": "build-with-caveats",
+    "blocker": "API v3 reference is served only inside your own tenant (<domain>.ladesk.com/docs/api/v3), so schemas are hard to survey pre-signup.",
+    "evidence": [
+      "https://support.liveagent.com/911737-API-v3",
+      "https://support.liveagent.com/741982-API-key",
+      "https://support.liveagent.com/931802-API-rate-limit-API-requests-limit",
+      "https://support.liveagent.com/647358-MCP-Integration-for-Agents"
+    ],
+    "confidence": "medium",
+    "notes": "Unconfirmed: whether API access is gated by plan tier, and the exact webhook model (appears to be rule/plugin driven rather than a subscription API)."
+  },
+  {
+    "id": 17,
+    "app": "Plain",
+    "category": "Support and Helpdesk",
+    "hint": "plain.com",
+    "one_liner": "API-first support tool for technical B2B teams, built on a public GraphQL API.",
+    "auth_methods": ["API key", "Bearer/PAT", "HMAC-signed"],
+    "auth_notes": "GraphQL API key sent as Bearer with per-key permission scopes; outbound webhooks are HMAC-signed.",
+    "access_tier": "self-serve-trial",
+    "credential_path": "Sign up for the free trial, then Settings > API Keys in your Plain workspace and create a key with the needed permissions.",
+    "api_protocols": ["GraphQL", "Webhooks", "SDK-only"],
+    "api_breadth": "broad",
+    "breadth_note": "Plain's own UI runs on the same GraphQL API: threads, customers, tenants, labels, email, chat, help center.",
+    "mcp": {
+      "status": "official",
+      "url": "https://help.plain.com/article/mcp-server",
+      "note": "Plain hosts mcp.plain.com/mcp with roughly 30 tools spanning threads, customers, tenants, help center articles, and workspace data; supports reads and writes."
+    },
+    "webhooks": "yes",
+    "rate_limits": "undocumented",
+    "buildability": "build-now",
+    "blocker": "none",
+    "evidence": [
+      "https://www.plain.com/docs/graphql/introduction",
+      "https://help.plain.com/article/mcp-server",
+      "https://www.plain.com/changelog/plain-mcp",
+      "https://www.plain.com/pricing"
+    ],
+    "confidence": "medium",
+    "notes": "GraphQL only, no REST, so a toolkit needs GraphQL codegen. Rate limits were not found in public docs; API region host is core-api.uk.plain.com."
+  },
+  {
+    "id": 18,
+    "app": "Help Scout",
+    "category": "Support and Helpdesk",
+    "hint": "helpscout.com",
+    "one_liner": "Simple shared inbox, knowledge base, and Beacon widget for small support teams.",
+    "auth_methods": ["OAuth2"],
+    "auth_notes": "Inbox/Mailbox API 2.0 is OAuth2 only: client credentials for internal apps, authorization code for multi-customer apps.",
+    "access_tier": "paid-plan-required",
+    "credential_path": "On a paid plan, go to Your Profile > My Apps > Create My App to get client_id/client_secret, then POST to /v2/oauth2/token.",
+    "api_protocols": ["REST", "Webhooks"],
+    "api_breadth": "broad",
+    "breadth_note": "Conversations, threads, customers, mailboxes, users, tags, workflows, reports, plus a separate Docs API.",
+    "mcp": {
+      "status": "official",
+      "url": "https://articles.helpscout.com/blog/introducing-help-scout-mcp/",
+      "note": "Help Scout runs a first-party server at mcp.helpscout.net/mcp, added as an OAuth custom connector; reported generally available to all customers. Community server drewburchfield/help-scout-mcp-server predates it."
+    },
+    "webhooks": "yes",
+    "rate_limits": "~200-800 req/min per account by plan; 429 with Retry-After",
+    "buildability": "build-with-caveats",
+    "blocker": "Free plan excludes API and integrations, so a paid seat is needed before any credentials work.",
+    "evidence": [
+      "https://developer.helpscout.com/mailbox-api/overview/authentication/",
+      "https://developer.helpscout.com/mailbox-api/overview/rate-limiting/",
+      "https://articles.helpscout.com/blog/introducing-help-scout-mcp/",
+      "https://www.helpscout.com/pricing/"
+    ],
+    "confidence": "high",
+    "notes": "Access tokens expire in about 48 hours (expires_in 172800), so a toolkit must handle refresh or re-issue via client credentials."
+  },
+  {
+    "id": 19,
+    "app": "Gorgias",
+    "category": "Support and Helpdesk",
+    "hint": "gorgias.com",
+    "one_liner": "Ecommerce-focused helpdesk deeply integrated with Shopify and DTC storefronts.",
+    "auth_methods": ["Basic", "API key", "OAuth2"],
+    "auth_notes": "Private apps use HTTP Basic with account email plus API key; OAuth2 is mandatory for public apps other accounts install.",
+    "access_tier": "self-serve-trial",
+    "credential_path": "In the helpdesk, Settings > Account > REST API shows your base API URL, username (email), and API key password.",
+    "api_protocols": ["REST", "Webhooks"],
+    "api_breadth": "broad",
+    "breadth_note": "Tickets, messages, customers, views, macros, rules, tags, integrations, satisfaction surveys, events, jobs.",
+    "mcp": {
+      "status": "official",
+      "url": "https://updates.gorgias.com/publications/gorgias-mcp-is-now-in-open-beta",
+      "note": "First-party connector at mcp.gorgias.com/mcp, in open beta since around May 2026, reported free on every Helpdesk plan. Community servers also exist."
+    },
+    "webhooks": "yes",
+    "rate_limits": "40 req/20s for API keys; 80 req/20s for OAuth apps (leaky bucket)",
+    "buildability": "build-now",
+    "blocker": "none",
+    "evidence": [
+      "https://developers.gorgias.com/reference/limitations",
+      "https://docs.gorgias.com/en-US/rest-api-208286",
+      "https://updates.gorgias.com/publications/gorgias-mcp-is-now-in-open-beta",
+      "https://www.getmacha.com/blog/how-to-use-the-gorgias-api"
+    ],
+    "confidence": "high",
+    "notes": "Public apps listed for other Gorgias merchants must use OAuth2 and go through Gorgias app listing; private API-key apps need no review."
+  },
+  {
+    "id": 20,
+    "app": "Gladly",
+    "category": "Support and Helpdesk",
+    "hint": "gladly.com",
+    "one_liner": "People-centered, customer-not-ticket service platform for enterprise retail and travel brands.",
+    "auth_methods": ["Basic", "API key"],
+    "auth_notes": "HTTP Basic using an agent-bound API token; the token is tied to a Gladly user holding the API User role.",
+    "access_tier": "contact-sales",
+    "credential_path": "Requires an existing Gladly org obtained via sales demo; an admin grants the API User role, then creates a token in Settings > API Tokens.",
+    "api_protocols": ["REST"],
+    "api_breadth": "moderate",
+    "breadth_note": "Customers, conversations, conversation items, tasks, agents, topics, plus reporting and data export endpoints.",
+    "mcp": {
+      "status": "community",
+      "url": "https://www.stackone.com/connectors/gladly/mcp/",
+      "note": "No first-party Gladly MCP server found. Third-party hosted connectors exist (StackOne reports ~65 actions; Truto offers a hosted connector for Claude)."
+    },
+    "webhooks": "unknown",
+    "rate_limits": "10 requests per second per organization by default",
+    "buildability": "needs-outreach",
+    "blocker": "No self-serve signup, no published pricing, no trial; credentials require an already-provisioned enterprise Gladly org.",
+    "evidence": [
+      "https://developer.gladly.com/rest/",
+      "https://help.gladly.com/implementation/docs/get-your-api-tokens",
+      "https://help.gladly.com/developer-tutorials/docs/default-api-rate-limits",
+      "https://www.gladly.ai/gladly-developer-platform/"
+    ],
+    "confidence": "medium",
+    "notes": "Unconfirmed: whether Gladly exposes outbound webhooks/event streams, and whether any ISV or partner program gates production API use."
+  }
+]

@@ -1,0 +1,312 @@
+[
+  {
+    "id": 71,
+    "app": "Notion",
+    "category": "Productivity and Project Management",
+    "hint": "developers.notion.com",
+    "one_liner": "Connected workspace for docs, wikis, and databases.",
+    "auth_methods": ["OAuth2", "Bearer/PAT"],
+    "auth_notes": "Internal connections use static bearer token; public connections use OAuth 2.0. Personal access tokens also supported.",
+    "access_tier": "self-serve-free",
+    "credential_path": "Create integration at notion.so/profile/integrations, copy token, share pages with it; OAuth for public apps.",
+    "api_protocols": ["REST", "Webhooks", "SDK-only"],
+    "api_breadth": "broad",
+    "breadth_note": "Pages, blocks, databases/data sources, users, comments, search, file uploads.",
+    "mcp": {
+      "status": "official",
+      "url": "https://developers.notion.com/guides/mcp/overview",
+      "note": "Hosted remote server at https://mcp.notion.com/mcp with OAuth; repo makenotion/notion-mcp-server."
+    },
+    "webhooks": "yes",
+    "rate_limits": "~3 req/sec average per integration; per-workspace limit also applies",
+    "buildability": "build-now",
+    "blocker": "none",
+    "evidence": [
+      "https://developers.notion.com/reference/authentication",
+      "https://developers.notion.com/reference/request-limits",
+      "https://developers.notion.com/reference/webhooks",
+      "https://developers.notion.com/guides/mcp/overview"
+    ],
+    "confidence": "high",
+    "notes": "Content must be explicitly shared with the integration; that sharing step is the main onboarding friction for agents."
+  },
+  {
+    "id": 72,
+    "app": "Airtable",
+    "category": "Productivity and Project Management",
+    "hint": "airtable.com/developers",
+    "one_liner": "Spreadsheet-database hybrid for building relational team apps.",
+    "auth_methods": ["OAuth2", "Bearer/PAT"],
+    "auth_notes": "Legacy API keys fully deprecated Feb 2024. Only scoped personal access tokens and OAuth remain.",
+    "access_tier": "self-serve-free",
+    "credential_path": "Create scoped PAT at airtable.com/create/tokens; register OAuth integration in developer hub for third-party apps.",
+    "api_protocols": ["REST", "Webhooks"],
+    "api_breadth": "broad",
+    "breadth_note": "Records CRUD, base/table/field schema, comments, attachments, webhooks, enterprise admin endpoints.",
+    "mcp": {
+      "status": "official",
+      "url": "https://github.com/Airtable/airtable-mcp-cli",
+      "note": "Airtable-org CLI targeting hosted https://mcp.airtable.com/mcp; explicitly labeled experimental."
+    },
+    "webhooks": "yes",
+    "rate_limits": "5 requests/second per base; not raised by higher plans",
+    "buildability": "build-now",
+    "blocker": "none",
+    "evidence": [
+      "https://support.airtable.com/articles/9934989703-creating-personal-access-tokens",
+      "https://airtable.com/developers/web/api/webhooks-overview",
+      "https://github.com/Airtable/airtable-mcp-cli",
+      "https://support.airtable.com/articles/6292134965-getting-started-with-airtable-s-web-api"
+    ],
+    "confidence": "high",
+    "notes": "Confirmed: API keys dead since Feb 2024, PAT/OAuth only. 5 rps per base is the practical ceiling for bulk agents."
+  },
+  {
+    "id": 73,
+    "app": "Linear",
+    "category": "Productivity and Project Management",
+    "hint": "developers.linear.app",
+    "one_liner": "Issue tracking and project planning for software teams.",
+    "auth_methods": ["OAuth2", "API key"],
+    "auth_notes": "Personal API keys with selectable scopes, or OAuth2 for multi-user apps; both sent as Authorization header.",
+    "access_tier": "self-serve-free",
+    "credential_path": "Settings > Account > Security & Access to create a personal API key; OAuth app via workspace API settings.",
+    "api_protocols": ["GraphQL", "Webhooks", "SDK-only"],
+    "api_breadth": "broad",
+    "breadth_note": "Issues, projects, initiatives, cycles, teams, comments, labels, documents, attachments.",
+    "mcp": {
+      "status": "official",
+      "url": "https://linear.app/docs/mcp",
+      "note": "Linear-hosted remote server at https://mcp.linear.app/mcp, OAuth per session, streamable HTTP."
+    },
+    "webhooks": "yes",
+    "rate_limits": "2,500 requests/hour with API key; 600/hour unauthenticated",
+    "buildability": "build-now",
+    "blocker": "none",
+    "evidence": [
+      "https://linear.app/developers/graphql",
+      "https://linear.app/developers/rate-limiting",
+      "https://linear.app/docs/api-and-webhooks",
+      "https://linear.app/docs/mcp"
+    ],
+    "confidence": "high",
+    "notes": "GraphQL-only, no REST. Toolkit must hand-write operations or generate from schema; official SDK eases this."
+  },
+  {
+    "id": 74,
+    "app": "Jira",
+    "category": "Productivity and Project Management",
+    "hint": "developer.atlassian.com",
+    "one_liner": "Atlassian issue tracking and agile project management platform.",
+    "auth_methods": ["OAuth2", "Basic", "Bearer/PAT"],
+    "auth_notes": "OAuth 2.0 3LO for apps; Basic auth with email plus API token for scripts; PATs on Data Center.",
+    "access_tier": "self-serve-free",
+    "credential_path": "API token from id.atlassian.com/manage-profile/security/api-tokens; OAuth 2.0 app via developer.atlassian.com console.",
+    "api_protocols": ["REST", "Webhooks", "SDK-only"],
+    "api_breadth": "broad",
+    "breadth_note": "Issues, JQL search, projects, workflows, fields, users, permissions, attachments, agile boards/sprints.",
+    "mcp": {
+      "status": "official",
+      "url": "https://github.com/atlassian/atlassian-mcp-server",
+      "note": "Atlassian Rovo remote MCP covering Jira, Confluence, JSM, Bitbucket, Compass; OAuth 2.1 or API tokens."
+    },
+    "webhooks": "yes",
+    "rate_limits": "Points-based hourly quota plus burst limits for 3LO/Forge/Connect apps",
+    "buildability": "build-now",
+    "blocker": "none",
+    "evidence": [
+      "https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/",
+      "https://developer.atlassian.com/cloud/jira/platform/basic-auth-for-rest-apis/",
+      "https://developer.atlassian.com/cloud/jira/platform/rate-limiting/",
+      "https://github.com/atlassian/atlassian-mcp-server"
+    ],
+    "confidence": "high",
+    "notes": "OAuth apps calling api.atlassian.com need cloudId resolution first. Marketplace distribution adds app review, direct API does not."
+  },
+  {
+    "id": 75,
+    "app": "Asana",
+    "category": "Productivity and Project Management",
+    "hint": "developers.asana.com",
+    "one_liner": "Work management platform for tasks, projects, and portfolios.",
+    "auth_methods": ["OAuth2", "Bearer/PAT"],
+    "auth_notes": "Personal access tokens for single-user scripts; OAuth 2.0 for apps acting on behalf of users.",
+    "access_tier": "self-serve-free",
+    "credential_path": "Create PAT in Asana developer console (app.asana.com/0/my-apps); register OAuth app in same console.",
+    "api_protocols": ["REST", "Webhooks", "SDK-only"],
+    "api_breadth": "broad",
+    "breadth_note": "Tasks, projects, portfolios, goals, custom fields, sections, teams, users, attachments, search.",
+    "mcp": {
+      "status": "official",
+      "url": "https://developers.asana.com/docs/mcp-server",
+      "note": "Asana-hosted V2 MCP server is GA with OAuth; V1 beta SSE endpoint deprecated, shutting down Aug 2026."
+    },
+    "webhooks": "yes",
+    "rate_limits": "150 req/min free plans, 1,500 req/min paid; search 60 req/min",
+    "buildability": "build-now",
+    "blocker": "none",
+    "evidence": [
+      "https://developers.asana.com/docs/personal-access-token",
+      "https://developers.asana.com/docs/oauth",
+      "https://developers.asana.com/docs/rate-limits",
+      "https://developers.asana.com/docs/mcp-server"
+    ],
+    "confidence": "high",
+    "notes": "Webhook setup uses an X-Hook-Secret handshake, so the receiving endpoint must be live before registration succeeds."
+  },
+  {
+    "id": 76,
+    "app": "Monday.com",
+    "category": "Productivity and Project Management",
+    "hint": "developer.monday.com",
+    "one_liner": "Visual work OS built on customizable boards and items.",
+    "auth_methods": ["OAuth2", "API key"],
+    "auth_notes": "Per-user API tokens from admin/member profile, or OAuth app tokens with scopes; short-lived tokens inside apps.",
+    "access_tier": "self-serve-free",
+    "credential_path": "Copy personal API token from monday profile > Developers > My access tokens; OAuth app via developer center.",
+    "api_protocols": ["GraphQL", "Webhooks", "SDK-only"],
+    "api_breadth": "broad",
+    "breadth_note": "Boards, items, columns, groups, subitems, docs, users, teams, updates, workspaces, files.",
+    "mcp": {
+      "status": "official",
+      "url": "https://developer.monday.com/api-reference/docs/mondaycom-mcp",
+      "note": "Hosted platform MCP at https://mcp.monday.com/mcp; API token, OAuth, or dynamic client registration."
+    },
+    "webhooks": "yes",
+    "rate_limits": "Complexity budget 10M/min per account; 5-35 req/sec by plan tier",
+    "buildability": "build-now",
+    "blocker": "none",
+    "evidence": [
+      "https://developer.monday.com/api-reference/docs/basics",
+      "https://developer.monday.com/api-reference/docs/rate-limits",
+      "https://developer.monday.com/api-reference/docs/mondaycom-mcp",
+      "https://support.monday.com/hc/en-us/articles/26471164460690-API-Rate-Limits"
+    ],
+    "confidence": "high",
+    "notes": "GraphQL-only as expected. Complexity-point budgeting means query shape, not just call count, drives throttling."
+  },
+  {
+    "id": 77,
+    "app": "ClickUp",
+    "category": "Productivity and Project Management",
+    "hint": "clickup.com/api",
+    "one_liner": "All-in-one productivity suite for tasks, docs, and goals.",
+    "auth_methods": ["OAuth2", "API key"],
+    "auth_notes": "Personal token prefixed pk_ sent raw in Authorization header, or OAuth 2.0 for distributed apps.",
+    "access_tier": "self-serve-free",
+    "credential_path": "Settings > Apps to generate personal API token; create OAuth app in same Apps settings page.",
+    "api_protocols": ["REST", "Webhooks"],
+    "api_breadth": "broad",
+    "breadth_note": "Tasks, lists, folders, spaces, docs, custom fields, time tracking, goals, comments, chat.",
+    "mcp": {
+      "status": "official",
+      "url": "https://developer.clickup.com/docs/connect-an-ai-assistant-to-clickups-mcp-server",
+      "note": "Hosted at https://mcp.clickup.com/mcp, public beta, OAuth-only; tight daily call caps without AI add-on."
+    },
+    "webhooks": "yes",
+    "rate_limits": "100 req/min free-Business; 1,000 Business Plus; 10,000 Enterprise",
+    "buildability": "build-now",
+    "blocker": "none",
+    "evidence": [
+      "https://developer.clickup.com/docs/authentication",
+      "https://developer.clickup.com/docs/rate-limits",
+      "https://developer.clickup.com/docs/connect-an-ai-assistant-to-clickups-mcp-server",
+      "https://developer.clickup.com/docs/Getting%20Started"
+    ],
+    "confidence": "high",
+    "notes": "100 req/min on lower plans is restrictive for bulk sync. Note token goes in Authorization without a Bearer prefix."
+  },
+  {
+    "id": 78,
+    "app": "Coda",
+    "category": "Productivity and Project Management",
+    "hint": "coda.io/developers",
+    "one_liner": "Doc-database hybrid combining text, tables, and automations.",
+    "auth_methods": ["Bearer/PAT", "OAuth2"],
+    "auth_notes": "Unscoped bearer API tokens inheriting user permissions; OAuth 2.0 supported for Packs and partner integrations.",
+    "access_tier": "self-serve-free",
+    "credential_path": "Generate API token from Coda account settings; free account sufficient for REST API access.",
+    "api_protocols": ["REST", "Webhooks"],
+    "api_breadth": "moderate",
+    "breadth_note": "Docs, pages, tables, rows, columns, formulas, controls, automations, permissions; no deep block-level editing.",
+    "mcp": {
+      "status": "official",
+      "url": "https://coda.io/resources/guides/getting_started_with_coda_mcp",
+      "note": "Official Coda/Superhuman Docs remote MCP in public beta; exact endpoint URL not confirmed from docs."
+    },
+    "webhooks": "limited",
+    "rate_limits": "~10 requests/second per token; varies by endpoint",
+    "buildability": "build-with-caveats",
+    "blocker": "Brand migration to Superhuman Docs is moving docs and endpoints; MCP endpoint unverified.",
+    "evidence": [
+      "https://coda.io/developers/apis/v1",
+      "https://docs.superhuman.com/developers",
+      "https://coda.io/resources/guides/getting_started_with_coda_mcp",
+      "https://help.coda.io/hc/en-us/articles/39555972006541-Create-webhook-triggered-automations"
+    ],
+    "confidence": "medium",
+    "notes": "Coda now redirects to docs.superhuman.com after the Superhuman/Grammarly acquisition. Webhooks are inbound automation triggers, not outbound event push."
+  },
+  {
+    "id": 79,
+    "app": "Smartsheet",
+    "category": "Productivity and Project Management",
+    "hint": "smartsheet.com/developers",
+    "one_liner": "Enterprise work management on a familiar grid interface.",
+    "auth_methods": ["OAuth2", "Bearer/PAT"],
+    "auth_notes": "Personal bearer access tokens or OAuth 2.0 authorization code flow; token required in Authorization header.",
+    "access_tier": "paid-plan-required",
+    "credential_path": "Generate API token in Personal Settings > API Access; requires Business, Enterprise, or Advanced Work Management plan.",
+    "api_protocols": ["REST", "Webhooks", "SDK-only"],
+    "api_breadth": "broad",
+    "breadth_note": "Sheets, rows, cells, columns, reports, dashboards, workspaces, attachments, users, groups, events.",
+    "mcp": {
+      "status": "official",
+      "url": "https://developers.smartsheet.com/ai-mcp/smartsheet/mcp-server",
+      "note": "Officially supported and generally available; also mirrored at github.com/smartsheet-platform/smar-mcp."
+    },
+    "webhooks": "yes",
+    "rate_limits": "300 requests/minute per token; heavy ops count as 10",
+    "buildability": "build-with-caveats",
+    "blocker": "API and MCP require Business+ plan, so free and Pro tier users cannot connect at all.",
+    "evidence": [
+      "https://developers.smartsheet.com/api/smartsheet/guides/getting-started",
+      "https://help.smartsheet.com/articles/2482389-generate-API-key",
+      "https://developers.smartsheet.com/ai-mcp/smartsheet/mcp-server",
+      "https://www.smartsheet.com/content-center/smartsheet-mcp-server-now-generally-available"
+    ],
+    "confidence": "high",
+    "notes": "Confirmed the plan gate: API access requires Business, Enterprise, or Advanced Work Management. Pro and free tiers excluded."
+  },
+  {
+    "id": 80,
+    "app": "Harvest",
+    "category": "Productivity and Project Management",
+    "hint": "harvestapp.com (help.getharvest.com/api-v2)",
+    "one_liner": "Time tracking, expenses, and invoicing for services teams.",
+    "auth_methods": ["Bearer/PAT", "OAuth2"],
+    "auth_notes": "PAT or OAuth2 bearer token plus mandatory Harvest-Account-Id header; User-Agent header also required.",
+    "access_tier": "self-serve-trial",
+    "credential_path": "Create personal access token at id.getharvest.com/developers; copy account ID shown alongside the token.",
+    "api_protocols": ["REST"],
+    "api_breadth": "moderate",
+    "breadth_note": "Time entries, projects, tasks, clients, invoices, estimates, expenses, users, reports, time off.",
+    "mcp": {
+      "status": "community",
+      "url": "https://github.com/southleft/harvest-mcp",
+      "note": "No official server found; several independent community implementations wrap the v2 REST API."
+    },
+    "webhooks": "no",
+    "rate_limits": "100 req/15 sec general; 100 req/15 min for Reports API",
+    "buildability": "build-with-caveats",
+    "blocker": "No webhooks, so change detection requires polling with updated_since filters.",
+    "evidence": [
+      "https://help.getharvest.com/api-v2/introduction/overview/general/",
+      "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/",
+      "https://help.getharvest.com/api-v2/",
+      "https://github.com/southleft/harvest-mcp"
+    ],
+    "confidence": "high",
+    "notes": "Confirmed PAT plus account-ID header pattern. Docs index has no webhooks section; omitting User-Agent returns 400."
+  }
+]

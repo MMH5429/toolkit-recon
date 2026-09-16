@@ -1,0 +1,312 @@
+[
+  {
+    "id": 61,
+    "app": "GitHub",
+    "category": "Developer, Infra and Data platforms",
+    "hint": "docs.github.com/rest",
+    "one_liner": "Code hosting, pull requests, issues, Actions CI and package registry.",
+    "auth_methods": ["OAuth2", "Bearer/PAT", "JWT"],
+    "auth_notes": "Fine-grained or classic PAT, OAuth app, or GitHub App (JWT to installation token). Bearer header on all REST calls.",
+    "access_tier": "self-serve-free",
+    "credential_path": "Free account, Settings > Developer settings > PAT; GitHub App or OAuth app registration is also self-serve.",
+    "api_protocols": ["REST", "GraphQL", "Webhooks"],
+    "api_breadth": "broad",
+    "breadth_note": "Hundreds of REST endpoints plus full GraphQL v4 covering repos, issues, PRs, Actions, orgs, security.",
+    "mcp": {
+      "status": "official",
+      "url": "https://github.com/github/github-mcp-server",
+      "note": "Official local server plus GA remote endpoint api.githubcopilot.com/mcp with OAuth."
+    },
+    "webhooks": "yes",
+    "rate_limits": "5,000/hr authenticated; 60/hr unauthenticated; 15,000/hr Enterprise Apps",
+    "buildability": "build-now",
+    "blocker": "none",
+    "evidence": [
+      "https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api",
+      "https://docs.github.com/en/enterprise-cloud@latest/rest/authentication/authenticating-to-the-rest-api",
+      "https://github.com/github/github-mcp-server",
+      "https://github.blog/changelog/2025-09-04-remote-github-mcp-server-is-now-generally-available/"
+    ],
+    "confidence": "high",
+    "notes": "Reference-grade developer API. GitHub App installation tokens are the right pattern for multi-tenant toolkits."
+  },
+  {
+    "id": 62,
+    "app": "Vercel",
+    "category": "Developer, Infra and Data platforms",
+    "hint": "vercel.com/docs/rest-api",
+    "one_liner": "Frontend hosting platform for deployments, projects, domains and edge functions.",
+    "auth_methods": ["Bearer/PAT", "OAuth2"],
+    "auth_notes": "Access token in Authorization: Bearer header; OAuth2 available for marketplace integrations acting on user teams.",
+    "access_tier": "self-serve-free",
+    "credential_path": "Free Hobby account, then Account Settings > Tokens > Create Token; scope to a team if needed.",
+    "api_protocols": ["REST", "Webhooks"],
+    "api_breadth": "broad",
+    "breadth_note": "Deployments, projects, env vars, domains, DNS, teams, logs, edge config, firewall and analytics.",
+    "mcp": {
+      "status": "official",
+      "url": "https://vercel.com/docs/agent-resources/vercel-mcp",
+      "note": "Official hosted remote server at mcp.vercel.com with OAuth; shipped public beta then expanded."
+    },
+    "webhooks": "yes",
+    "rate_limits": "Per-endpoint; X-RateLimit-* headers, 429 with Retry-After",
+    "buildability": "build-now",
+    "blocker": "none",
+    "evidence": [
+      "https://vercel.com/docs/rest-api",
+      "https://vercel.com/docs/rest-api/authentication/create-an-auth-token",
+      "https://vercel.com/docs/agent-resources/vercel-mcp",
+      "https://vercel.com/changelog/vercels-mcp"
+    ],
+    "confidence": "high",
+    "notes": "Team-scoped tokens matter: most endpoints need a teamId query param for org resources. Exact per-endpoint limits unconfirmed."
+  },
+  {
+    "id": 63,
+    "app": "Netlify",
+    "category": "Developer, Infra and Data platforms",
+    "hint": "docs.netlify.com/api",
+    "one_liner": "Jamstack hosting for sites, deploys, forms, functions and DNS.",
+    "auth_methods": ["Bearer/PAT", "OAuth2"],
+    "auth_notes": "Personal access token as Authorization: Bearer; OAuth2 required for public multi-user integrations.",
+    "access_tier": "self-serve-free",
+    "credential_path": "Free account, then Applications > Personal access tokens > New access token.",
+    "api_protocols": ["REST", "Webhooks"],
+    "api_breadth": "broad",
+    "breadth_note": "OpenAPI-described: sites, deploys, builds, forms, submissions, DNS zones, env vars, teams, hooks.",
+    "mcp": {
+      "status": "official",
+      "url": "https://github.com/netlify/netlify-mcp",
+      "note": "Official server; docs at docs.netlify.com/build/build-with-ai/netlify-mcp-server and a hosted remote endpoint."
+    },
+    "webhooks": "yes",
+    "rate_limits": "500 requests/minute for most endpoints; stricter on some operations",
+    "buildability": "build-now",
+    "blocker": "none",
+    "evidence": [
+      "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api/",
+      "https://docs.netlify.com/manage/security/secure-access-to-sites/rate-limiting/",
+      "https://github.com/netlify/netlify-mcp",
+      "https://docs.netlify.com/build/build-with-ai/netlify-mcp-server/"
+    ],
+    "confidence": "high",
+    "notes": "Deploy-creation endpoints have tighter limits than the 500/min default. OAuth app registration is self-serve for public integrations."
+  },
+  {
+    "id": 64,
+    "app": "Cloudflare",
+    "category": "Developer, Infra and Data platforms",
+    "hint": "developers.cloudflare.com/api",
+    "one_liner": "CDN, DNS, WAF, Workers, R2 and Zero Trust edge platform.",
+    "auth_methods": ["Bearer/PAT", "API key", "OAuth2"],
+    "auth_notes": "Scoped API tokens via Authorization: Bearer (preferred); legacy global API key with X-Auth-Email/X-Auth-Key. OAuth used by MCP servers.",
+    "access_tier": "self-serve-free",
+    "credential_path": "Free account, then My Profile > API Tokens > Create Token with scoped account/zone permissions.",
+    "api_protocols": ["REST", "GraphQL", "Webhooks"],
+    "api_breadth": "broad",
+    "breadth_note": "Very large surface: zones, DNS, WAF, Workers, KV, R2, D1, Pages, Access; GraphQL analytics separately.",
+    "mcp": {
+      "status": "official",
+      "url": "https://developers.cloudflare.com/agents/model-context-protocol/cloudflare/servers-for-cloudflare/",
+      "note": "Catalog of managed remote servers (*.mcp.cloudflare.com) with OAuth; repos cloudflare/mcp and mcp-server-cloudflare."
+    },
+    "webhooks": "yes",
+    "rate_limits": "1,200 requests per 5 minutes per user, account-wide cumulative",
+    "buildability": "build-now",
+    "blocker": "none",
+    "evidence": [
+      "https://developers.cloudflare.com/agents/model-context-protocol/cloudflare/servers-for-cloudflare/",
+      "https://github.com/cloudflare/mcp-server-cloudflare",
+      "https://blog.cloudflare.com/thirteen-new-mcp-servers-from-cloudflare/",
+      "https://community.cloudflare.com/t/is-the-cloudflare-api-rate-limit-per-account-or-per-zone-domain-or-per-api-token/149009"
+    ],
+    "confidence": "medium",
+    "notes": "1,200/5min limit is cumulative across dashboard and all tokens, so it bites in agent loops. Notification webhooks not directly reconfirmed."
+  },
+  {
+    "id": 65,
+    "app": "Supabase",
+    "category": "Developer, Infra and Data platforms",
+    "hint": "supabase.com/docs",
+    "one_liner": "Hosted Postgres with auth, storage, realtime and edge functions.",
+    "auth_methods": ["Bearer/PAT", "OAuth2", "API key", "JWT"],
+    "auth_notes": "Management API uses personal access token (Bearer) or OAuth2; per-project data APIs use anon/service_role keys and user JWTs.",
+    "access_tier": "self-serve-free",
+    "credential_path": "Free account, then Account Settings > Access Tokens; scoped PATs in public alpha, classic PATs are full-access.",
+    "api_protocols": ["REST", "GraphQL", "Webhooks", "SDK-only"],
+    "api_breadth": "broad",
+    "breadth_note": "Management API for projects, orgs, branches, secrets, functions; per-project PostgREST plus pg_graphql and realtime.",
+    "mcp": {
+      "status": "official",
+      "url": "https://supabase.com/docs/guides/ai-tools/mcp",
+      "note": "Hosted server at mcp.supabase.com/mcp with OAuth dynamic client registration; PAT fallback for CI. Repo github.com/supabase/mcp."
+    },
+    "webhooks": "yes",
+    "rate_limits": "Management API 60 requests/minute per user, scoped per project/org",
+    "buildability": "build-now",
+    "blocker": "none",
+    "evidence": [
+      "https://supabase.com/docs/guides/ai-tools/mcp",
+      "https://supabase.com/docs/reference/api/introduction",
+      "https://supabase.com/docs/guides/platform/personal-access-tokens",
+      "https://supabase.com/docs/reference/api/management-api"
+    ],
+    "confidence": "high",
+    "notes": "Two distinct API layers: control plane (Management API, PAT) and data plane (project URL + anon/service keys). Model both."
+  },
+  {
+    "id": 66,
+    "app": "Neo4j",
+    "category": "Developer, Infra and Data platforms",
+    "hint": "neo4j.com/docs/api",
+    "one_liner": "Graph database; Cypher over Bolt/HTTP plus an Aura cloud management API.",
+    "auth_methods": ["OAuth2", "Basic", "Bearer/PAT"],
+    "auth_notes": "Aura API: OAuth2 client_credentials to api.neo4j.io/oauth/token. Database Query API: HTTP Basic with DB username/password.",
+    "access_tier": "self-serve-free",
+    "credential_path": "Aura console > API credentials, but Free/Professional users must add billing info or marketplace project first.",
+    "api_protocols": ["REST", "SDK-only"],
+    "api_breadth": "narrow",
+    "breadth_note": "Aura REST is instance/tenant lifecycle CRUD only; real work is Cypher over Bolt or the HTTP Query API.",
+    "mcp": {
+      "status": "official",
+      "url": "https://github.com/neo4j/mcp",
+      "note": "Official server (get-schema, read-cypher, write-cypher, list-gds-procedures) using NEO4J_MCP_URI/USERNAME/PASSWORD; also neo4j-contrib/mcp-neo4j Labs servers."
+    },
+    "webhooks": "no",
+    "rate_limits": "undocumented",
+    "buildability": "build-with-caveats",
+    "blocker": "Not a SaaS REST app: needs DB connection credentials; Aura API credentials gated behind billing info on free tiers.",
+    "evidence": [
+      "https://neo4j.com/docs/aura/platform/api/authentication/",
+      "https://neo4j.com/docs/aura/platform/api/specification/",
+      "https://neo4j.com/docs/query-api/current/authentication-authorization/",
+      "https://github.com/neo4j/mcp"
+    ],
+    "confidence": "high",
+    "notes": "Two separate things: open-source/self-hosted DB (Bolt or Query API /db/{name}/query/v2, Basic auth) vs Aura management REST API (OAuth2)."
+  },
+  {
+    "id": 67,
+    "app": "Snowflake",
+    "category": "Developer, Infra and Data platforms",
+    "hint": "docs.snowflake.com",
+    "one_liner": "Cloud data warehouse with SQL REST API and Cortex AI services.",
+    "auth_methods": ["JWT", "OAuth2", "Bearer/PAT"],
+    "auth_notes": "Key-pair JWT (RS256, ~1hr, X-Snowflake-Authorization-Token-Type: KEYPAIR_JWT) or Snowflake OAuth; PATs also supported.",
+    "access_tier": "self-serve-trial",
+    "credential_path": "30-day trial with $400 credits, no card at signup.snowflake.com; then generate RSA key pair and set user RSA_PUBLIC_KEY.",
+    "api_protocols": ["REST", "SDK-only"],
+    "api_breadth": "moderate",
+    "breadth_note": "SQL API at /api/v2/statements plus object REST APIs for warehouses, databases, tasks, users, Cortex.",
+    "mcp": {
+      "status": "official",
+      "url": "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp",
+      "note": "Snowflake-managed MCP server GA Nov 2025, OAuth + RBAC; plus Snowflake-Labs/mcp open-source server."
+    },
+    "webhooks": "limited",
+    "rate_limits": "undocumented",
+    "buildability": "build-with-caveats",
+    "blocker": "Account-scoped URL, key-pair setup and warehouse/role config make onboarding heavier than a plain API key.",
+    "evidence": [
+      "https://docs.snowflake.com/en/developer-guide/sql-api/authenticating",
+      "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp",
+      "https://signup.snowflake.com/",
+      "https://github.com/Snowflake-Labs/mcp"
+    ],
+    "confidence": "high",
+    "notes": "Every call needs the account identifier host. Outbound webhook notification integrations exist but are not classic event webhooks; unconfirmed detail."
+  },
+  {
+    "id": 68,
+    "app": "MongoDB Atlas",
+    "category": "Developer, Infra and Data platforms",
+    "hint": "mongodb.com/docs/atlas/api",
+    "one_liner": "Managed MongoDB clusters with a versioned Administration API.",
+    "auth_methods": ["OAuth2", "other"],
+    "auth_notes": "Service accounts via OAuth2 client_credentials at /api/oauth/token (1hr bearer) — recommended; legacy API keys use HTTP Digest auth.",
+    "access_tier": "self-serve-free",
+    "credential_path": "Free M0 cluster account, then Organization Access Manager > Applications > Service Accounts (or legacy API keys).",
+    "api_protocols": ["REST", "Webhooks", "SDK-only"],
+    "api_breadth": "broad",
+    "breadth_note": "Admin API v2 covers clusters, projects, orgs, users, backups, alerts, metrics, network access, billing.",
+    "mcp": {
+      "status": "official",
+      "url": "https://www.mongodb.com/docs/mcp-server/",
+      "note": "Official MongoDB MCP Server, local (mongodb-js/mongodb-mcp-server) and Atlas-managed hosted variants."
+    },
+    "webhooks": "limited",
+    "rate_limits": "undocumented",
+    "buildability": "build-now",
+    "blocker": "none",
+    "evidence": [
+      "https://www.mongodb.com/docs/atlas/api/api-authentication/",
+      "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/authentication",
+      "https://www.mongodb.com/docs/mcp-server/",
+      "https://www.mongodb.com/docs/atlas/app-services/data-api/data-api-deprecation/"
+    ],
+    "confidence": "high",
+    "notes": "HTTP Digest (not Basic) for legacy keys — many HTTP clients need explicit digest support. Atlas Data API and App Services reached EOL Sep 30 2025."
+  },
+  {
+    "id": 69,
+    "app": "Datadog",
+    "category": "Developer, Infra and Data platforms",
+    "hint": "docs.datadoghq.com/api",
+    "one_liner": "Observability platform for metrics, logs, traces, monitors and dashboards.",
+    "auth_methods": ["API key", "Bearer/PAT", "OAuth2"],
+    "auth_notes": "DD-API-KEY header for writes; reads additionally need DD-APPLICATION-KEY. OAuth2 for marketplace integrations and MCP.",
+    "access_tier": "self-serve-free",
+    "credential_path": "Account (free plan or 14-day trial), then Organization Settings > API Keys and Application Keys.",
+    "api_protocols": ["REST", "Webhooks"],
+    "api_breadth": "broad",
+    "breadth_note": "v1 and v2 REST across metrics, logs, events, monitors, dashboards, incidents, SLOs, users, RUM, security.",
+    "mcp": {
+      "status": "official",
+      "url": "https://docs.datadoghq.com/mcp_server/",
+      "note": "Official remote server at mcp.datadoghq.com (site-specific), OAuth2 or API+app keys; in Preview. Repo datadog-labs/mcp-server."
+    },
+    "webhooks": "yes",
+    "rate_limits": "Per-endpoint; 250k events/min org limit; log intake not rate limited",
+    "buildability": "build-now",
+    "blocker": "none",
+    "evidence": [
+      "https://docs.datadoghq.com/api/latest/authentication/",
+      "https://docs.datadoghq.com/api/latest/rate-limits/",
+      "https://docs.datadoghq.com/mcp_server/setup/",
+      "https://github.com/datadog-labs/mcp-server"
+    ],
+    "confidence": "medium",
+    "notes": "Two-key model (API + app key) is the main integration gotcha. Auth docs state no plan gating for API access, but per-plan limits unconfirmed."
+  },
+  {
+    "id": 70,
+    "app": "Sentry",
+    "category": "Developer, Infra and Data platforms",
+    "hint": "docs.sentry.io/api",
+    "one_liner": "Error monitoring and performance tracing for application issues and releases.",
+    "auth_methods": ["Bearer/PAT", "OAuth2"],
+    "auth_notes": "Organization auth tokens (recommended) or personal tokens in Authorization: Bearer; internal/public integrations support OAuth-style installs.",
+    "access_tier": "self-serve-free",
+    "credential_path": "Free sentry.io account, then Settings > Developer Settings > Organization Tokens, or User Settings > Personal Tokens.",
+    "api_protocols": ["REST", "Webhooks"],
+    "api_breadth": "broad",
+    "breadth_note": "Projects, issues, events, releases, teams, orgs, alerts, discover queries, source maps, Seer.",
+    "mcp": {
+      "status": "official",
+      "url": "https://github.com/getsentry/sentry-mcp",
+      "note": "Official first-party remote server at mcp.sentry.dev/mcp, OAuth-only on the hosted endpoint; self-host with a token."
+    },
+    "webhooks": "yes",
+    "rate_limits": "Per-endpoint; X-Sentry-Rate-Limit-* headers; values undocumented",
+    "buildability": "build-now",
+    "blocker": "none",
+    "evidence": [
+      "https://docs.sentry.io/api/auth",
+      "https://docs.sentry.io/account/auth-tokens/",
+      "https://docs.sentry.io/api/ratelimits.md",
+      "https://github.com/getsentry/sentry-mcp"
+    ],
+    "confidence": "high",
+    "notes": "Rate limits are enforced per caller identity, so minting extra tokens will not raise throughput. Numeric limits not published."
+  }
+]

@@ -1,0 +1,308 @@
+[
+  {
+    "id": 1,
+    "app": "Salesforce",
+    "category": "CRM and Sales",
+    "hint": "salesforce.com",
+    "one_liner": "Enterprise CRM platform with extensive multi-cloud APIs and customizable object metadata.",
+    "auth_methods": ["OAuth2", "JWT"],
+    "auth_notes": "OAuth2 via Connected App or External Client App; JWT bearer flow for server-to-server; access token in Authorization header.",
+    "access_tier": "self-serve-free",
+    "credential_path": "Sign up for free Developer Edition org, create Connected/External Client App in Setup, enable OAuth scopes, copy client id/secret.",
+    "api_protocols": ["REST", "SOAP", "GraphQL", "Webhooks"],
+    "api_breadth": "broad",
+    "breadth_note": "REST, SOAP, Bulk, Metadata and GraphQL APIs across hundreds of standard plus custom sObjects.",
+    "mcp": {
+      "status": "official",
+      "url": "https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/hosted-mcp-servers-overview.html",
+      "note": "Salesforce-hosted MCP servers documented as GA for Enterprise Edition and above; salesforcecli/mcp also exists for dev tooling."
+    },
+    "webhooks": "yes",
+    "rate_limits": "Daily org API request limits by edition/licenses; concurrent request caps.",
+    "buildability": "build-now",
+    "blocker": "none",
+    "evidence": [
+      "https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_oauth_and_connected_apps.htm",
+      "https://developer.salesforce.com/docs/platform/api-rest/guide/quickstart-oauth.html",
+      "https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/hosted-mcp-servers-overview.html",
+      "https://developer.salesforce.com/docs/atlas.en-us.packagingGuide.meta/packagingGuide/dev_packages_api_access.htm"
+    ],
+    "confidence": "high",
+    "notes": "Free Developer Edition has API on. Customer Group/Professional orgs need a paid API add-on. AppExchange listing requires ISV security review."
+  },
+  {
+    "id": 2,
+    "app": "HubSpot",
+    "category": "CRM and Sales",
+    "hint": "hubspot.com",
+    "one_liner": "Inbound marketing, sales and service CRM with broad public REST APIs.",
+    "auth_methods": ["OAuth2", "Bearer/PAT"],
+    "auth_notes": "Private app access token (bearer) for single-account use; OAuth2 for multi-account or marketplace apps. Legacy static API keys retired.",
+    "access_tier": "self-serve-free",
+    "credential_path": "Create free HubSpot account, Settings > Integrations > Private Apps, pick scopes, copy token; or register developer app for OAuth.",
+    "api_protocols": ["REST", "Webhooks"],
+    "api_breadth": "broad",
+    "breadth_note": "CRM objects, marketing, CMS, conversations, automation; hundreds of endpoints plus associations and custom objects.",
+    "mcp": {
+      "status": "official",
+      "url": "https://developers.hubspot.com/mcp",
+      "note": "Two official servers: remote CRM MCP at mcp.hubspot.com (OAuth) and a local developer MCP for app/CMS building."
+    },
+    "webhooks": "yes",
+    "rate_limits": "100 req/10s for OAuth apps, 500 req/10s for private apps; daily caps.",
+    "buildability": "build-now",
+    "blocker": "none",
+    "evidence": [
+      "https://developers.hubspot.com/docs/developer-tooling/platform/usage-guidelines",
+      "https://developers.hubspot.com/mcp",
+      "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server",
+      "https://developers.hubspot.com/changelog/hubspot-developer-mcp-server-for-app-and-cms-development-now-in-ga"
+    ],
+    "confidence": "high",
+    "notes": "Listing a public app on the HubSpot App Marketplace requires app review; private/OAuth apps for own use do not. Some objects need paid tiers."
+  },
+  {
+    "id": 3,
+    "app": "Pipedrive",
+    "category": "CRM and Sales",
+    "hint": "pipedrive.com",
+    "one_liner": "Sales-pipeline-focused CRM with a mature versioned REST API.",
+    "auth_methods": ["API key", "OAuth2"],
+    "auth_notes": "Personal API token for own-account scripts; OAuth2 client id/secret from Developer Hub with scoped consent for multi-tenant apps.",
+    "access_tier": "self-serve-trial",
+    "credential_path": "Start free trial, Personal preferences > API to copy token; or register an app in Pipedrive Developer Hub for OAuth credentials.",
+    "api_protocols": ["REST", "Webhooks"],
+    "api_breadth": "broad",
+    "breadth_note": "v1 and v2 REST across deals, persons, organizations, activities, products; published OpenAPI 3 specs and SDKs.",
+    "mcp": {
+      "status": "official",
+      "url": "https://www.pipedrive.com/en/features/mcp-server",
+      "note": "Native Pipedrive-built MCP server launched June 2026, reported available on all Pipedrive plans."
+    },
+    "webhooks": "yes",
+    "rate_limits": "Token-budget per 2-second window; 10,000 POST/PUT per user daily.",
+    "buildability": "build-now",
+    "blocker": "none",
+    "evidence": [
+      "https://pipedrive.readme.io/docs/core-api-concepts-rate-limiting",
+      "https://pipedrive.readme.io/docs/guide-for-optimizing-api-usage",
+      "https://www.pipedrive.com/en/features/mcp-server",
+      "https://www.pipedrive.com/en/newsroom/pipedrive-launches-native-mcp-server-bringing-crm-workflows-directly-into-ai-assistants"
+    ],
+    "confidence": "high",
+    "notes": "API access reported on every plan, but there is no permanent free tier so a trial or paid seat is needed. Marketplace listing needs Pipedrive review."
+  },
+  {
+    "id": 4,
+    "app": "Attio",
+    "category": "CRM and Sales",
+    "hint": "attio.com",
+    "one_liner": "Modern flexible-data-model CRM with a clean, well-documented REST API.",
+    "auth_methods": ["API key", "OAuth2"],
+    "auth_notes": "Workspace API key used as Bearer token, or per-user OAuth2 authorization-code access token; both use the same Bearer scheme.",
+    "credential_path": "Create Attio workspace, Workspace Settings > Developers, create an integration and API key with scopes; OAuth app for distribution.",
+    "access_tier": "self-serve-free",
+    "api_protocols": ["REST", "Webhooks"],
+    "api_breadth": "moderate",
+    "breadth_note": "REST over objects, records, lists, entries, notes, tasks, comments and webhooks; attribute schema is workspace-defined.",
+    "mcp": {
+      "status": "official",
+      "url": "https://mcp.attio.com/mcp",
+      "note": "Official remote MCP with OAuth login and dynamic client registration; docs at docs.attio.com/mcp/overview. Some SQL tools are plan-gated."
+    },
+    "webhooks": "yes",
+    "rate_limits": "100 read req/s, 25 write req/s; 429 with Retry-After header.",
+    "buildability": "build-now",
+    "blocker": "none",
+    "evidence": [
+      "https://docs.attio.com/mcp/overview",
+      "https://docs.attio.com/rest-api/guides/rate-limiting",
+      "https://docs.attio.com/rest-api/guides/webhooks"
+    ],
+    "confidence": "high",
+    "notes": "One third-party blog claimed API access needs approval and 1,000 calls/hour; official docs show self-serve keys, so that claim is treated as unreliable."
+  },
+  {
+    "id": 5,
+    "app": "Twenty",
+    "category": "CRM and Sales",
+    "hint": "twenty.com (open-source CRM)",
+    "one_liner": "Open-source, self-hostable CRM with auto-generated REST and GraphQL APIs.",
+    "auth_methods": ["API key", "Bearer/PAT"],
+    "auth_notes": "Workspace API key sent as Bearer token; created in Settings > API & Webhooks and optionally scoped to a role.",
+    "access_tier": "self-serve-free",
+    "credential_path": "Self-host from GitHub or sign up for Twenty Cloud, then Settings > API & Webhooks > Create key and copy it once.",
+    "api_protocols": ["REST", "GraphQL", "Webhooks"],
+    "api_breadth": "moderate",
+    "breadth_note": "Core CRUD at /rest and /graphql plus metadata API at /rest/metadata; endpoints follow each workspace's own schema.",
+    "mcp": {
+      "status": "community",
+      "url": "https://github.com/mhenry3164/twenty-crm-mcp-server",
+      "note": "Several community MCP servers exist; an official one was still an open feature request (twentyhq/twenty issue 12953). Some blogs claim a native Cloud MCP — unverified."
+    },
+    "webhooks": "yes",
+    "rate_limits": "undocumented",
+    "buildability": "build-with-caveats",
+    "blocker": "Schema is per-workspace with no static API reference, so the tool surface must be generated at runtime.",
+    "evidence": [
+      "https://docs.twenty.com/developers/extend/api",
+      "https://github.com/twentyhq/twenty/issues/12953",
+      "https://github.com/mhenry3164/twenty-crm-mcp-server"
+    ],
+    "confidence": "medium",
+    "notes": "Unconfirmed: official MCP status and rate limits. Self-hosted instances have no vendor-enforced limits; Cloud limits not found in docs."
+  },
+  {
+    "id": 6,
+    "app": "Podio",
+    "category": "CRM and Sales",
+    "hint": "podio.com",
+    "one_liner": "Progress-owned low-code work and CRM platform built on configurable apps.",
+    "auth_methods": ["OAuth2"],
+    "auth_notes": "OAuth2 only against api.podio.com: server-side flow, app authentication (app id + app token), or username/password flow.",
+    "access_tier": "self-serve-free",
+    "credential_path": "Create Podio account, register an API client in account settings to get client_id and client_secret, then run an OAuth flow.",
+    "api_protocols": ["REST", "Webhooks"],
+    "api_breadth": "broad",
+    "breadth_note": "Large REST surface: items, apps, orgs, spaces, tasks, files, comments, hooks, views and more.",
+    "mcp": {
+      "status": "official",
+      "url": "https://docs.sharefile.com/en-us/podio/using-podio/general-features/podio-mcp-server.html",
+      "note": "Official Podio MCP server documented at mcp.podio.com in Progress/ShareFile docs; read and write over workspaces, apps and items."
+    },
+    "webhooks": "yes",
+    "rate_limits": "Hourly per-client limit; third-party cites 250/hour, not verified officially.",
+    "buildability": "build-now",
+    "blocker": "none",
+    "evidence": [
+      "https://developers.podio.com/authentication",
+      "https://developers.podio.com/doc/oauth-authorization",
+      "https://docs.sharefile.com/en-us/podio/using-podio/general-features/podio-mcp-server.html",
+      "https://www.progress.com/podio"
+    ],
+    "confidence": "medium",
+    "notes": "Unconfirmed: exact rate-limit numbers. Product moved from Citrix to Progress Software and is actively maintained, not sunset."
+  },
+  {
+    "id": 7,
+    "app": "Zoho CRM",
+    "category": "CRM and Sales",
+    "hint": "zoho.com/crm",
+    "one_liner": "Zoho suite CRM with a v8 REST API and credit-based rate limiting.",
+    "auth_methods": ["OAuth2"],
+    "auth_notes": "OAuth2 only; Self Client grant for server-to-server, authorization code for user apps. Access tokens last one hour, refresh tokens persist.",
+    "access_tier": "self-serve-free",
+    "credential_path": "Register a client (Self Client or Server-based) in Zoho API Console, pick scopes, generate auth code, exchange for refresh token.",
+    "api_protocols": ["REST", "Webhooks"],
+    "api_breadth": "broad",
+    "breadth_note": "Records, modules, COQL queries, bulk read/write, metadata, notifications; datacenter-specific domains (.com/.eu/.in).",
+    "mcp": {
+      "status": "official",
+      "url": "https://www.zoho.com/blog/tag/zoho-mcp",
+      "note": "Zoho runs mcp.zoho.com with prebuilt CRM servers (Data Insights, Data Operations, Module Customization, Workflow Automation). Exact doc URL unverified."
+    },
+    "webhooks": "yes",
+    "rate_limits": "Credit-based daily limits by edition (Free 5,000/day); concurrency 5-25 calls.",
+    "buildability": "build-now",
+    "blocker": "none",
+    "evidence": [
+      "https://www.zoho.com/crm/developer/docs/api/v8/api-limits.html",
+      "https://www.zoho.com/developer/rest-api.html",
+      "https://www.zoho.com/blog/tag/zoho-mcp"
+    ],
+    "confidence": "medium",
+    "notes": "Free edition confirmed to have API credits. Multi-datacenter token/domain handling adds integration complexity. Zoho MCP docs URL not directly retrieved."
+  },
+  {
+    "id": 8,
+    "app": "Close",
+    "category": "CRM and Sales",
+    "hint": "close.com",
+    "one_liner": "Inside-sales CRM with built-in calling, email and a REST API.",
+    "auth_methods": ["API key", "Basic", "OAuth2"],
+    "auth_notes": "API key sent via HTTP Basic (key as username, empty password); OAuth2 client id/secret yields a Bearer access token.",
+    "access_tier": "self-serve-trial",
+    "credential_path": "Start a Close trial, Settings > API Keys > generate key; or register an OAuth app in Close developer settings for client id/secret.",
+    "api_protocols": ["REST", "Webhooks"],
+    "api_breadth": "broad",
+    "breadth_note": "Leads, contacts, opportunities, activities (calls, emails, SMS), custom fields, smart views, reporting.",
+    "mcp": {
+      "status": "official",
+      "url": "https://help.close.com/docs/mcp-server",
+      "note": "Official remote MCP at mcp.close.com/mcp with streamable HTTP and OAuth2 dynamic client registration."
+    },
+    "webhooks": "yes",
+    "rate_limits": "Per-endpoint-group limits via RateLimit headers; org limit 3x key limit.",
+    "buildability": "build-now",
+    "blocker": "none",
+    "evidence": [
+      "https://developer.close.com/api/overview/rate-limits",
+      "https://developer.close.com/topics/webhooks/",
+      "https://developer.close.com/",
+      "https://help.close.com/docs/mcp-server"
+    ],
+    "confidence": "high",
+    "notes": "Close publishes no fixed numeric rate limit; limits are per endpoint group and exposed in headers. No free plan, so trial or paid seat needed."
+  },
+  {
+    "id": 9,
+    "app": "Copper",
+    "category": "CRM and Sales",
+    "hint": "copper.com",
+    "one_liner": "Google Workspace-native CRM with a header-key REST API.",
+    "auth_methods": ["API key", "OAuth2"],
+    "auth_notes": "API key via X-PW-AccessToken plus X-PW-UserEmail headers. OAuth2 client credentials are only issued after contacting partners@copper.com.",
+    "access_tier": "partner-gated",
+    "credential_path": "For keys: System Settings > API Keys > Generate API Key in the Copper app. For OAuth: email partners@copper.com to register an app.",
+    "api_protocols": ["REST", "Webhooks"],
+    "api_breadth": "moderate",
+    "breadth_note": "REST v1 for people, companies, opportunities, leads, tasks, activities, projects and webhook subscriptions.",
+    "mcp": {
+      "status": "community",
+      "url": "https://glama.ai/mcp/servers/hasankhadra/copper-mcp",
+      "note": "No official Copper MCP found; several community and aggregator-hosted servers (Apideck, Pipedream, n8n, viaSocket) exist."
+    },
+    "webhooks": "yes",
+    "rate_limits": "Third-party sources cite ~600 req/min per key; official figure unconfirmed.",
+    "buildability": "build-with-caveats",
+    "blocker": "OAuth client credentials require Copper partner approval; only per-user API keys are self-serve.",
+    "evidence": [
+      "https://developer.copper.com/introduction/authentication.html",
+      "https://developer.copper.com/introduction/oauth/flow.html",
+      "https://support.copper.com/en/articles/8823460-learn-more-about-copper-webhooks"
+    ],
+    "confidence": "medium",
+    "notes": "OAuth explicitly requires registering with Copper's partner team, so multi-tenant toolkits need outreach; API-key-only single-tenant builds work today."
+  },
+  {
+    "id": 10,
+    "app": "DealCloud",
+    "category": "CRM and Sales",
+    "hint": "api.docs.dealcloud.com",
+    "one_liner": "Intapp's deal and relationship CRM for private capital and advisory firms.",
+    "auth_methods": ["OAuth2", "API key"],
+    "auth_notes": "OAuth2 client-credentials bearer token; the client id/secret come from an API key generated in the user profile after admin enablement.",
+    "access_tier": "admin-approval",
+    "credential_path": "Admin enables API under Admin > User Management > Capabilities > Site Areas, then user Profile > API Key > Enable and copy.",
+    "api_protocols": ["REST"],
+    "api_breadth": "moderate",
+    "breadth_note": "Data, schema, user management, RelIntel, publications and eMarketing endpoints over a tenant-configured schema.",
+    "mcp": {
+      "status": "official",
+      "url": "https://api.docs.dealcloud.com/mcp",
+      "note": "DealCloud MCP server documented, reported as client preview from July 2026; responses scoped to requesting user's permissions."
+    },
+    "webhooks": "unknown",
+    "rate_limits": "5 req/s data, schema, user mgmt; 300/min auth; 1000/s eMarketing.",
+    "buildability": "needs-outreach",
+    "blocker": "Requires a licensed DealCloud tenant plus admin-granted API capability; no public sandbox or self-signup found.",
+    "evidence": [
+      "https://api.docs.dealcloud.com/docs/apikeys",
+      "https://api.docs.dealcloud.com/docs/token",
+      "https://api.docs.dealcloud.com/docs/limits",
+      "https://api.docs.dealcloud.com/mcp"
+    ],
+    "confidence": "medium",
+    "notes": "Docs are public but credentials are gated behind a paid tenant and an admin. Webhook/event-notification support not confirmed in retrieved docs."
+  }
+]

@@ -1,0 +1,122 @@
+[
+ {
+  "id": 4,
+  "app": "Attio",
+  "category": "CRM and Sales",
+  "hint": "attio.com"
+ },
+ {
+  "id": 5,
+  "app": "Twenty",
+  "category": "CRM and Sales",
+  "hint": "twenty.com (open-source CRM)"
+ },
+ {
+  "id": 14,
+  "app": "Front",
+  "category": "Support and Helpdesk",
+  "hint": "front.com"
+ },
+ {
+  "id": 19,
+  "app": "Gorgias",
+  "category": "Support and Helpdesk",
+  "hint": "gorgias.com"
+ },
+ {
+  "id": 23,
+  "app": "Zoho Cliq",
+  "category": "Communications and Messaging",
+  "hint": "zoho.com/cliq"
+ },
+ {
+  "id": 24,
+  "app": "Lark (Larksuite)",
+  "category": "Communications and Messaging",
+  "hint": "open.larksuite.com"
+ },
+ {
+  "id": 34,
+  "app": "GoHighLevel",
+  "category": "Marketing, Ads, Email and Social",
+  "hint": "highlevel.stoplight.io"
+ },
+ {
+  "id": 39,
+  "app": "Threads (Meta)",
+  "category": "Marketing, Ads, Email and Social",
+  "hint": "developers.facebook.com/docs/threads"
+ },
+ {
+  "id": 41,
+  "app": "Shopify",
+  "category": "Ecommerce",
+  "hint": "shopify.dev"
+ },
+ {
+  "id": 50,
+  "app": "fanbasis",
+  "category": "Ecommerce",
+  "hint": "fanbasis.com"
+ },
+ {
+  "id": 52,
+  "app": "SE Ranking",
+  "category": "Data, SEO and Scraping",
+  "hint": "seranking.com/api"
+ },
+ {
+  "id": 59,
+  "app": "Waterfall.io",
+  "category": "Data, SEO and Scraping",
+  "hint": "waterfall.io (contact/company intel)"
+ },
+ {
+  "id": 62,
+  "app": "Vercel",
+  "category": "Developer, Infra and Data platforms",
+  "hint": "vercel.com/docs/rest-api"
+ },
+ {
+  "id": 67,
+  "app": "Snowflake",
+  "category": "Developer, Infra and Data platforms",
+  "hint": "docs.snowflake.com"
+ },
+ {
+  "id": 71,
+  "app": "Notion",
+  "category": "Productivity and Project Management",
+  "hint": "developers.notion.com"
+ },
+ {
+  "id": 80,
+  "app": "Harvest",
+  "category": "Productivity and Project Management",
+  "hint": "harvestapp.com (help.getharvest.com/api-v2)"
+ },
+ {
+  "id": 82,
+  "app": "Plaid",
+  "category": "Finance and Fintech",
+  "hint": "plaid.com/docs"
+ },
+ {
+  "id": 84,
+  "app": "Paygent Connect",
+  "category": "Finance and Fintech",
+  "hint": "paygent (NMI-powered)"
+ },
+ {
+  "id": 91,
+  "app": "NotebookLM",
+  "category": "AI, Research and Media-native",
+  "hint": "cloud.google.com/gemini (Enterprise API)"
+ },
+ {
+  "id": 92,
+  "app": "Otter AI",
+  "category": "AI, Research and Media-native",
+  "hint": "help.otter.ai (MCP server)"
+ }
+]

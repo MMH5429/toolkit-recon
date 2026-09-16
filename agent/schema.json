@@ -1,0 +1,24 @@
+{
+  "record": {
+    "id": "int 1-100",
+    "app": "string",
+    "category": "string (one of the 10 category names)",
+    "hint": "string (website/hint given in the assignment)",
+    "one_liner": "string, <=15 words, what it does",
+    "auth_methods": ["OAuth2 | API key | Basic | Bearer/PAT | JWT | HMAC-signed | mTLS | SAML/SSO-only | none | other"],
+    "auth_notes": "string <=25 words, e.g. 'OAuth2 auth-code + refresh; also long-lived PAT for single-workspace'",
+    "access_tier": "self-serve-free | self-serve-trial | paid-plan-required | admin-approval | app-review | partner-gated | contact-sales | waitlist | not-public",
+    "credential_path": "string <=25 words: exact path a dev takes to get creds",
+    "api_protocols": ["REST", "GraphQL", "gRPC", "SOAP", "Webhooks", "SDK-only", "CLI-only", "none"],
+    "api_breadth": "broad | moderate | narrow | minimal | none",
+    "breadth_note": "string <=20 words, e.g. '~900 REST endpoints across 40 resources'",
+    "mcp": {"status": "official | community | none | unknown", "url": "string or null", "note": "<=15 words"},
+    "webhooks": "yes | no | limited | unknown",
+    "rate_limits": "string <=15 words or 'undocumented'",
+    "buildability": "build-now | build-with-caveats | needs-outreach | not-buildable-today",
+    "blocker": "string <=20 words; 'none' if build-now",
+    "evidence": ["2-4 REAL urls you actually opened/saw in search results"],
+    "confidence": "high | medium | low",
+    "notes": "string <=30 words, anything surprising/uncertain"
+  }
+}

@@ -1,0 +1,16 @@
+{
+ "sample_size": 20,
+ "field_decisions": 100,
+ "pass1_exact_agreement_pct": 57.0,
+ "pass1_overlap_tolerant_pct": 72.0,
+ "pass1_survived_adjudication_pct": 83.0,
+ "corrections_applied": 17,
+ "disagreements": 28,
+ "adjudication": {
+  "pass1_right": 7,
+  "pass2_right": 17,
+  "both_defensible": 4
+ },
+ "shipped_adjudicated_pct": 100.0,
+ "caveat": "4 of 28 disagreements are rubric ambiguity, not factual error: two defensible readings of the same documented reality. Counted in pass 1's favour because its value is what ships."
+}

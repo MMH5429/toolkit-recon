@@ -1,0 +1,790 @@
+[
+ {
+  "id": 1,
+  "app": "Salesforce",
+  "claim": "official",
+  "url": "https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/hosted-mcp-servers-overview.html",
+  "http": 403,
+  "verdict": "ENDPOINT-REJECTS-GET"
+ },
+ {
+  "id": 2,
+  "app": "HubSpot",
+  "claim": "official",
+  "url": "https://developers.hubspot.com/mcp",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 3,
+  "app": "Pipedrive",
+  "claim": "official",
+  "url": "https://www.pipedrive.com/en/features/mcp-server",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 4,
+  "app": "Attio",
+  "claim": "official",
+  "url": "https://mcp.attio.com/mcp",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 5,
+  "app": "Twenty",
+  "claim": "community",
+  "url": "https://github.com/mhenry3164/twenty-crm-mcp-server",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 6,
+  "app": "Podio",
+  "claim": "official",
+  "url": "https://docs.sharefile.com/en-us/podio/using-podio/general-features/podio-mcp-server.html",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 7,
+  "app": "Zoho CRM",
+  "claim": "official",
+  "url": "https://www.zoho.com/blog/tag/zoho-mcp",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 8,
+  "app": "Close",
+  "claim": "official",
+  "url": "https://help.close.com/docs/mcp-server",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 9,
+  "app": "Copper",
+  "claim": "community",
+  "url": "https://glama.ai/mcp/servers/hasankhadra/copper-mcp",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 10,
+  "app": "DealCloud",
+  "claim": "official",
+  "url": "https://api.docs.dealcloud.com/mcp",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 11,
+  "app": "Zendesk",
+  "claim": "community",
+  "url": "https://github.com/reminia/zendesk-mcp-server",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 12,
+  "app": "Intercom",
+  "claim": "official",
+  "url": "https://mcp.intercom.com/mcp",
+  "http": 401,
+  "verdict": "ENDPOINT-REJECTS-GET"
+ },
+ {
+  "id": 13,
+  "app": "Freshdesk",
+  "claim": "official",
+  "url": "https://support.freshdesk.com/support/solutions/articles/50000012670-model-context-protocol-mcp-integration-in-freshdesk-eap-",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 14,
+  "app": "Front",
+  "claim": "official",
+  "url": "https://dev.frontapp.com/docs/mcp-server",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 15,
+  "app": "Pylon",
+  "claim": "official",
+  "url": "https://docs.usepylon.com/pylon-docs/integrations/pylon-mcp",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 16,
+  "app": "LiveAgent",
+  "claim": "official",
+  "url": "https://github.com/QualityUnit/liveagent-mcp-server",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 17,
+  "app": "Plain",
+  "claim": "official",
+  "url": "https://help.plain.com/article/mcp-server",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 18,
+  "app": "Help Scout",
+  "claim": "official",
+  "url": "https://articles.helpscout.com/blog/introducing-help-scout-mcp/",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 19,
+  "app": "Gorgias",
+  "claim": "official",
+  "url": "https://updates.gorgias.com/publications/gorgias-mcp-is-now-in-open-beta",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 20,
+  "app": "Gladly",
+  "claim": "community",
+  "url": "https://www.stackone.com/connectors/gladly/mcp/",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 21,
+  "app": "Slack",
+  "claim": "official",
+  "url": "https://docs.slack.dev/ai/slack-mcp-server/",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 22,
+  "app": "Twilio",
+  "claim": "official",
+  "url": "https://www.twilio.com/docs/ai/mcp",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 23,
+  "app": "Zoho Cliq",
+  "claim": "official",
+  "url": "https://www.zoho.com/cliq/mcp-server.html",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 24,
+  "app": "Lark (Larksuite)",
+  "claim": "official",
+  "url": "https://github.com/larksuite/lark-openapi-mcp",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 25,
+  "app": "Pumble",
+  "claim": "community",
+  "url": "https://github.com/infralayers/pumble-mcp",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 26,
+  "app": "Discord",
+  "claim": "community",
+  "url": "https://github.com/SaseQ/discord-mcp",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 27,
+  "app": "Telegram",
+  "claim": "community",
+  "url": "https://github.com/FantomaSkaRus1/telegram-bot-mcp",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 28,
+  "app": "WhatsApp Business",
+  "claim": "official",
+  "url": null,
+  "verdict": "NO-URL"
+ },
+ {
+  "id": 29,
+  "app": "Aircall",
+  "claim": "community",
+  "url": "https://github.com/themobilefirstco/aircall-mcp-server",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 30,
+  "app": "Vonage",
+  "claim": "official",
+  "url": "https://developer.vonage.com/en/blog/introducing-the-vonage-documentation-mcp-server",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 31,
+  "app": "Google Ads",
+  "claim": "official",
+  "url": "https://github.com/googleads/google-ads-mcp",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 32,
+  "app": "Meta Ads",
+  "claim": "official",
+  "url": "https://mcp.facebook.com/ads",
+  "http": 405,
+  "verdict": "ENDPOINT-REJECTS-GET"
+ },
+ {
+  "id": 33,
+  "app": "LinkedIn Ads",
+  "claim": "community",
+  "url": "https://github.com/danielpopamd/linkedin-ads-mcp",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 34,
+  "app": "GoHighLevel",
+  "claim": "official",
+  "url": "https://marketplace.gohighlevel.com/docs/other/mcp",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 35,
+  "app": "Mailchimp",
+  "claim": "official",
+  "url": "https://mailchimp.com/developer/transactional/guides/how-to-use-mailchimps-transactional-messaging-mcp/",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 36,
+  "app": "Klaviyo",
+  "claim": "official",
+  "url": "https://developers.klaviyo.com/en/docs/klaviyo_mcp_server",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 37,
+  "app": "systeme.io",
+  "claim": "official",
+  "url": "https://help.systeme.io/category/11216-model-context-protocol-mcp",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 38,
+  "app": "Pinterest",
+  "claim": "community",
+  "url": "https://github.com/aymandakirgh/pinterest-mcp",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 39,
+  "app": "Threads (Meta)",
+  "claim": "community",
+  "url": "https://glama.ai/mcp/servers/MetaThreads/meta-threads-mcp",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 40,
+  "app": "SendGrid",
+  "claim": "community",
+  "url": "https://github.com/Garoth/sendgrid-mcp",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 41,
+  "app": "Shopify",
+  "claim": "official",
+  "url": "https://shopify.dev/changelog/mcp-server-for-the-shopify-dev-assistant",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 42,
+  "app": "WooCommerce",
+  "claim": "official",
+  "url": "https://developer.woocommerce.com/docs/features/mcp/",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 43,
+  "app": "BigCommerce",
+  "claim": "official",
+  "url": "https://docs.bigcommerce.com/developer/api-reference/mcp/overview",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 44,
+  "app": "Salesforce Commerce Cloud",
+  "claim": "community",
+  "url": "https://mcpservers.org/servers/BrinsilElias/commercecloud-mcp-server",
+  "http": 403,
+  "verdict": "ENDPOINT-REJECTS-GET"
+ },
+ {
+  "id": 45,
+  "app": "Magento (Adobe Commerce)",
+  "claim": "unknown",
+  "url": "https://www.paz.ai/blog/adobe-mcp-commerce-default-agent-protocol",
+  "verdict": "n/a"
+ },
+ {
+  "id": 46,
+  "app": "Squarespace",
+  "claim": "unknown",
+  "url": null,
+  "verdict": "n/a"
+ },
+ {
+  "id": 47,
+  "app": "Ecwid",
+  "claim": "unknown",
+  "url": null,
+  "verdict": "n/a"
+ },
+ {
+  "id": 48,
+  "app": "Gumroad",
+  "claim": "community",
+  "url": "https://glama.ai/mcp/servers/N-Graves/gumroad-mcp-server",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 49,
+  "app": "Amazon Selling Partner",
+  "claim": "official",
+  "url": "https://github.com/amzn/selling-partner-api-samples",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 50,
+  "app": "fanbasis",
+  "claim": "none",
+  "url": null,
+  "verdict": "n/a"
+ },
+ {
+  "id": 51,
+  "app": "DataForSEO",
+  "claim": "official",
+  "url": "https://github.com/dataforseo/mcp-server-typescript",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 52,
+  "app": "SE Ranking",
+  "claim": "official",
+  "url": "https://seranking.com/api/integrations/mcp/",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 53,
+  "app": "Ahrefs",
+  "claim": "official",
+  "url": "https://docs.ahrefs.com/mcp/docs/introduction.md",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 54,
+  "app": "MrScraper",
+  "claim": "official",
+  "url": "https://docs.mrscraper.com/",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 55,
+  "app": "Apify",
+  "claim": "official",
+  "url": "https://docs.apify.com/platform/integrations/mcp",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 56,
+  "app": "Firecrawl",
+  "claim": "official",
+  "url": "https://docs.firecrawl.dev/mcp-server",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 57,
+  "app": "Bright Data",
+  "claim": "official",
+  "url": "https://github.com/brightdata/brightdata-mcp",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 58,
+  "app": "Sherlock",
+  "claim": "community",
+  "url": "https://github.com/Burnsedia/sherlock-mcp",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 59,
+  "app": "Waterfall.io",
+  "claim": "unknown",
+  "url": null,
+  "verdict": "n/a"
+ },
+ {
+  "id": 60,
+  "app": "Clay",
+  "claim": "unknown",
+  "url": null,
+  "verdict": "n/a"
+ },
+ {
+  "id": 61,
+  "app": "GitHub",
+  "claim": "official",
+  "url": "https://github.com/github/github-mcp-server",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 62,
+  "app": "Vercel",
+  "claim": "official",
+  "url": "https://vercel.com/docs/agent-resources/vercel-mcp",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 63,
+  "app": "Netlify",
+  "claim": "official",
+  "url": "https://github.com/netlify/netlify-mcp",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 64,
+  "app": "Cloudflare",
+  "claim": "official",
+  "url": "https://developers.cloudflare.com/agents/model-context-protocol/cloudflare/servers-for-cloudflare/",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 65,
+  "app": "Supabase",
+  "claim": "official",
+  "url": "https://supabase.com/docs/guides/ai-tools/mcp",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 66,
+  "app": "Neo4j",
+  "claim": "official",
+  "url": "https://github.com/neo4j/mcp",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 67,
+  "app": "Snowflake",
+  "claim": "official",
+  "url": "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 68,
+  "app": "MongoDB Atlas",
+  "claim": "official",
+  "url": "https://www.mongodb.com/docs/mcp-server/",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 69,
+  "app": "Datadog",
+  "claim": "official",
+  "url": "https://docs.datadoghq.com/mcp_server/",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 70,
+  "app": "Sentry",
+  "claim": "official",
+  "url": "https://github.com/getsentry/sentry-mcp",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 71,
+  "app": "Notion",
+  "claim": "official",
+  "url": "https://developers.notion.com/guides/mcp/overview",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 72,
+  "app": "Airtable",
+  "claim": "official",
+  "url": "https://github.com/Airtable/airtable-mcp-cli",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 73,
+  "app": "Linear",
+  "claim": "official",
+  "url": "https://linear.app/docs/mcp",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 74,
+  "app": "Jira",
+  "claim": "official",
+  "url": "https://github.com/atlassian/atlassian-mcp-server",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 75,
+  "app": "Asana",
+  "claim": "official",
+  "url": "https://developers.asana.com/docs/mcp-server",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 76,
+  "app": "Monday.com",
+  "claim": "official",
+  "url": "https://developer.monday.com/api-reference/docs/mondaycom-mcp",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 77,
+  "app": "ClickUp",
+  "claim": "official",
+  "url": "https://developer.clickup.com/docs/connect-an-ai-assistant-to-clickups-mcp-server",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 78,
+  "app": "Coda",
+  "claim": "official",
+  "url": "https://coda.io/resources/guides/getting_started_with_coda_mcp",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 79,
+  "app": "Smartsheet",
+  "claim": "official",
+  "url": "https://developers.smartsheet.com/ai-mcp/smartsheet/mcp-server",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 80,
+  "app": "Harvest",
+  "claim": "community",
+  "url": "https://github.com/southleft/harvest-mcp",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 81,
+  "app": "Stripe",
+  "claim": "official",
+  "url": "https://docs.stripe.com/mcp",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 82,
+  "app": "Plaid",
+  "claim": "official",
+  "url": "https://github.com/plaid/ai-coding-toolkit",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 83,
+  "app": "Binance",
+  "claim": "community",
+  "url": "https://github.com/AnalyticAce/binance-mcp-server",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 84,
+  "app": "Paygent Connect",
+  "claim": "none",
+  "url": null,
+  "verdict": "n/a"
+ },
+ {
+  "id": 85,
+  "app": "iPayX",
+  "claim": "official",
+  "url": "https://github.com/iPAYX-Technologies/mcp-fx-audit",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 86,
+  "app": "QuickBooks",
+  "claim": "official",
+  "url": "https://github.com/intuit/quickbooks-online-mcp-server",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 87,
+  "app": "Xero",
+  "claim": "official",
+  "url": "https://github.com/XeroAPI/xero-mcp-server",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 88,
+  "app": "Brex",
+  "claim": "official",
+  "url": "https://developer.brex.com/docs/mcp",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 89,
+  "app": "Ramp",
+  "claim": "official",
+  "url": "https://mcp.ramp.com/developer/mcp",
+  "http": 406,
+  "verdict": "ENDPOINT-REJECTS-GET"
+ },
+ {
+  "id": 90,
+  "app": "PitchBook",
+  "claim": "unknown",
+  "url": null,
+  "verdict": "n/a"
+ },
+ {
+  "id": 91,
+  "app": "NotebookLM",
+  "claim": "none",
+  "url": null,
+  "verdict": "n/a"
+ },
+ {
+  "id": 92,
+  "app": "Otter AI",
+  "claim": "official",
+  "url": "https://mcp.otter.ai/mcp",
+  "http": 401,
+  "verdict": "ENDPOINT-REJECTS-GET"
+ },
+ {
+  "id": 93,
+  "app": "Fathom",
+  "claim": "official",
+  "url": "https://developers.fathom.ai/mcp-docs/index.md",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 94,
+  "app": "Consensus",
+  "claim": "official",
+  "url": "https://consensus.app/home/mcp/",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 95,
+  "app": "Reducto",
+  "claim": "official",
+  "url": "https://docs.reducto.ai/quickstart",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 96,
+  "app": "Devin",
+  "claim": "official",
+  "url": "https://mcp.devin.ai/mcp",
+  "http": 406,
+  "verdict": "ENDPOINT-REJECTS-GET"
+ },
+ {
+  "id": 97,
+  "app": "higgsfield",
+  "claim": "official",
+  "url": "https://higgsfield.ai/creator-hub/help-center/mcp-cli/how-do-i-access-higgsfield-via-cli",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 98,
+  "app": "Mermaid CLI",
+  "claim": "none",
+  "url": null,
+  "verdict": "n/a"
+ },
+ {
+  "id": 99,
+  "app": "YouTube Transcript",
+  "claim": "official",
+  "url": "https://transcriptapi.com/",
+  "http": 200,
+  "verdict": "RESOLVES"
+ },
+ {
+  "id": 100,
+  "app": "Grain",
+  "claim": "unknown",
+  "url": null,
+  "verdict": "n/a"
+ }
+]

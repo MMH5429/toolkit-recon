@@ -1,0 +1,142 @@
+[
+ {
+  "id": 28,
+  "app": "WhatsApp Business",
+  "url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/get-started",
+  "status": 400,
+  "ok": false,
+  "note": "dead",
+  "retry_status": 200,
+  "verdict": "LIVE"
+ },
+ {
+  "id": 28,
+  "app": "WhatsApp Business",
+  "url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/app-review",
+  "status": 400,
+  "ok": false,
+  "note": "dead",
+  "retry_status": 200,
+  "verdict": "LIVE"
+ },
+ {
+  "id": 28,
+  "app": "WhatsApp Business",
+  "url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/get-started-for-tech-providers",
+  "status": 400,
+  "ok": false,
+  "note": "dead",
+  "retry_status": 200,
+  "verdict": "LIVE"
+ },
+ {
+  "id": 32,
+  "app": "Meta Ads",
+  "url": "https://developers.facebook.com/docs/permissions/",
+  "status": 400,
+  "ok": false,
+  "note": "dead",
+  "retry_status": 200,
+  "verdict": "LIVE"
+ },
+ {
+  "id": 32,
+  "app": "Meta Ads",
+  "url": "https://developers.meta.com/blog/updates-to-ads-management-standard-access-feature/",
+  "status": 400,
+  "ok": false,
+  "note": "dead",
+  "retry_status": 200,
+  "verdict": "LIVE"
+ },
+ {
+  "id": 32,
+  "app": "Meta Ads",
+  "url": "https://www.facebook.com/business/news/meta-ads-ai-connectors",
+  "status": 400,
+  "ok": false,
+  "note": "dead",
+  "retry_status": 200,
+  "verdict": "LIVE"
+ },
+ {
+  "id": 32,
+  "app": "Meta Ads",
+  "url": "https://developers.facebook.com/docs/graph-api/overview/rate-limiting/",
+  "status": 400,
+  "ok": false,
+  "note": "dead",
+  "retry_status": 200,
+  "verdict": "LIVE"
+ },
+ {
+  "id": 39,
+  "app": "Threads (Meta)",
+  "url": "https://developers.facebook.com/docs/threads/get-started/get-access-tokens-and-permissions/",
+  "status": 400,
+  "ok": false,
+  "note": "dead",
+  "retry_status": 200,
+  "verdict": "LIVE"
+ },
+ {
+  "id": 39,
+  "app": "Threads (Meta)",
+  "url": "https://developers.facebook.com/documentation/threads/overview",
+  "status": 400,
+  "ok": false,
+  "note": "dead",
+  "retry_status": 200,
+  "verdict": "LIVE"
+ },
+ {
+  "id": 39,
+  "app": "Threads (Meta)",
+  "url": "https://developers.facebook.com/docs/graph-api/overview/rate-limiting/",
+  "status": 400,
+  "ok": false,
+  "note": "dead",
+  "retry_status": 200,
+  "verdict": "LIVE"
+ },
+ {
+  "id": 45,
+  "app": "Magento (Adobe Commerce)",
+  "url": "https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-oauth/",
+  "status": 404,
+  "ok": false,
+  "note": "dead",
+  "retry_status": 404,
+  "verdict": "DEAD-404"
+ },
+ {
+  "id": 65,
+  "app": "Supabase",
+  "url": "https://supabase.com/docs/reference/api/management-api",
+  "status": 404,
+  "ok": false,
+  "note": "dead",
+  "retry_status": 404,
+  "verdict": "DEAD-404"
+ },
+ {
+  "id": 66,
+  "app": "Neo4j",
+  "url": "https://neo4j.com/docs/aura/platform/api/authentication/",
+  "status": 404,
+  "ok": false,
+  "note": "dead",
+  "retry_status": 404,
+  "verdict": "DEAD-404"
+ },
+ {
+  "id": 68,
+  "app": "MongoDB Atlas",
+  "url": "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/authentication",
+  "status": 502,
+  "ok": false,
+  "note": "dead",
+  "retry_status": 200,
+  "verdict": "LIVE"
+ }
+]

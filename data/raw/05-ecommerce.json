@@ -1,0 +1,310 @@
+[
+  {
+    "id": 41,
+    "app": "Shopify",
+    "category": "Ecommerce",
+    "hint": "shopify.dev",
+    "one_liner": "Hosted ecommerce platform with deep Admin, Storefront and Functions APIs.",
+    "auth_methods": ["OAuth2", "API key", "Bearer/PAT", "HMAC-signed"],
+    "auth_notes": "Admin-created custom apps issue a static Admin API token; Partner/Dev-dashboard custom and public apps use OAuth2; webhooks HMAC-signed.",
+    "access_tier": "self-serve-free",
+    "credential_path": "Free Partner account plus dev store, or merchant admin Settings > Apps > Develop apps to mint a token.",
+    "api_protocols": ["GraphQL", "REST", "Webhooks", "SDK-only"],
+    "api_breadth": "broad",
+    "breadth_note": "Products, orders, customers, inventory, fulfillment, discounts, metafields, B2B, Functions; GraphQL Admin is the primary surface.",
+    "mcp": {
+      "status": "official",
+      "url": "https://shopify.dev/changelog/mcp-server-for-the-shopify-dev-assistant",
+      "note": "Official @shopify/dev-mcp (docs/schema introspection, no auth) plus an official Storefront MCP server for shopper agents."
+    },
+    "webhooks": "yes",
+    "rate_limits": "GraphQL leaky bucket 1000 points, 50/sec restore; plan-scaled",
+    "buildability": "build-now",
+    "blocker": "none",
+    "evidence": [
+      "https://shopify.dev/docs/apps/auth/admin-app-access-tokens",
+      "https://shopify.dev/docs/api/usage/limits",
+      "https://shopify.dev/changelog/mcp-server-for-the-shopify-dev-assistant",
+      "https://shopify.dev/docs/apps/build/storefront-mcp/servers/storefront"
+    ],
+    "confidence": "high",
+    "notes": "Note 2026 change: new public apps must use expiring offline tokens (60-min access, 90-day refresh). Plan token refresh into any connector."
+  },
+  {
+    "id": 42,
+    "app": "WooCommerce",
+    "category": "Ecommerce",
+    "hint": "woocommerce.com/document/woocommerce-rest-api",
+    "one_liner": "Open-source WordPress ecommerce plugin exposing a self-hosted REST API.",
+    "auth_methods": ["Basic", "other"],
+    "auth_notes": "Consumer key/secret over HTTPS as HTTP Basic; OAuth 1.0a one-legged HMAC-SHA1/256 for non-SSL sites.",
+    "access_tier": "self-serve-free",
+    "credential_path": "Store admin generates keys at WooCommerce > Settings > Advanced > REST API; no vendor approval.",
+    "api_protocols": ["REST", "Webhooks"],
+    "api_breadth": "broad",
+    "breadth_note": "Products, variations, orders, refunds, customers, coupons, reports, taxes, shipping, settings, webhooks.",
+    "mcp": {
+      "status": "official",
+      "url": "https://developer.woocommerce.com/docs/features/mcp/",
+      "note": "Native MCP support shipped in WooCommerce core but is in developer preview; several community servers also exist."
+    },
+    "webhooks": "yes",
+    "rate_limits": "undocumented",
+    "buildability": "build-now",
+    "blocker": "none",
+    "evidence": [
+      "https://woocommerce.github.io/woocommerce-rest-api-docs/v3.html",
+      "https://developer.woocommerce.com/docs/apis/rest-api/",
+      "https://github.com/woocommerce/woocommerce-rest-api-docs/blob/trunk/source/includes/wp-api-v3/_authentication.md",
+      "https://developer.woocommerce.com/docs/features/mcp/"
+    ],
+    "confidence": "high",
+    "notes": "Self-hosted, so base URL is per-store and limits depend on the host, not WooCommerce. Some servers mangle the Authorization header."
+  },
+  {
+    "id": 43,
+    "app": "BigCommerce",
+    "category": "Ecommerce",
+    "hint": "developer.bigcommerce.com",
+    "one_liner": "SaaS ecommerce platform with API-first catalog, orders and storefront APIs.",
+    "auth_methods": ["OAuth2", "API key", "Bearer/PAT"],
+    "auth_notes": "Store-level API accounts issue non-expiring tokens sent as X-Auth-Token; marketplace apps use OAuth2 with scopes.",
+    "access_tier": "self-serve-free",
+    "credential_path": "Store control panel Settings > Store-level API accounts; app developers register free at devtools.bigcommerce.com.",
+    "api_protocols": ["REST", "GraphQL", "Webhooks"],
+    "api_breadth": "broad",
+    "breadth_note": "Catalog, orders, customers, carts, checkout, pricing, channels; GraphQL Storefront and Admin surfaces.",
+    "mcp": {
+      "status": "official",
+      "url": "https://docs.bigcommerce.com/developer/api-reference/mcp/overview",
+      "note": "Storefront MCP server in beta, enabled per-store by the owner via Early Access; docs site also exposes an MCP endpoint."
+    },
+    "webhooks": "yes",
+    "rate_limits": "Quota per 30s window, plan-scaled (~450 for standard)",
+    "buildability": "build-now",
+    "blocker": "none",
+    "evidence": [
+      "https://developer.bigcommerce.com/docs/start/best-practices/api-rate-limits",
+      "https://docs.bigcommerce.com/developer/docs/overview/api-fundamentals/api-accounts",
+      "https://docs.bigcommerce.com/developer/api-reference/mcp/overview",
+      "https://www.bigcommerce.com/blog/storefront-mcp/"
+    ],
+    "confidence": "high",
+    "notes": "Store-level token is the simplest connector path. Enterprise plans can get an unlimited rate plan. Storefront MCP is beta, not GA."
+  },
+  {
+    "id": 44,
+    "app": "Salesforce Commerce Cloud",
+    "category": "Ecommerce",
+    "hint": "developer.salesforce.com/docs/commerce",
+    "one_liner": "Enterprise B2C/B2B commerce suite behind Salesforce licensing and Account Manager.",
+    "auth_methods": ["OAuth2", "JWT", "other"],
+    "auth_notes": "Account Manager client ID/secret OAuth2 for SCAPI Admin and OCAPI; SLAS issues shopper tokens. Separate client IDs per framework.",
+    "access_tier": "partner-gated",
+    "credential_path": "Requires a licensed B2C Commerce realm or ISV partner enrollment; admin creates API client in Account Manager.",
+    "api_protocols": ["REST", "Webhooks", "SDK-only"],
+    "api_breadth": "broad",
+    "breadth_note": "SCAPI Shopper and Admin APIs plus legacy OCAPI: products, orders, customers, promotions, catalogs, sandbox management.",
+    "mcp": {
+      "status": "community",
+      "url": "https://mcpservers.org/servers/BrinsilElias/commercecloud-mcp-server",
+      "note": "No official Salesforce Commerce MCP server confirmed; a community commercecloud-mcp-server exists."
+    },
+    "webhooks": "limited",
+    "rate_limits": "undocumented",
+    "buildability": "needs-outreach",
+    "blocker": "No free self-serve sandbox; needs a license or B2C Commerce partner enrollment to obtain credentials.",
+    "evidence": [
+      "https://developer.salesforce.com/docs/commerce/commerce-api/guide/authorization-for-admin-apis.html",
+      "https://developer.salesforce.com/docs/commerce/b2c-commerce/references/b2c-commerce-ocapi/oauth.html",
+      "https://developer.salesforce.com/docs/commerce/b2c-commerce/guide/b2c-developer-sandboxes.html",
+      "https://help.salesforce.com/s/articleView?id=000393797&language=en_US&type=1"
+    ],
+    "confidence": "medium",
+    "notes": "On-demand sandboxes require purchased credits; a 90-day trial sandbox exists only for B2C Commerce ISV prospects. Rate limits unverified."
+  },
+  {
+    "id": 45,
+    "app": "Magento (Adobe Commerce)",
+    "category": "Ecommerce",
+    "hint": "developer.adobe.com/commerce",
+    "one_liner": "Adobe's enterprise commerce platform; Magento Open Source is the free self-hosted edition.",
+    "auth_methods": ["OAuth2", "Bearer/PAT", "other"],
+    "auth_notes": "Integration tokens and admin/customer bearer tokens; OAuth 1.0a for integrations; Adobe Commerce as a Cloud Service uses Adobe IMS OAuth2.",
+    "access_tier": "paid-plan-required",
+    "credential_path": "Admin creates an Integration under System > Integrations for a token; Adobe-hosted editions need an Adobe license and IMS credentials.",
+    "api_protocols": ["REST", "GraphQL", "SOAP", "Webhooks"],
+    "api_breadth": "broad",
+    "breadth_note": "Catalog, orders, carts/quotes, customers, inventory/MSI, CMS, shipping, tax; GraphQL is storefront-focused.",
+    "mcp": {
+      "status": "unknown",
+      "url": "https://www.paz.ai/blog/adobe-mcp-commerce-default-agent-protocol",
+      "note": "Adobe announced a Commerce MCP server at Summit 2026 per third-party reporting; I could not confirm it on an Adobe-owned page. Third-party CData server exists."
+    },
+    "webhooks": "yes",
+    "rate_limits": "undocumented",
+    "buildability": "build-with-caveats",
+    "blocker": "Adobe Commerce is license-gated with no free self-serve sandbox; testing realistically means self-hosting Magento Open Source.",
+    "evidence": [
+      "https://developer.adobe.com/commerce/webapi/rest/",
+      "https://developer.adobe.com/commerce/webapi/rest/authentication",
+      "https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-oauth/",
+      "https://developer.adobe.com/commerce/webapi/rest/authentication/server-to-server"
+    ],
+    "confidence": "medium",
+    "notes": "Auth model differs sharply between self-hosted (integration tokens) and Adobe Commerce as a Cloud Service (IMS). Official MCP status unconfirmed."
+  },
+  {
+    "id": 46,
+    "app": "Squarespace",
+    "category": "Ecommerce",
+    "hint": "developers.squarespace.com",
+    "one_liner": "Website builder whose Commerce APIs cover orders, products and inventory.",
+    "auth_methods": ["API key", "OAuth2"],
+    "auth_notes": "Per-site API keys with per-API read/write permissions, or OAuth2 for Squarespace Extensions distributed to any-plan merchants.",
+    "access_tier": "paid-plan-required",
+    "credential_path": "API keys require a Commerce Advanced plan; generated in site Settings > Developer API Keys. OAuth needs Extension registration.",
+    "api_protocols": ["REST", "Webhooks"],
+    "api_breadth": "moderate",
+    "breadth_note": "Orders, Products, Inventory, Transactions, Contacts, Discounts, Analytics, Forms, Webhook Subscriptions. No cart/checkout write.",
+    "mcp": {
+      "status": "unknown",
+      "url": null,
+      "note": "No official Squarespace MCP server found in prior searches; could not run a dedicated search before the budget ran out."
+    },
+    "webhooks": "yes",
+    "rate_limits": "undocumented",
+    "buildability": "build-with-caveats",
+    "blocker": "API keys gated behind Commerce Advanced plan; Webhook Subscriptions API is OAuth-only, not available to API keys.",
+    "evidence": [
+      "https://developers.squarespace.com/commerce-apis/overview",
+      "https://developers.squarespace.com/commerce-apis/authentication-and-permissions",
+      "https://support.squarespace.com/hc/en-us/articles/236297987-Squarespace-API-keys"
+    ],
+    "confidence": "medium",
+    "notes": "Plan naming varies across sources (Business vs Commerce Advanced vs Core/Plus/Advanced); official auth page says Commerce Advanced for API keys."
+  },
+  {
+    "id": 47,
+    "app": "Ecwid",
+    "category": "Ecommerce",
+    "hint": "api-docs.ecwid.com",
+    "one_liner": "Lightspeed's embeddable store widget with a REST API and app platform.",
+    "auth_methods": ["OAuth2", "Bearer/PAT"],
+    "auth_notes": "OAuth2 with client_id/client_secret; non-expiring secret access tokens for backend use. Store ID now required for external app auth.",
+    "access_tier": "self-serve-free",
+    "credential_path": "Store admin creates a custom app under Ecwid admin > Apps > develop-apps to get client_id/secret; scope changes need a request form.",
+    "api_protocols": ["REST", "Webhooks", "SDK-only"],
+    "api_breadth": "moderate",
+    "breadth_note": "Products, categories, orders, customers, discount coupons, store profile, batch requests, storefront JS API.",
+    "mcp": {
+      "status": "unknown",
+      "url": null,
+      "note": "No official Ecwid/Lightspeed MCP server found; dedicated search not run before the web search budget was exhausted."
+    },
+    "webhooks": "yes",
+    "rate_limits": "600 requests/minute per token; 429 with Retry-After",
+    "buildability": "build-with-caveats",
+    "blocker": "Public/multi-store apps need Ecwid review; scope or endpoint changes go through a contact form rather than self-serve.",
+    "evidence": [
+      "https://api-docs.ecwid.com/reference/get-started-with-rest-api",
+      "https://api-docs.ecwid.com/reference/custom-app-configuration",
+      "https://github.com/Ecwid/ecwid-api-docs/blob/master/includes/_authentication.md",
+      "https://docs.ecwid.com/develop-apps/private-and-public-ecwid-apps"
+    ],
+    "confidence": "medium",
+    "notes": "Docs are split across api-docs.ecwid.com and newer docs.ecwid.com. Webhook retries back off over 24 hours then drop."
+  },
+  {
+    "id": 48,
+    "app": "Gumroad",
+    "category": "Ecommerce",
+    "hint": "gumroad.com/api",
+    "one_liner": "Creator storefront for digital products, with a small OAuth2 REST API.",
+    "auth_methods": ["OAuth2", "Bearer/PAT"],
+    "auth_notes": "OAuth 2.0; sellers can self-generate a non-expiring personal access token from their own application record.",
+    "access_tier": "self-serve-free",
+    "credential_path": "Create an application at gumroad.com/oauth/applications, then click Generate access token for own-account use.",
+    "api_protocols": ["REST", "Webhooks"],
+    "api_breadth": "narrow",
+    "breadth_note": "Products, variants, offer codes, sales, subscribers, license verification, user; no catalog-wide storefront or checkout control.",
+    "mcp": {
+      "status": "community",
+      "url": "https://glama.ai/mcp/servers/N-Graves/gumroad-mcp-server",
+      "note": "No official Gumroad MCP server found; community gumroad-mcp-server implementations are listed on MCP directories."
+    },
+    "webhooks": "yes",
+    "rate_limits": "undocumented; 429s observed, no published numbers",
+    "buildability": "build-now",
+    "blocker": "none",
+    "evidence": [
+      "https://help.gumroad.com/article/280-create-application-api",
+      "https://apis.io/providers/gumroad/",
+      "https://glama.ai/mcp/servers/N-Graves/gumroad-mcp-server"
+    ],
+    "confidence": "medium",
+    "notes": "Webhooks are 'resource subscriptions' (sale, refund, dispute, cancellation, subscription_*). Did not fetch the primary gumroad.com/api reference directly."
+  },
+  {
+    "id": 49,
+    "app": "Amazon Selling Partner",
+    "category": "Ecommerce",
+    "hint": "developer-docs.amazon.com/sp-api",
+    "one_liner": "Amazon's seller/vendor API for listings, orders, fulfillment, reports and finances.",
+    "auth_methods": ["OAuth2", "Bearer/PAT"],
+    "auth_notes": "Login with Amazon OAuth2; LWA client credentials plus a refresh token per selling partner. Restricted data needs extra RDT tokens.",
+    "access_tier": "app-review",
+    "credential_path": "Register a developer/solution provider profile, get Amazon approval, then register the app in Solution Provider Portal for LWA credentials.",
+    "api_protocols": ["REST", "Webhooks", "SDK-only"],
+    "api_breadth": "broad",
+    "breadth_note": "Orders, listings, catalog, FBA inventory and inbound, reports, feeds, finances, pricing, shipping, notifications.",
+    "mcp": {
+      "status": "official",
+      "url": "https://github.com/amzn/selling-partner-api-samples",
+      "note": "Amazon publishes an official SP-API dev/workflow MCP package in its samples repo; numerous community servers also exist."
+    },
+    "webhooks": "yes",
+    "rate_limits": "Token bucket per operation; most ~1-5 req/sec with burst",
+    "buildability": "needs-outreach",
+    "blocker": "Developer profile review plus per-role qualification; public apps must be listed in the Selling Partner Appstore.",
+    "evidence": [
+      "https://developer-docs.amazon.com/sp-api/docs/registering-your-application",
+      "https://sell.amazon.com/developers",
+      "https://developer.amazonservices.com/register",
+      "https://github.com/amzn/selling-partner-api-samples"
+    ],
+    "confidence": "medium",
+    "notes": "Notifications are delivered via SQS/EventBridge rather than plain HTTP webhooks. Role approval, not just app registration, is the real gate."
+  },
+  {
+    "id": 50,
+    "app": "fanbasis",
+    "category": "Ecommerce",
+    "hint": "fanbasis.com",
+    "one_liner": "Creator commerce and payments platform, rebranded to Commas.",
+    "auth_methods": ["API key"],
+    "auth_notes": "Scoped API key sent in an x-api-key header per a mirrored copy of the docs; separate sandbox key required. Not verified on a first-party page.",
+    "access_tier": "not-public",
+    "credential_path": "Keys appear to be issued from the seller account dashboard; no public self-serve signup-to-key path was confirmed.",
+    "api_protocols": ["REST", "Webhooks", "SDK-only"],
+    "api_breadth": "moderate",
+    "breadth_note": "Checkout sessions, customers, subscribers, products, transactions, refunds, discount codes, invoices, disputes.",
+    "mcp": {
+      "status": "none",
+      "url": null,
+      "note": "No FanBasis/Commas MCP server found in any search result."
+    },
+    "webhooks": "yes",
+    "rate_limits": "~10,000/hour on checkout-sessions and customers only (unverified)",
+    "buildability": "build-with-caveats",
+    "blocker": "Credential issuance appears account-gated with no public developer signup; rebrand to Commas is mid-flight.",
+    "evidence": [
+      "https://apidocs.fan/",
+      "https://www.fanbasis.com/enterprises",
+      "https://commas.com/",
+      "https://raw.githubusercontent.com/otniel-bit/fbnewapi/main/api-docs.md"
+    ],
+    "confidence": "low",
+    "notes": "Confirmed: apidocs.fan exists titled 'Commas API Reference', fanbasis.com 301s to commas.com, @fanbasis/checkout-sdk on npm. Auth/rate-limit details came from a third-party mirror, not first-party docs."
+  }
+]

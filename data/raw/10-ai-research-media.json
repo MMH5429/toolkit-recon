@@ -1,0 +1,310 @@
+[
+  {
+    "id": 91,
+    "app": "NotebookLM",
+    "category": "AI, Research and Media-native",
+    "hint": "cloud.google.com/gemini (Enterprise API)",
+    "one_liner": "Google AI notebook; programmatic access only via Gemini Notebook Enterprise preview APIs.",
+    "auth_methods": ["OAuth2"],
+    "auth_notes": "Google Cloud OAuth2 access tokens (gcloud auth print-access-token); caller needs Cloud NotebookLM User IAM role.",
+    "access_tier": "contact-sales",
+    "credential_path": "Google Cloud project plus Gemini Notebook Enterprise license; assign Cloud NotebookLM User IAM role.",
+    "api_protocols": ["REST"],
+    "api_breadth": "narrow",
+    "breadth_note": "Enterprise-only notebook CRUD, sources, sharing, audio overviews; no consumer NotebookLM endpoints.",
+    "mcp": {
+      "status": "none",
+      "url": null,
+      "note": "No official NotebookLM/Gemini Notebook MCP server found in Google documentation reviewed."
+    },
+    "webhooks": "unknown",
+    "rate_limits": "undocumented",
+    "buildability": "needs-outreach",
+    "blocker": "No consumer API; enterprise preview APIs need GCP project plus Gemini Enterprise license.",
+    "evidence": [
+      "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks",
+      "https://autocontentapi.com/blog/does-notebooklm-have-an-api",
+      "https://notebookclipper.com/blog/gemini-notebook-api",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/release-notes"
+    ],
+    "confidence": "high",
+    "notes": "Consumer NotebookLM has no public API. Enterprise APIs are pre-GA preview. Third-party 'NotebookLM APIs' are separate reverse-engineered services."
+  },
+  {
+    "id": 92,
+    "app": "Otter AI",
+    "category": "AI, Research and Media-native",
+    "hint": "help.otter.ai (MCP server)",
+    "one_liner": "Meeting transcription; OAuth MCP for normal accounts, REST API Enterprise-only.",
+    "auth_methods": ["OAuth2", "Bearer/PAT"],
+    "auth_notes": "MCP uses OAuth 2.1 browser consent; Public API uses static Bearer API keys, capped at two per user.",
+    "access_tier": "paid-plan-required",
+    "credential_path": "MCP: OAuth sign-in with a standard Otter account. REST keys: Enterprise workspace settings only.",
+    "api_protocols": ["REST", "Webhooks"],
+    "api_breadth": "moderate",
+    "breadth_note": "Channels, conversations, transcripts, audio, action items, insights, outlines, workspace and super-admin endpoints.",
+    "mcp": {
+      "status": "official",
+      "url": "https://mcp.otter.ai/mcp",
+      "note": "Official remote MCP documented in Otter help center; OAuth-only, read-only tools (search meetings, fetch transcript, user info). Rejects API keys."
+    },
+    "webhooks": "limited",
+    "rate_limits": "10 requests/second on Enterprise Public API",
+    "buildability": "build-with-caveats",
+    "blocker": "REST Public API gated to Enterprise workspaces; MCP alternative is read-only and OAuth-only.",
+    "evidence": [
+      "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+      "https://help.otter.ai/hc/en-us/articles/35287607569687-Otter-MCP-Server",
+      "https://www.scalekit.com/blog/otter-mcp-vs-api",
+      "https://otter.ai/blog/otter-for-enterprise-connect-ai-to-ai-with-otters-mcp"
+    ],
+    "confidence": "medium",
+    "notes": "help.otter.ai blocked WebFetch with 403; details come from search snippets and third-party analysis. Webhook support not directly verified."
+  },
+  {
+    "id": 93,
+    "app": "Fathom",
+    "category": "AI, Research and Media-native",
+    "hint": "fathom.video",
+    "one_liner": "AI meeting recorder with public REST API, OAuth, webhooks and MCP.",
+    "auth_methods": ["API key", "OAuth2"],
+    "auth_notes": "Self-serve API key from User Settings API Access; OAuth 2.0 authorization code for distributed third-party apps.",
+    "access_tier": "self-serve-free",
+    "credential_path": "Generate key at fathom.video/customize#api-access-header; register an OAuth app for multi-tenant integrations.",
+    "api_protocols": ["REST", "Webhooks"],
+    "api_breadth": "moderate",
+    "breadth_note": "Meetings, meeting types, recordings, summaries, transcripts, downloads, teams, members, users, webhooks.",
+    "mcp": {
+      "status": "official",
+      "url": "https://developers.fathom.ai/mcp-docs/index.md",
+      "note": "Official MCP docs with ChatGPT and Claude setup pages; exact remote server endpoint not captured in retrieved pages."
+    },
+    "webhooks": "yes",
+    "rate_limits": "60 req/min standard; 30/min for transcripts, summaries, downloads",
+    "buildability": "build-now",
+    "blocker": "none",
+    "evidence": [
+      "https://developers.fathom.ai/llms.txt",
+      "https://developers.fathom.ai/api-overview.md",
+      "https://developers.fathom.ai/quickstart.md",
+      "https://developers.fathom.ai/faq.md"
+    ],
+    "confidence": "high",
+    "notes": "FAQ states API keys and webhooks are included on all plans. Keys are user-scoped to own or shared meetings. Base: api.fathom.ai/external/v1."
+  },
+  {
+    "id": 94,
+    "app": "Consensus",
+    "category": "AI, Research and Media-native",
+    "hint": "consensus.app (OAuth requested)",
+    "one_liner": "AI search over 220M research papers via self-serve REST API and MCP.",
+    "auth_methods": ["API key"],
+    "auth_notes": "x-api-key header; keys self-issued from the API & MCP dashboard inside a Consensus account. No OAuth documented.",
+    "access_tier": "self-serve-trial",
+    "credential_path": "Create key in Consensus account API & MCP dashboard; plan credits then $0.05 per call.",
+    "api_protocols": ["REST"],
+    "api_breadth": "narrow",
+    "breadth_note": "Essentially one search endpoint over 220M papers with rich filters; read-only, no writes.",
+    "mcp": {
+      "status": "official",
+      "url": "https://consensus.app/home/mcp/",
+      "note": "Consensus markets an official MCP for Claude/ChatGPT/Copilot sharing the account and credits; remote server endpoint URL not confirmed."
+    },
+    "webhooks": "no",
+    "rate_limits": "undocumented",
+    "buildability": "build-now",
+    "blocker": "none",
+    "evidence": [
+      "https://consensus.app/home/api/",
+      "https://consensus.app/home/mcp/",
+      "https://docs.consensus.app/core-features/api",
+      "https://github.com/Consensus-NLP/consensus-api"
+    ],
+    "confidence": "medium",
+    "notes": "Hint says 'OAuth requested' but documented auth is x-api-key only. docs.consensus.app returned 403; endpoint details from search snippets."
+  },
+  {
+    "id": 95,
+    "app": "Reducto",
+    "category": "AI, Research and Media-native",
+    "hint": "reducto.ai (document parsing)",
+    "one_liner": "Document parsing and extraction API with self-serve keys, SDKs and MCP.",
+    "auth_methods": ["API key"],
+    "auth_notes": "Bearer API key created in the Reducto studio/platform dashboard; SDKs read the REDUCTO_API_KEY environment variable.",
+    "access_tier": "self-serve-trial",
+    "credential_path": "Sign up at studio.reducto.ai, create key under API Keys; free starter credits then usage billing.",
+    "api_protocols": ["REST", "Webhooks"],
+    "api_breadth": "moderate",
+    "breadth_note": "Parse, extract, split, edit, upload plus async jobs; public OpenAPI 3.1 spec published.",
+    "mcp": {
+      "status": "official",
+      "url": "https://docs.reducto.ai/quickstart",
+      "note": "Quickstart documents a Reducto MCP server for Claude Code, Cursor and other coding agents; separate MCP endpoint URL not captured."
+    },
+    "webhooks": "yes",
+    "rate_limits": "undocumented",
+    "buildability": "build-now",
+    "blocker": "none",
+    "evidence": [
+      "https://docs.reducto.ai/quickstart",
+      "https://reducto.ai/pricing",
+      "https://llms.reducto.ai/",
+      "https://providers.apis.io/providers/reducto-ai/"
+    ],
+    "confidence": "high",
+    "notes": "Pricing roughly $10/1k pages parse and $20/1k extract, 20% async discount, ~15k free credits. Rate limits not published."
+  },
+  {
+    "id": 96,
+    "app": "Devin",
+    "category": "AI, Research and Media-native",
+    "hint": "docs.devin.ai (MCP)",
+    "one_liner": "Autonomous coding agent with broad REST API and official MCP server.",
+    "auth_methods": ["Bearer/PAT"],
+    "auth_notes": "Bearer service-user or personal API keys (cog_ prefix); legacy apk_ keys rejected by MCP. Enterprise adds X-Org-Id header.",
+    "access_tier": "paid-plan-required",
+    "credential_path": "Generate a service user or personal API key in Devin account settings; requires an active Devin account.",
+    "api_protocols": ["REST"],
+    "api_breadth": "broad",
+    "breadth_note": "Sessions, knowledge, playbooks, secrets, schedules, attachments, repo wikis, enterprise analytics and user management.",
+    "mcp": {
+      "status": "official",
+      "url": "https://mcp.devin.ai/mcp",
+      "note": "Official Streamable-HTTP MCP with API-key auth; covers sessions, playbooks, knowledge, schedules, integrations and public/private repo wikis."
+    },
+    "webhooks": "unknown",
+    "rate_limits": "undocumented",
+    "buildability": "build-now",
+    "blocker": "none",
+    "evidence": [
+      "https://docs.devin.ai/work-with-devin/devin-mcp",
+      "https://docs.devin.ai/api-reference/overview",
+      "https://fast.io/resources/devin-api-guide/",
+      "https://github.com/jsklan/devin-api-mcp"
+    ],
+    "confidence": "high",
+    "notes": "v3 API at api.devin.ai/v3 with organization and enterprise scopes; v1/v2 still work. Webhook support and rate limits unconfirmed."
+  },
+  {
+    "id": 97,
+    "app": "higgsfield",
+    "category": "AI, Research and Media-native",
+    "hint": "higgsfield.ai/cli (content suite)",
+    "one_liner": "Generative image and video suite with documented REST API, CLI and skills.",
+    "auth_methods": ["API key"],
+    "auth_notes": "Header 'Authorization: Key <key_id>:<key_secret>' from cloud.higgsfield.ai; the CLI instead uses account login, no key.",
+    "access_tier": "self-serve-trial",
+    "credential_path": "Create API key id/secret at cloud.higgsfield.ai; CLI path uses 'higgsfield auth login' and plan credits.",
+    "api_protocols": ["REST", "Webhooks", "CLI-only"],
+    "api_breadth": "moderate",
+    "breadth_note": "Async generative media endpoints: text/image-to-video, soul images, product photoshoot; poll or webhook for results.",
+    "mcp": {
+      "status": "official",
+      "url": "https://higgsfield.ai/creator-hub/help-center/mcp-cli/how-do-i-access-higgsfield-via-cli",
+      "note": "Help center describes both an MCP for chat agents and CLI+skills for coding agents; MCP server endpoint URL not retrieved."
+    },
+    "webhooks": "yes",
+    "rate_limits": "undocumented",
+    "buildability": "build-now",
+    "blocker": "none",
+    "evidence": [
+      "https://docs.higgsfield.ai/docs",
+      "https://github.com/higgsfield-ai/cli",
+      "https://higgsfield.ai/cli",
+      "https://higgsfield.ai/creator-hub/help-center/mcp-cli/how-do-i-access-higgsfield-via-cli"
+    ],
+    "confidence": "medium",
+    "notes": "API docs confirm key/secret auth, base api.higgsfield.ai, async jobs, 7-day output retention. Full model endpoint list and rate limits not retrieved."
+  },
+  {
+    "id": 98,
+    "app": "Mermaid CLI",
+    "category": "AI, Research and Media-native",
+    "hint": "github.com/mermaid-js/mermaid-cli",
+    "one_liner": "Open-source npm CLI rendering Mermaid diagrams to SVG, PNG or PDF.",
+    "auth_methods": ["none"],
+    "auth_notes": "No authentication at all; runs locally via npm, npx, Docker or Podman. No hosted service exists.",
+    "access_tier": "self-serve-free",
+    "credential_path": "None. npm install -g @mermaid-js/mermaid-cli, or use minlag/mermaid-cli Docker image.",
+    "api_protocols": ["CLI-only"],
+    "api_breadth": "narrow",
+    "breadth_note": "Single mmdc command: diagram or markdown in, SVG/PNG/PDF out, with themes and transparent backgrounds.",
+    "mcp": {
+      "status": "none",
+      "url": null,
+      "note": "No MCP server in the official repo. Third-party Mermaid MCP servers exist but were not verified in this pass."
+    },
+    "webhooks": "no",
+    "rate_limits": "none - runs entirely locally",
+    "buildability": "build-now",
+    "blocker": "none",
+    "evidence": [
+      "https://github.com/mermaid-js/mermaid-cli",
+      "https://github.com/mermaid-js/mermaid-cli/blob/master/README.md"
+    ],
+    "confidence": "high",
+    "notes": "Correct finding: no auth, no hosted API. A toolkit wraps a local binary or container, not a remote service. Homebrew install discontinued."
+  },
+  {
+    "id": 99,
+    "app": "YouTube Transcript",
+    "category": "AI, Research and Media-native",
+    "hint": "transcriptapi.com",
+    "one_liner": "Third-party YouTube transcript, search and channel API with credit pricing.",
+    "auth_methods": ["API key"],
+    "auth_notes": "Authorization: Bearer <api_key> from the account dashboard; 100 free credits granted on signup.",
+    "access_tier": "self-serve-free",
+    "credential_path": "Sign up at transcriptapi.com, copy key from dashboard; 100 free credits, then $5/month for 5,000.",
+    "api_protocols": ["REST"],
+    "api_breadth": "narrow",
+    "breadth_note": "Seven read-only endpoints: transcript, info, search, channel resolve, channel videos, playlist videos.",
+    "mcp": {
+      "status": "official",
+      "url": "https://transcriptapi.com/",
+      "note": "Vendor markets a YouTube MCP for ChatGPT and Claude sharing the same credit pool; MCP endpoint URL not captured."
+    },
+    "webhooks": "no",
+    "rate_limits": "300 requests/minute per API key",
+    "buildability": "build-now",
+    "blocker": "none",
+    "evidence": [
+      "https://transcriptapi.com/docs/api/",
+      "https://transcriptapi.com/",
+      "https://transcriptapi.com/blog/youtube-transcript-api-complete-developer-guide",
+      "https://transcriptapi.com/blog/best-youtube-transcript-api-compared"
+    ],
+    "confidence": "high",
+    "notes": "Small independent vendor, not Google. Base transcriptapi.com/api/v2. Depends on YouTube captions, so ToS and durability risk for production agents."
+  },
+  {
+    "id": 100,
+    "app": "Grain",
+    "category": "AI, Research and Media-native",
+    "hint": "grain.com (meeting notes)",
+    "one_liner": "Meeting recorder with full REST API, OAuth2, access tokens and webhooks.",
+    "auth_methods": ["OAuth2", "Bearer/PAT"],
+    "auth_notes": "Bearer personal or workspace access token, or OAuth2 authorization code with PKCE; Public-Api-Version header required.",
+    "access_tier": "paid-plan-required",
+    "credential_path": "Personal tokens on Starter and above; workspace tokens need Business/Enterprise admin. Free plan has no API.",
+    "api_protocols": ["REST", "Webhooks"],
+    "api_breadth": "broad",
+    "breadth_note": "Recordings CRUD and upload, transcripts (json/txt/vtt/srt), AI notes, tags, sharing, users, teams, webhooks.",
+    "mcp": {
+      "status": "unknown",
+      "url": null,
+      "note": "No official Grain MCP server found in developers.grain.com or the support article reviewed."
+    },
+    "webhooks": "yes",
+    "rate_limits": "300 requests/minute per token",
+    "buildability": "build-now",
+    "blocker": "none",
+    "evidence": [
+      "https://developers.grain.com/",
+      "https://support.grain.com/en/articles/15507288-grain-api",
+      "https://docs.grain.inc/",
+      "https://apitracker.io/a/grain-co"
+    ],
+    "confidence": "high",
+    "notes": "Base api.grain.com. Webhook events include recording.added, highlight.added, recording.removed. Workspace tokens expose all workspace data."
+  }
+]

@@ -1,0 +1,311 @@
+[
+  {
+    "id": 81,
+    "app": "Stripe",
+    "category": "Finance and Fintech",
+    "hint": "stripe.com/docs/api",
+    "one_liner": "Payments, billing and financial infrastructure API for internet businesses.",
+    "auth_methods": ["API key", "Bearer/PAT", "OAuth2"],
+    "auth_notes": "Secret or restricted API keys sent as Bearer; Connect platforms and the remote MCP server use OAuth2.",
+    "access_tier": "self-serve-free",
+    "credential_path": "Sign up at dashboard.stripe.com; test and live secret/restricted keys under Developers > API keys.",
+    "api_protocols": ["REST", "Webhooks"],
+    "api_breadth": "broad",
+    "breadth_note": "Hundreds of resources: PaymentIntents, subscriptions, invoices, Connect, Issuing, Payouts, Tax, Search.",
+    "mcp": {
+      "status": "official",
+      "url": "https://docs.stripe.com/mcp",
+      "note": "Hosted remote server at mcp.stripe.com with OAuth; local server via npx -y @stripe/mcp (Stripe Agent Toolkit)."
+    },
+    "webhooks": "yes",
+    "rate_limits": "100 req/s live, 25 req/s sandbox; per-endpoint caps",
+    "buildability": "build-now",
+    "blocker": "none",
+    "evidence": [
+      "https://docs.stripe.com/api",
+      "https://docs.stripe.com/rate-limits",
+      "https://docs.stripe.com/mcp",
+      "https://mcpservers.org/servers/stripe/agent-toolkit"
+    ],
+    "confidence": "high",
+    "notes": "Best-in-class case: instant self-serve keys, official MCP/agent toolkit, full OpenAPI, webhooks. Read-request allocations tied to transaction volume."
+  },
+  {
+    "id": 82,
+    "app": "Plaid",
+    "category": "Finance and Fintech",
+    "hint": "plaid.com/docs",
+    "one_liner": "Bank account linking with transactions, balances, identity and transfer data.",
+    "auth_methods": ["API key"],
+    "auth_notes": "client_id and secret in request body or PLAID-CLIENT-ID / PLAID-SECRET headers; per-user access_tokens issued via Link.",
+    "access_tier": "self-serve-trial",
+    "credential_path": "Dashboard signup returns Sandbox keys instantly; Production access needs a separate Dashboard request and approval.",
+    "api_protocols": ["REST", "Webhooks"],
+    "api_breadth": "broad",
+    "breadth_note": "Auth, Balance, Transactions, Identity, Investments, Liabilities, Transfer, Income, Identity Verification products.",
+    "mcp": {
+      "status": "official",
+      "url": "https://github.com/plaid/ai-coding-toolkit",
+      "note": "Plaid-owned repo bundling prompts, sandbox data and an MCP aimed at building integrations, not at end-user account data."
+    },
+    "webhooks": "yes",
+    "rate_limits": "Per-Item and per-client; /transactions/get 30/min per Item",
+    "buildability": "build-with-caveats",
+    "blocker": "Sandbox is self-serve but Production requires a Plaid review of use case and compliance.",
+    "evidence": [
+      "https://plaid.com/docs/api/",
+      "https://plaid.com/docs/sandbox/",
+      "https://plaid.com/docs/errors/rate-limit-exceeded/",
+      "https://github.com/plaid/ai-coding-toolkit"
+    ],
+    "confidence": "high",
+    "notes": "Trial plans give free Production for up to 10 Items via a streamlined questionnaire, replacing Limited Production for new teams."
+  },
+  {
+    "id": 83,
+    "app": "Binance",
+    "category": "Finance and Fintech",
+    "hint": "binance-docs.github.io",
+    "one_liner": "Global crypto exchange API for spot, futures, wallet and market data.",
+    "auth_methods": ["API key", "HMAC-signed", "other"],
+    "auth_notes": "X-MBX-APIKEY header; SIGNED endpoints accept HMAC-SHA256, Ed25519 or RSA signatures over the query string.",
+    "access_tier": "self-serve-free",
+    "credential_path": "Generate API keys in Binance account settings after KYC; free testnet keys at testnet.binance.vision.",
+    "api_protocols": ["REST"],
+    "api_breadth": "broad",
+    "breadth_note": "Spot, margin, futures, options, wallet, staking, sub-accounts; also WebSocket streams and FIX (no webhooks).",
+    "mcp": {
+      "status": "community",
+      "url": "https://github.com/AnalyticAce/binance-mcp-server",
+      "note": "No Binance-owned MCP found; several unofficial servers exist, including a separate Binance.US one."
+    },
+    "webhooks": "no",
+    "rate_limits": "Weight-based, ~6000 request weight/min per IP; 429 then IP ban",
+    "buildability": "build-with-caveats",
+    "blocker": "Regional restrictions; Binance.US is a separate legal entity with its own docs, keys and endpoints.",
+    "evidence": [
+      "https://developers.binance.com/docs/binance-spot-api-docs",
+      "https://developers.binance.com/docs/algo/general-info",
+      "https://docs.binance.us/",
+      "https://github.com/AnalyticAce/binance-mcp-server"
+    ],
+    "confidence": "high",
+    "notes": "A toolkit must branch on global vs US entity. Trading endpoints are financially irreversible, so read-only scoping is advisable."
+  },
+  {
+    "id": 84,
+    "app": "Paygent Connect",
+    "category": "Finance and Fintech",
+    "hint": "paygent (NMI-powered)",
+    "one_liner": "No public API found under this name; product identity itself unconfirmed.",
+    "auth_methods": ["other"],
+    "auth_notes": "Unknown. If it is a white-label NMI gateway, NMI uses a merchant security_key posted with form-encoded requests (inference).",
+    "access_tier": "not-public",
+    "credential_path": "No public signup or docs located; NMI gateway credentials are normally issued through ISO/reseller partners.",
+    "api_protocols": ["none"],
+    "api_breadth": "none",
+    "breadth_note": "No public API surface confirmed for a product named Paygent Connect.",
+    "mcp": {
+      "status": "none",
+      "url": null,
+      "note": "No MCP server found for any Paygent entity relevant to an NMI-powered gateway."
+    },
+    "webhooks": "unknown",
+    "rate_limits": "undocumented",
+    "buildability": "needs-outreach",
+    "blocker": "Product unidentified; no public docs, signup or API surface found under the name Paygent Connect.",
+    "evidence": [
+      "https://docs.nmi.com/reference/getting-started",
+      "https://paygent.ai/",
+      "https://api.paygent.tech/",
+      "https://documentation.ixopay.com/adapters/paygent"
+    ],
+    "confidence": "low",
+    "notes": "Searched Paygent Connect API, NMI white-label, paygent.ai, api.paygent.tech, IXOPAY Paygent adapter. Three unrelated Paygent entities found; NMI link is unverified inference."
+  },
+  {
+    "id": 85,
+    "app": "iPayX",
+    "category": "Finance and Fintech",
+    "hint": "ipayx.ai/docs",
+    "one_liner": "FX forensic audit layer detecting hidden bank spreads on B2B payments.",
+    "auth_methods": ["API key", "none"],
+    "auth_notes": "Most MCP tools are unauthenticated; the full forensic report tool requires a bearer token/API key from app.ipayx.ai.",
+    "access_tier": "self-serve-trial",
+    "credential_path": "Public MCP endpoint needs no key (3 free audits/month per IP); paid reports need an app.ipayx.ai token.",
+    "api_protocols": ["REST"],
+    "api_breadth": "narrow",
+    "breadth_note": "Four FX-audit tools only: check_fx_rate, audit_transaction, full_forensic_report, compare_fx_sources. No general REST reference.",
+    "mcp": {
+      "status": "official",
+      "url": "https://github.com/iPAYX-Technologies/mcp-fx-audit",
+      "note": "Vendor-published MCP hosted on a Cloudflare worker; it proxies Twelve Data and Open Exchange Rates."
+    },
+    "webhooks": "unknown",
+    "rate_limits": "3 free transaction audits per month per IP",
+    "buildability": "build-with-caveats",
+    "blocker": "No published API reference; ipayx.ai/docs returns 404, so the vendor MCP is the only usable surface.",
+    "evidence": [
+      "https://github.com/iPAYX-Technologies/mcp-fx-audit",
+      "https://ipayx.ai/docs",
+      "https://glama.ai/mcp/servers/iPAYX-Technologies/mcp-fx-audit",
+      "https://mcpservers.org/servers/ipayx-technologies/mcp-fx-audit"
+    ],
+    "confidence": "medium",
+    "notes": "ipayx.ai/docs 404s (confirmed by fetch). Tool names, auth and pricing come from the vendor's own GitHub README, not a docs site."
+  },
+  {
+    "id": 86,
+    "app": "QuickBooks",
+    "category": "Finance and Fintech",
+    "hint": "developer.intuit.com",
+    "one_liner": "QuickBooks Online accounting API for invoices, customers, payments and reports.",
+    "auth_methods": ["OAuth2"],
+    "auth_notes": "OAuth 2.0 authorization code against Intuit; access tokens last 1 hour, refresh tokens 101 days and rotate.",
+    "access_tier": "self-serve-free",
+    "credential_path": "Free Intuit Developer account; create an app for Client ID/Secret plus a free sandbox company.",
+    "api_protocols": ["REST", "Webhooks"],
+    "api_breadth": "broad",
+    "breadth_note": "~40 accounting entities plus reports, attachments and batch; separate Payments, Payroll and Time APIs.",
+    "mcp": {
+      "status": "official",
+      "url": "https://github.com/intuit/quickbooks-online-mcp-server",
+      "note": "Intuit-owned TypeScript MCP server for QuickBooks Online, ~389 stars at time of check."
+    },
+    "webhooks": "yes",
+    "rate_limits": "~500 req/min per realm, 10 concurrent; batch 40/min",
+    "buildability": "build-now",
+    "blocker": "none",
+    "evidence": [
+      "https://developer.intuit.com/app/developer/qbo/docs/develop",
+      "https://github.com/intuit/quickbooks-online-mcp-server",
+      "https://truto.one/blog/how-much-does-the-quickbooks-api-cost-2026-pricing-rate-limits/",
+      "https://www.getknit.dev/blog/quickbooks-online-api-integration-guide-in-depth"
+    ],
+    "confidence": "medium",
+    "notes": "Rate limits and App Partner Program tiers ($300-$4,500/mo above a free 500k-read Builder tier) come from third-party blogs, not confirmed on Intuit's site."
+  },
+  {
+    "id": 87,
+    "app": "Xero",
+    "category": "Finance and Fintech",
+    "hint": "developer.xero.com",
+    "one_liner": "Cloud accounting API for invoices, contacts, bank transactions and reports.",
+    "auth_methods": ["OAuth2"],
+    "auth_notes": "OAuth 2.0 authorization code or PKCE; custom connections use client credentials scoped to one organisation.",
+    "access_tier": "self-serve-free",
+    "credential_path": "Free developer account at developer.xero.com; create an app for client ID/secret, test on the demo company.",
+    "api_protocols": ["REST", "Webhooks"],
+    "api_breadth": "broad",
+    "breadth_note": "Accounting, Payroll, Files, Projects, Assets, Bank Feeds and Finance APIs across many endpoints.",
+    "mcp": {
+      "status": "official",
+      "url": "https://github.com/XeroAPI/xero-mcp-server",
+      "note": "Maintained under the XeroAPI org; MIT licensed, custom-connection OAuth2 or bearer token."
+    },
+    "webhooks": "limited",
+    "rate_limits": "60/min and 5000/day per tenant; 5 concurrent calls",
+    "buildability": "build-now",
+    "blocker": "none",
+    "evidence": [
+      "https://developer.xero.com/documentation/guides/oauth2/limits/",
+      "https://developer.xero.com/documentation/best-practices/api-call-efficiencies/rate-limits",
+      "https://github.com/XeroAPI/xero-mcp-server",
+      "https://developer.xero.com/faq"
+    ],
+    "confidence": "high",
+    "notes": "Uncertified apps cap at 25 connected tenants and each org may connect only two uncertified apps; certification lifts both limits."
+  },
+  {
+    "id": 88,
+    "app": "Brex",
+    "category": "Finance and Fintech",
+    "hint": "developer.brex.com",
+    "one_liner": "Corporate card and spend management API for expenses, cards and transactions.",
+    "auth_methods": ["Bearer/PAT", "OAuth2"],
+    "auth_notes": "Dashboard-issued user tokens sent as Bearer; partner apps use OAuth2 authorization code, with client_credentials only for onboarding.",
+    "access_tier": "admin-approval",
+    "credential_path": "Sign in to dashboard.brex.com as Account or Card Admin, Developer > Settings > Create Token with scopes.",
+    "api_protocols": ["REST", "Webhooks"],
+    "api_breadth": "broad",
+    "breadth_note": "Transactions, Expenses, Team/Cards, Budgets & Limits, Payments, Accounting, Travel, Onboarding and Webhooks APIs.",
+    "mcp": {
+      "status": "official",
+      "url": "https://developer.brex.com/docs/mcp",
+      "note": "Hosted at api.brex.com/mcp with OAuth or API-key Bearer; 50+ tools; requires enabling a beta feature flag."
+    },
+    "webhooks": "yes",
+    "rate_limits": "undocumented",
+    "buildability": "build-with-caveats",
+    "blocker": "Needs an existing Brex customer account with admin role; partner OAuth client IDs issued only on request.",
+    "evidence": [
+      "https://developer.brex.com/guides/authentication",
+      "https://developer.brex.com/guides/partner_authentication",
+      "https://developer.brex.com/docs/mcp",
+      "https://developer.brex.com/docs/faq"
+    ],
+    "confidence": "high",
+    "notes": "Confirmed: no self-serve developer signup. Partner docs say contact Brex developer support to be issued client ID and secret."
+  },
+  {
+    "id": 89,
+    "app": "Ramp",
+    "category": "Finance and Fintech",
+    "hint": "docs.ramp.com",
+    "one_liner": "Corporate card and spend API for transactions, bills and reimbursements.",
+    "auth_methods": ["OAuth2"],
+    "auth_notes": "OAuth 2.0 with granular scopes; client credentials for your own account, authorization code for third-party apps.",
+    "access_tier": "admin-approval",
+    "credential_path": "Ramp dashboard Settings > Developer (admin required) creates an app; sandbox needs a separate access request form.",
+    "api_protocols": ["REST", "Webhooks"],
+    "api_breadth": "broad",
+    "breadth_note": "Transactions, cards, users, departments, bills, reimbursements, limits, accounting sync; published OpenAPI spec.",
+    "mcp": {
+      "status": "official",
+      "url": "https://mcp.ramp.com/developer/mcp",
+      "note": "Ramp ships three MCP servers; the developer/docs one needs no account or key, account-data ones need OAuth."
+    },
+    "webhooks": "yes",
+    "rate_limits": "200 requests per 10-second rolling window per source IP",
+    "buildability": "build-with-caveats",
+    "blocker": "Needs an existing Ramp account with admin role; third-party production access requires Ramp approval.",
+    "evidence": [
+      "https://docs.ramp.com/llms.txt",
+      "https://docs.ramp.com/llms-guides/rate-limiting.txt",
+      "https://docs.ramp.com/llms-guides/developer-mcp.txt",
+      "https://support.ramp.com/hc/en-us/articles/46681939909907-Accessing-the-Developer-API"
+    ],
+    "confidence": "high",
+    "notes": "Docs are LLM-friendly (llms.txt, llms-api.txt, openapi/developer-api.json). Sandbox is a separate environment with its own base URL and credentials."
+  },
+  {
+    "id": 90,
+    "app": "PitchBook",
+    "category": "Finance and Fintech",
+    "hint": "pitchbook.com (research API)",
+    "one_liner": "Private capital markets data on companies, investors, funds and deals.",
+    "auth_methods": ["other"],
+    "auth_notes": "Unconfirmed. No public developer portal, auth documentation or API reference could be located.",
+    "access_tier": "contact-sales",
+    "credential_path": "No public signup or developer portal found; access appears to require a PitchBook license via sales.",
+    "api_protocols": ["none"],
+    "api_breadth": "none",
+    "breadth_note": "No public API reference located; only marketing pages for the platform and data products surfaced.",
+    "mcp": {
+      "status": "unknown",
+      "url": null,
+      "note": "No PitchBook MCP server surfaced; not exhaustively searched because there is no underlying public API."
+    },
+    "webhooks": "unknown",
+    "rate_limits": "undocumented",
+    "buildability": "needs-outreach",
+    "blocker": "No public docs or self-serve credentials; requires a PitchBook license and a sales conversation.",
+    "evidence": [
+      "https://apitracker.io/a/pitchbook",
+      "https://pitchbook.com/products",
+      "https://pitchbook.com/data"
+    ],
+    "confidence": "low",
+    "notes": "pitchbook.com returns 403 to automated fetches. API Tracker entry lists no auth, docs or API reference. Any data-feed offering is license-gated."
+  }
+]

@@ -1,0 +1,120 @@
+{
+ "sample_size": 20,
+ "sample": [
+  {
+   "id": 4,
+   "app": "Attio"
+  },
+  {
+   "id": 5,
+   "app": "Twenty"
+  },
+  {
+   "id": 14,
+   "app": "Front"
+  },
+  {
+   "id": 19,
+   "app": "Gorgias"
+  },
+  {
+   "id": 23,
+   "app": "Zoho Cliq"
+  },
+  {
+   "id": 24,
+   "app": "Lark (Larksuite)"
+  },
+  {
+   "id": 34,
+   "app": "GoHighLevel"
+  },
+  {
+   "id": 39,
+   "app": "Threads (Meta)"
+  },
+  {
+   "id": 41,
+   "app": "Shopify"
+  },
+  {
+   "id": 50,
+   "app": "fanbasis"
+  },
+  {
+   "id": 52,
+   "app": "SE Ranking"
+  },
+  {
+   "id": 59,
+   "app": "Waterfall.io"
+  },
+  {
+   "id": 62,
+   "app": "Vercel"
+  },
+  {
+   "id": 67,
+   "app": "Snowflake"
+  },
+  {
+   "id": 71,
+   "app": "Notion"
+  },
+  {
+   "id": 80,
+   "app": "Harvest"
+  },
+  {
+   "id": 82,
+   "app": "Plaid"
+  },
+  {
+   "id": 84,
+   "app": "Paygent Connect"
+  },
+  {
+   "id": 91,
+   "app": "NotebookLM"
+  },
+  {
+   "id": 92,
+   "app": "Otter AI"
+  }
+ ],
+ "fields": {
+  "access_tier": {
+   "hit": 12,
+   "miss": 8,
+   "agreement": 60.0
+  },
+  "buildability": {
+   "hit": 11,
+   "miss": 9,
+   "agreement": 55.0
+  },
+  "mcp_status": {
+   "hit": 12,
+   "miss": 8,
+   "agreement": 60.0
+  }
+ },
+ "set_fields": {
+  "auth_methods": {
+   "exact": 10,
+   "inexact": 10,
+   "exact_pct": 50.0,
+   "overlap_pct": 90.0,
+   "mean_jaccard": 72.9
+  },
+  "api_protocols": {
+   "exact": 12,
+   "inexact": 8,
+   "exact_pct": 60.0,
+   "overlap_pct": 95.0,
+   "mean_jaccard": 79.6
+  }
+ },
+ "overall_exact_agreement": 57.0,
+ "disagreement_count": 28
+}
