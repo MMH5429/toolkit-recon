@@ -4,3 +4,6 @@ __pycache__/
 .env.*
 !.env.example
 .venv/
+
+# build artifact for form upload
+Mrinaal-Harihar-Composio-Toolkit-Recon.html
