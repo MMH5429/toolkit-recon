@@ -1,0 +1,1492 @@
+[
+ {
+  "id": 1,
+  "app": "Salesforce",
+  "category": "CRM and Sales",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "salesforce",
+  "toolkit_name": "Salesforce",
+  "buildability": "build-now",
+  "api_breadth": "broad",
+  "access_tier": "self-serve-free",
+  "composio_auth_schemes": [
+   "OAUTH2",
+   "S2S_OAUTH2"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 2,
+  "app": "HubSpot",
+  "category": "CRM and Sales",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "hubspot",
+  "toolkit_name": "HubSpot",
+  "buildability": "build-now",
+  "api_breadth": "broad",
+  "access_tier": "self-serve-free",
+  "composio_auth_schemes": [
+   "OAUTH2",
+   "API_KEY"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 3,
+  "app": "Pipedrive",
+  "category": "CRM and Sales",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "pipedrive",
+  "toolkit_name": "Pipedrive",
+  "buildability": "build-now",
+  "api_breadth": "broad",
+  "access_tier": "self-serve-trial",
+  "composio_auth_schemes": [
+   "OAUTH2",
+   "API_KEY"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 4,
+  "app": "Attio",
+  "category": "CRM and Sales",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "attio",
+  "toolkit_name": "Attio",
+  "buildability": "build-now",
+  "api_breadth": "moderate",
+  "access_tier": "self-serve-free",
+  "composio_auth_schemes": [
+   "OAUTH2"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 5,
+  "app": "Twenty",
+  "category": "CRM and Sales",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "twenty",
+  "toolkit_name": "Twenty",
+  "buildability": "build-with-caveats",
+  "api_breadth": "moderate",
+  "access_tier": "self-serve-free",
+  "composio_auth_schemes": [
+   "API_KEY"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 6,
+  "app": "Podio",
+  "category": "CRM and Sales",
+  "covered": false,
+  "match": null,
+  "toolkit_slug": null,
+  "toolkit_name": null,
+  "buildability": "build-now",
+  "api_breadth": "broad",
+  "access_tier": "self-serve-free"
+ },
+ {
+  "id": 7,
+  "app": "Zoho CRM",
+  "category": "CRM and Sales",
+  "covered": true,
+  "match": "alias-parent",
+  "toolkit_slug": "zoho",
+  "toolkit_name": "Zoho",
+  "buildability": "build-now",
+  "api_breadth": "broad",
+  "access_tier": "self-serve-free",
+  "composio_auth_schemes": [
+   "OAUTH2"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 8,
+  "app": "Close",
+  "category": "CRM and Sales",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "close",
+  "toolkit_name": "Close",
+  "buildability": "build-now",
+  "api_breadth": "broad",
+  "access_tier": "self-serve-trial",
+  "composio_auth_schemes": [
+   "API_KEY"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 9,
+  "app": "Copper",
+  "category": "CRM and Sales",
+  "covered": false,
+  "match": null,
+  "toolkit_slug": null,
+  "toolkit_name": null,
+  "buildability": "build-with-caveats",
+  "api_breadth": "moderate",
+  "access_tier": "partner-gated"
+ },
+ {
+  "id": 10,
+  "app": "DealCloud",
+  "category": "CRM and Sales",
+  "covered": false,
+  "match": null,
+  "toolkit_slug": null,
+  "toolkit_name": null,
+  "buildability": "needs-outreach",
+  "api_breadth": "moderate",
+  "access_tier": "admin-approval"
+ },
+ {
+  "id": 11,
+  "app": "Zendesk",
+  "category": "Support and Helpdesk",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "zendesk",
+  "toolkit_name": "Zendesk",
+  "buildability": "build-with-caveats",
+  "api_breadth": "broad",
+  "access_tier": "self-serve-trial",
+  "composio_auth_schemes": [
+   "OAUTH2"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 12,
+  "app": "Intercom",
+  "category": "Support and Helpdesk",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "intercom",
+  "toolkit_name": "Intercom",
+  "buildability": "build-now",
+  "api_breadth": "broad",
+  "access_tier": "self-serve-trial",
+  "composio_auth_schemes": [
+   "OAUTH2"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 13,
+  "app": "Freshdesk",
+  "category": "Support and Helpdesk",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "freshdesk",
+  "toolkit_name": "Freshdesk",
+  "buildability": "build-now",
+  "api_breadth": "broad",
+  "access_tier": "self-serve-free",
+  "composio_auth_schemes": [
+   "API_KEY"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 14,
+  "app": "Front",
+  "category": "Support and Helpdesk",
+  "covered": false,
+  "match": null,
+  "toolkit_slug": null,
+  "toolkit_name": null,
+  "buildability": "build-now",
+  "api_breadth": "broad",
+  "access_tier": "self-serve-free"
+ },
+ {
+  "id": 15,
+  "app": "Pylon",
+  "category": "Support and Helpdesk",
+  "covered": true,
+  "match": "mcp-toolkit",
+  "toolkit_slug": "pylon_mcp",
+  "toolkit_name": "Pylon MCP",
+  "buildability": "build-now",
+  "api_breadth": "moderate",
+  "access_tier": "self-serve-trial",
+  "composio_auth_schemes": [
+   "DCR_OAUTH"
+  ],
+  "auth_agrees": null
+ },
+ {
+  "id": 16,
+  "app": "LiveAgent",
+  "category": "Support and Helpdesk",
+  "covered": false,
+  "match": null,
+  "toolkit_slug": null,
+  "toolkit_name": null,
+  "buildability": "build-with-caveats",
+  "api_breadth": "moderate",
+  "access_tier": "self-serve-trial"
+ },
+ {
+  "id": 17,
+  "app": "Plain",
+  "category": "Support and Helpdesk",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "plain",
+  "toolkit_name": "Plain",
+  "buildability": "build-now",
+  "api_breadth": "broad",
+  "access_tier": "self-serve-trial",
+  "composio_auth_schemes": [
+   "API_KEY"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 18,
+  "app": "Help Scout",
+  "category": "Support and Helpdesk",
+  "covered": true,
+  "match": "name",
+  "toolkit_slug": "help_scout",
+  "toolkit_name": "Help Scout",
+  "buildability": "build-with-caveats",
+  "api_breadth": "broad",
+  "access_tier": "paid-plan-required",
+  "composio_auth_schemes": [
+   "OAUTH2"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 19,
+  "app": "Gorgias",
+  "category": "Support and Helpdesk",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "gorgias",
+  "toolkit_name": "Gorgias",
+  "buildability": "build-with-caveats",
+  "api_breadth": "broad",
+  "access_tier": "self-serve-trial",
+  "composio_auth_schemes": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 20,
+  "app": "Gladly",
+  "category": "Support and Helpdesk",
+  "covered": false,
+  "match": null,
+  "toolkit_slug": null,
+  "toolkit_name": null,
+  "buildability": "needs-outreach",
+  "api_breadth": "moderate",
+  "access_tier": "contact-sales"
+ },
+ {
+  "id": 21,
+  "app": "Slack",
+  "category": "Communications and Messaging",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "slack",
+  "toolkit_name": "Slack",
+  "buildability": "build-with-caveats",
+  "api_breadth": "broad",
+  "access_tier": "self-serve-free",
+  "composio_auth_schemes": [
+   "OAUTH2"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 22,
+  "app": "Twilio",
+  "category": "Communications and Messaging",
+  "covered": false,
+  "match": null,
+  "toolkit_slug": null,
+  "toolkit_name": null,
+  "buildability": "build-now",
+  "api_breadth": "broad",
+  "access_tier": "self-serve-trial"
+ },
+ {
+  "id": 23,
+  "app": "Zoho Cliq",
+  "category": "Communications and Messaging",
+  "covered": false,
+  "match": null,
+  "toolkit_slug": null,
+  "toolkit_name": null,
+  "buildability": "build-now",
+  "api_breadth": "moderate",
+  "access_tier": "self-serve-free"
+ },
+ {
+  "id": 24,
+  "app": "Lark (Larksuite)",
+  "category": "Communications and Messaging",
+  "covered": false,
+  "match": null,
+  "toolkit_slug": null,
+  "toolkit_name": null,
+  "buildability": "build-with-caveats",
+  "api_breadth": "broad",
+  "access_tier": "admin-approval"
+ },
+ {
+  "id": 25,
+  "app": "Pumble",
+  "category": "Communications and Messaging",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "pumble",
+  "toolkit_name": "Pumble",
+  "buildability": "build-with-caveats",
+  "api_breadth": "narrow",
+  "access_tier": "self-serve-free",
+  "composio_auth_schemes": [
+   "API_KEY"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 26,
+  "app": "Discord",
+  "category": "Communications and Messaging",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "discord",
+  "toolkit_name": "Discord",
+  "buildability": "build-with-caveats",
+  "api_breadth": "broad",
+  "access_tier": "self-serve-free",
+  "composio_auth_schemes": [
+   "OAUTH2"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 27,
+  "app": "Telegram",
+  "category": "Communications and Messaging",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "telegram",
+  "toolkit_name": "Telegram",
+  "buildability": "build-now",
+  "api_breadth": "broad",
+  "access_tier": "self-serve-free",
+  "composio_auth_schemes": [
+   "API_KEY"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 28,
+  "app": "WhatsApp Business",
+  "category": "Communications and Messaging",
+  "covered": true,
+  "match": "alias",
+  "toolkit_slug": "whatsapp",
+  "toolkit_name": "WhatsApp",
+  "buildability": "build-with-caveats",
+  "api_breadth": "moderate",
+  "access_tier": "app-review",
+  "composio_auth_schemes": [
+   "OAUTH2",
+   "API_KEY"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 29,
+  "app": "Aircall",
+  "category": "Communications and Messaging",
+  "covered": false,
+  "match": null,
+  "toolkit_slug": null,
+  "toolkit_name": null,
+  "buildability": "build-with-caveats",
+  "api_breadth": "moderate",
+  "access_tier": "paid-plan-required"
+ },
+ {
+  "id": 30,
+  "app": "Vonage",
+  "category": "Communications and Messaging",
+  "covered": false,
+  "match": null,
+  "toolkit_slug": null,
+  "toolkit_name": null,
+  "buildability": "build-now",
+  "api_breadth": "broad",
+  "access_tier": "self-serve-trial"
+ },
+ {
+  "id": 31,
+  "app": "Google Ads",
+  "category": "Marketing, Ads, Email and Social",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "googleads",
+  "toolkit_name": "Google Ads",
+  "buildability": "build-with-caveats",
+  "api_breadth": "broad",
+  "access_tier": "app-review",
+  "composio_auth_schemes": [
+   "OAUTH2"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 32,
+  "app": "Meta Ads",
+  "category": "Marketing, Ads, Email and Social",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "metaads",
+  "toolkit_name": "Meta Ads",
+  "buildability": "build-with-caveats",
+  "api_breadth": "broad",
+  "access_tier": "app-review",
+  "composio_auth_schemes": [
+   "OAUTH2",
+   "API_KEY"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 33,
+  "app": "LinkedIn Ads",
+  "category": "Marketing, Ads, Email and Social",
+  "covered": true,
+  "match": "name",
+  "toolkit_slug": "linkedin_ads",
+  "toolkit_name": "Linkedin Ads",
+  "buildability": "needs-outreach",
+  "api_breadth": "broad",
+  "access_tier": "partner-gated",
+  "composio_auth_schemes": [
+   "OAUTH2"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 34,
+  "app": "GoHighLevel",
+  "category": "Marketing, Ads, Email and Social",
+  "covered": true,
+  "match": "alias",
+  "toolkit_slug": "highlevel",
+  "toolkit_name": "Highlevel",
+  "buildability": "build-with-caveats",
+  "api_breadth": "broad",
+  "access_tier": "paid-plan-required",
+  "composio_auth_schemes": [
+   "OAUTH2"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 35,
+  "app": "Mailchimp",
+  "category": "Marketing, Ads, Email and Social",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "mailchimp",
+  "toolkit_name": "Mailchimp",
+  "buildability": "build-now",
+  "api_breadth": "broad",
+  "access_tier": "self-serve-free",
+  "composio_auth_schemes": [
+   "OAUTH2"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 36,
+  "app": "Klaviyo",
+  "category": "Marketing, Ads, Email and Social",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "klaviyo",
+  "toolkit_name": "Klaviyo",
+  "buildability": "build-now",
+  "api_breadth": "broad",
+  "access_tier": "self-serve-free",
+  "composio_auth_schemes": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 37,
+  "app": "systeme.io",
+  "category": "Marketing, Ads, Email and Social",
+  "covered": false,
+  "match": null,
+  "toolkit_slug": null,
+  "toolkit_name": null,
+  "buildability": "build-now",
+  "api_breadth": "moderate",
+  "access_tier": "self-serve-free"
+ },
+ {
+  "id": 38,
+  "app": "Pinterest",
+  "category": "Marketing, Ads, Email and Social",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "pinterest",
+  "toolkit_name": "Pinterest",
+  "buildability": "build-with-caveats",
+  "api_breadth": "broad",
+  "access_tier": "app-review",
+  "composio_auth_schemes": [
+   "OAUTH2"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 39,
+  "app": "Threads (Meta)",
+  "category": "Marketing, Ads, Email and Social",
+  "covered": false,
+  "match": null,
+  "toolkit_slug": null,
+  "toolkit_name": null,
+  "buildability": "build-with-caveats",
+  "api_breadth": "narrow",
+  "access_tier": "app-review"
+ },
+ {
+  "id": 40,
+  "app": "SendGrid",
+  "category": "Marketing, Ads, Email and Social",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "sendgrid",
+  "toolkit_name": "SendGrid",
+  "buildability": "build-now",
+  "api_breadth": "broad",
+  "access_tier": "self-serve-trial",
+  "composio_auth_schemes": [
+   "API_KEY"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 41,
+  "app": "Shopify",
+  "category": "Ecommerce",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "shopify",
+  "toolkit_name": "Shopify",
+  "buildability": "build-now",
+  "api_breadth": "broad",
+  "access_tier": "self-serve-free",
+  "composio_auth_schemes": [
+   "API_KEY",
+   "OAUTH2",
+   "S2S_OAUTH2"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 42,
+  "app": "WooCommerce",
+  "category": "Ecommerce",
+  "covered": false,
+  "match": null,
+  "toolkit_slug": null,
+  "toolkit_name": null,
+  "buildability": "build-now",
+  "api_breadth": "broad",
+  "access_tier": "self-serve-free"
+ },
+ {
+  "id": 43,
+  "app": "BigCommerce",
+  "category": "Ecommerce",
+  "covered": false,
+  "match": null,
+  "toolkit_slug": null,
+  "toolkit_name": null,
+  "buildability": "build-now",
+  "api_breadth": "broad",
+  "access_tier": "self-serve-free"
+ },
+ {
+  "id": 44,
+  "app": "Salesforce Commerce Cloud",
+  "category": "Ecommerce",
+  "covered": false,
+  "match": null,
+  "toolkit_slug": null,
+  "toolkit_name": null,
+  "buildability": "needs-outreach",
+  "api_breadth": "broad",
+  "access_tier": "partner-gated"
+ },
+ {
+  "id": 45,
+  "app": "Magento (Adobe Commerce)",
+  "category": "Ecommerce",
+  "covered": false,
+  "match": null,
+  "toolkit_slug": null,
+  "toolkit_name": null,
+  "buildability": "build-with-caveats",
+  "api_breadth": "broad",
+  "access_tier": "paid-plan-required"
+ },
+ {
+  "id": 46,
+  "app": "Squarespace",
+  "category": "Ecommerce",
+  "covered": false,
+  "match": null,
+  "toolkit_slug": null,
+  "toolkit_name": null,
+  "buildability": "build-with-caveats",
+  "api_breadth": "moderate",
+  "access_tier": "paid-plan-required"
+ },
+ {
+  "id": 47,
+  "app": "Ecwid",
+  "category": "Ecommerce",
+  "covered": false,
+  "match": null,
+  "toolkit_slug": null,
+  "toolkit_name": null,
+  "buildability": "build-with-caveats",
+  "api_breadth": "moderate",
+  "access_tier": "self-serve-free"
+ },
+ {
+  "id": 48,
+  "app": "Gumroad",
+  "category": "Ecommerce",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "gumroad",
+  "toolkit_name": "Gumroad",
+  "buildability": "build-now",
+  "api_breadth": "narrow",
+  "access_tier": "self-serve-free",
+  "composio_auth_schemes": [
+   "OAUTH2"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 49,
+  "app": "Amazon Selling Partner",
+  "category": "Ecommerce",
+  "covered": false,
+  "match": null,
+  "toolkit_slug": null,
+  "toolkit_name": null,
+  "buildability": "needs-outreach",
+  "api_breadth": "broad",
+  "access_tier": "app-review"
+ },
+ {
+  "id": 50,
+  "app": "fanbasis",
+  "category": "Ecommerce",
+  "covered": false,
+  "match": null,
+  "toolkit_slug": null,
+  "toolkit_name": null,
+  "buildability": "not-buildable-today",
+  "api_breadth": "moderate",
+  "access_tier": "not-public"
+ },
+ {
+  "id": 51,
+  "app": "DataForSEO",
+  "category": "Data, SEO and Scraping",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "dataforseo",
+  "toolkit_name": "Dataforseo",
+  "buildability": "build-now",
+  "api_breadth": "broad",
+  "access_tier": "self-serve-trial",
+  "composio_auth_schemes": [
+   "BASIC"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 52,
+  "app": "SE Ranking",
+  "category": "Data, SEO and Scraping",
+  "covered": false,
+  "match": null,
+  "toolkit_slug": null,
+  "toolkit_name": null,
+  "buildability": "build-with-caveats",
+  "api_breadth": "broad",
+  "access_tier": "paid-plan-required"
+ },
+ {
+  "id": 53,
+  "app": "Ahrefs",
+  "category": "Data, SEO and Scraping",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "ahrefs",
+  "toolkit_name": "Ahrefs",
+  "buildability": "build-with-caveats",
+  "api_breadth": "broad",
+  "access_tier": "paid-plan-required",
+  "composio_auth_schemes": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 54,
+  "app": "MrScraper",
+  "category": "Data, SEO and Scraping",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "mrscraper",
+  "toolkit_name": "MrScraper",
+  "buildability": "build-now",
+  "api_breadth": "moderate",
+  "access_tier": "self-serve-free",
+  "composio_auth_schemes": [
+   "API_KEY"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 55,
+  "app": "Apify",
+  "category": "Data, SEO and Scraping",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "apify",
+  "toolkit_name": "Apify",
+  "buildability": "build-now",
+  "api_breadth": "broad",
+  "access_tier": "self-serve-free",
+  "composio_auth_schemes": [
+   "API_KEY"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 56,
+  "app": "Firecrawl",
+  "category": "Data, SEO and Scraping",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "firecrawl",
+  "toolkit_name": "Firecrawl",
+  "buildability": "build-now",
+  "api_breadth": "moderate",
+  "access_tier": "self-serve-free",
+  "composio_auth_schemes": [
+   "API_KEY"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 57,
+  "app": "Bright Data",
+  "category": "Data, SEO and Scraping",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "brightdata",
+  "toolkit_name": "Bright Data",
+  "buildability": "build-now",
+  "api_breadth": "broad",
+  "access_tier": "self-serve-free",
+  "composio_auth_schemes": [
+   "API_KEY"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 58,
+  "app": "Sherlock",
+  "category": "Data, SEO and Scraping",
+  "covered": false,
+  "match": null,
+  "toolkit_slug": null,
+  "toolkit_name": null,
+  "buildability": "not-buildable-today",
+  "api_breadth": "minimal",
+  "access_tier": "self-serve-free"
+ },
+ {
+  "id": 59,
+  "app": "Waterfall.io",
+  "category": "Data, SEO and Scraping",
+  "covered": false,
+  "match": null,
+  "toolkit_slug": null,
+  "toolkit_name": null,
+  "buildability": "needs-outreach",
+  "api_breadth": "moderate",
+  "access_tier": "contact-sales"
+ },
+ {
+  "id": 60,
+  "app": "Clay",
+  "category": "Data, SEO and Scraping",
+  "covered": true,
+  "match": "mcp-toolkit",
+  "toolkit_slug": "clay_mcp",
+  "toolkit_name": "Clay MCP",
+  "buildability": "build-with-caveats",
+  "api_breadth": "moderate",
+  "access_tier": "self-serve-free",
+  "composio_auth_schemes": [
+   "DCR_OAUTH"
+  ],
+  "auth_agrees": null
+ },
+ {
+  "id": 61,
+  "app": "GitHub",
+  "category": "Developer, Infra and Data platforms",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "github",
+  "toolkit_name": "GitHub",
+  "buildability": "build-now",
+  "api_breadth": "broad",
+  "access_tier": "self-serve-free",
+  "composio_auth_schemes": [
+   "OAUTH2"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 62,
+  "app": "Vercel",
+  "category": "Developer, Infra and Data platforms",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "vercel",
+  "toolkit_name": "Vercel",
+  "buildability": "build-now",
+  "api_breadth": "broad",
+  "access_tier": "self-serve-free",
+  "composio_auth_schemes": [
+   "OAUTH2",
+   "API_KEY"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 63,
+  "app": "Netlify",
+  "category": "Developer, Infra and Data platforms",
+  "covered": true,
+  "match": "mcp-toolkit",
+  "toolkit_slug": "netlify_mcp",
+  "toolkit_name": "Netlify MCP",
+  "buildability": "build-now",
+  "api_breadth": "broad",
+  "access_tier": "self-serve-free",
+  "composio_auth_schemes": [
+   "DCR_OAUTH"
+  ],
+  "auth_agrees": null
+ },
+ {
+  "id": 64,
+  "app": "Cloudflare",
+  "category": "Developer, Infra and Data platforms",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "cloudflare",
+  "toolkit_name": "Cloudflare",
+  "buildability": "build-now",
+  "api_breadth": "broad",
+  "access_tier": "self-serve-free",
+  "composio_auth_schemes": [
+   "API_KEY"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 65,
+  "app": "Supabase",
+  "category": "Developer, Infra and Data platforms",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "supabase",
+  "toolkit_name": "Supabase",
+  "buildability": "build-now",
+  "api_breadth": "broad",
+  "access_tier": "self-serve-free",
+  "composio_auth_schemes": [
+   "OAUTH2",
+   "API_KEY"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 66,
+  "app": "Neo4j",
+  "category": "Developer, Infra and Data platforms",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "neo4j",
+  "toolkit_name": "Neo4J",
+  "buildability": "build-with-caveats",
+  "api_breadth": "narrow",
+  "access_tier": "self-serve-free",
+  "composio_auth_schemes": [
+   "OAUTH2",
+   "BASIC",
+   "API_KEY",
+   "S2S_OAUTH2"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 67,
+  "app": "Snowflake",
+  "category": "Developer, Infra and Data platforms",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "snowflake",
+  "toolkit_name": "Snowflake",
+  "buildability": "build-with-caveats",
+  "api_breadth": "moderate",
+  "access_tier": "self-serve-trial",
+  "composio_auth_schemes": [
+   "OAUTH2"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 68,
+  "app": "MongoDB Atlas",
+  "category": "Developer, Infra and Data platforms",
+  "covered": false,
+  "match": null,
+  "toolkit_slug": null,
+  "toolkit_name": null,
+  "buildability": "build-now",
+  "api_breadth": "broad",
+  "access_tier": "self-serve-free"
+ },
+ {
+  "id": 69,
+  "app": "Datadog",
+  "category": "Developer, Infra and Data platforms",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "datadog",
+  "toolkit_name": "Datadog",
+  "buildability": "build-now",
+  "api_breadth": "broad",
+  "access_tier": "self-serve-free",
+  "composio_auth_schemes": [
+   "OAUTH2",
+   "API_KEY",
+   "BEARER_TOKEN"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 70,
+  "app": "Sentry",
+  "category": "Developer, Infra and Data platforms",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "sentry",
+  "toolkit_name": "Sentry",
+  "buildability": "build-now",
+  "api_breadth": "broad",
+  "access_tier": "self-serve-free",
+  "composio_auth_schemes": [
+   "OAUTH2"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 71,
+  "app": "Notion",
+  "category": "Productivity and Project Management",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "notion",
+  "toolkit_name": "Notion",
+  "buildability": "build-now",
+  "api_breadth": "broad",
+  "access_tier": "self-serve-free",
+  "composio_auth_schemes": [
+   "OAUTH2",
+   "API_KEY"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 72,
+  "app": "Airtable",
+  "category": "Productivity and Project Management",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "airtable",
+  "toolkit_name": "Airtable",
+  "buildability": "build-now",
+  "api_breadth": "broad",
+  "access_tier": "self-serve-free",
+  "composio_auth_schemes": [
+   "OAUTH2",
+   "API_KEY"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 73,
+  "app": "Linear",
+  "category": "Productivity and Project Management",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "linear",
+  "toolkit_name": "Linear",
+  "buildability": "build-now",
+  "api_breadth": "broad",
+  "access_tier": "self-serve-free",
+  "composio_auth_schemes": [
+   "OAUTH2",
+   "API_KEY"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 74,
+  "app": "Jira",
+  "category": "Productivity and Project Management",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "jira",
+  "toolkit_name": "Jira",
+  "buildability": "build-now",
+  "api_breadth": "broad",
+  "access_tier": "self-serve-free",
+  "composio_auth_schemes": [
+   "OAUTH2",
+   "S2S_OAUTH2",
+   "API_KEY"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 75,
+  "app": "Asana",
+  "category": "Productivity and Project Management",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "asana",
+  "toolkit_name": "Asana",
+  "buildability": "build-now",
+  "api_breadth": "broad",
+  "access_tier": "self-serve-free",
+  "composio_auth_schemes": [
+   "OAUTH2"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 76,
+  "app": "Monday.com",
+  "category": "Productivity and Project Management",
+  "covered": true,
+  "match": "alias",
+  "toolkit_slug": "monday",
+  "toolkit_name": "Monday",
+  "buildability": "build-now",
+  "api_breadth": "broad",
+  "access_tier": "self-serve-free",
+  "composio_auth_schemes": [
+   "OAUTH2"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 77,
+  "app": "ClickUp",
+  "category": "Productivity and Project Management",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "clickup",
+  "toolkit_name": "ClickUp",
+  "buildability": "build-now",
+  "api_breadth": "broad",
+  "access_tier": "self-serve-free",
+  "composio_auth_schemes": [
+   "OAUTH2",
+   "API_KEY"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 78,
+  "app": "Coda",
+  "category": "Productivity and Project Management",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "coda",
+  "toolkit_name": "Coda",
+  "buildability": "build-with-caveats",
+  "api_breadth": "moderate",
+  "access_tier": "self-serve-free",
+  "composio_auth_schemes": [
+   "API_KEY"
+  ],
+  "auth_agrees": false
+ },
+ {
+  "id": 79,
+  "app": "Smartsheet",
+  "category": "Productivity and Project Management",
+  "covered": false,
+  "match": null,
+  "toolkit_slug": null,
+  "toolkit_name": null,
+  "buildability": "build-with-caveats",
+  "api_breadth": "broad",
+  "access_tier": "paid-plan-required"
+ },
+ {
+  "id": 80,
+  "app": "Harvest",
+  "category": "Productivity and Project Management",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "harvest",
+  "toolkit_name": "Harvest",
+  "buildability": "build-now",
+  "api_breadth": "moderate",
+  "access_tier": "self-serve-free",
+  "composio_auth_schemes": [
+   "OAUTH2"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 81,
+  "app": "Stripe",
+  "category": "Finance and Fintech",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "stripe",
+  "toolkit_name": "Stripe",
+  "buildability": "build-now",
+  "api_breadth": "broad",
+  "access_tier": "self-serve-free",
+  "composio_auth_schemes": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 82,
+  "app": "Plaid",
+  "category": "Finance and Fintech",
+  "covered": true,
+  "match": "alias",
+  "toolkit_slug": "plaid_mcp",
+  "toolkit_name": "Plaid MCP",
+  "buildability": "build-with-caveats",
+  "api_breadth": "broad",
+  "access_tier": "app-review",
+  "composio_auth_schemes": [
+   "DCR_OAUTH"
+  ],
+  "auth_agrees": null
+ },
+ {
+  "id": 83,
+  "app": "Binance",
+  "category": "Finance and Fintech",
+  "covered": false,
+  "match": null,
+  "toolkit_slug": null,
+  "toolkit_name": null,
+  "buildability": "build-with-caveats",
+  "api_breadth": "broad",
+  "access_tier": "self-serve-free"
+ },
+ {
+  "id": 84,
+  "app": "Paygent Connect",
+  "category": "Finance and Fintech",
+  "covered": false,
+  "match": null,
+  "toolkit_slug": null,
+  "toolkit_name": null,
+  "buildability": "not-buildable-today",
+  "api_breadth": "none",
+  "access_tier": "not-public"
+ },
+ {
+  "id": 85,
+  "app": "iPayX",
+  "category": "Finance and Fintech",
+  "covered": false,
+  "match": null,
+  "toolkit_slug": null,
+  "toolkit_name": null,
+  "buildability": "build-with-caveats",
+  "api_breadth": "narrow",
+  "access_tier": "self-serve-trial"
+ },
+ {
+  "id": 86,
+  "app": "QuickBooks",
+  "category": "Finance and Fintech",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "quickbooks",
+  "toolkit_name": "QuickBooks",
+  "buildability": "build-now",
+  "api_breadth": "broad",
+  "access_tier": "self-serve-free",
+  "composio_auth_schemes": [
+   "OAUTH2"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 87,
+  "app": "Xero",
+  "category": "Finance and Fintech",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "xero",
+  "toolkit_name": "Xero",
+  "buildability": "build-now",
+  "api_breadth": "broad",
+  "access_tier": "self-serve-free",
+  "composio_auth_schemes": [
+   "OAUTH2"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 88,
+  "app": "Brex",
+  "category": "Finance and Fintech",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "brex",
+  "toolkit_name": "Brex",
+  "buildability": "build-with-caveats",
+  "api_breadth": "broad",
+  "access_tier": "admin-approval",
+  "composio_auth_schemes": [
+   "OAUTH2",
+   "API_KEY"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 89,
+  "app": "Ramp",
+  "category": "Finance and Fintech",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "ramp",
+  "toolkit_name": "Ramp",
+  "buildability": "build-with-caveats",
+  "api_breadth": "broad",
+  "access_tier": "admin-approval",
+  "composio_auth_schemes": [
+   "OAUTH2"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 90,
+  "app": "PitchBook",
+  "category": "Finance and Fintech",
+  "covered": false,
+  "match": null,
+  "toolkit_slug": null,
+  "toolkit_name": null,
+  "buildability": "needs-outreach",
+  "api_breadth": "none",
+  "access_tier": "contact-sales"
+ },
+ {
+  "id": 91,
+  "app": "NotebookLM",
+  "category": "AI, Research and Media-native",
+  "covered": true,
+  "match": "name",
+  "toolkit_slug": "notebook_lm",
+  "toolkit_name": "NotebookLM",
+  "buildability": "build-with-caveats",
+  "api_breadth": "narrow",
+  "access_tier": "paid-plan-required",
+  "composio_auth_schemes": [
+   "OAUTH2"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 92,
+  "app": "Otter AI",
+  "category": "AI, Research and Media-native",
+  "covered": false,
+  "match": null,
+  "toolkit_slug": null,
+  "toolkit_name": null,
+  "buildability": "build-with-caveats",
+  "api_breadth": "moderate",
+  "access_tier": "paid-plan-required"
+ },
+ {
+  "id": 93,
+  "app": "Fathom",
+  "category": "AI, Research and Media-native",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "fathom",
+  "toolkit_name": "Fathom",
+  "buildability": "build-now",
+  "api_breadth": "moderate",
+  "access_tier": "self-serve-free",
+  "composio_auth_schemes": [
+   "OAUTH2",
+   "API_KEY"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 94,
+  "app": "Consensus",
+  "category": "AI, Research and Media-native",
+  "covered": true,
+  "match": "slug",
+  "toolkit_slug": "consensus",
+  "toolkit_name": "Consensus",
+  "buildability": "build-now",
+  "api_breadth": "narrow",
+  "access_tier": "self-serve-trial",
+  "composio_auth_schemes": [
+   "API_KEY"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 95,
+  "app": "Reducto",
+  "category": "AI, Research and Media-native",
+  "covered": false,
+  "match": null,
+  "toolkit_slug": null,
+  "toolkit_name": null,
+  "buildability": "build-now",
+  "api_breadth": "moderate",
+  "access_tier": "self-serve-trial"
+ },
+ {
+  "id": 96,
+  "app": "Devin",
+  "category": "AI, Research and Media-native",
+  "covered": true,
+  "match": "mcp-toolkit",
+  "toolkit_slug": "devin_mcp",
+  "toolkit_name": "Devin MCP",
+  "buildability": "build-now",
+  "api_breadth": "broad",
+  "access_tier": "paid-plan-required",
+  "composio_auth_schemes": [
+   "API_KEY"
+  ],
+  "auth_agrees": null
+ },
+ {
+  "id": 97,
+  "app": "higgsfield",
+  "category": "AI, Research and Media-native",
+  "covered": true,
+  "match": "mcp-toolkit",
+  "toolkit_slug": "higgsfield_mcp",
+  "toolkit_name": "Higgsfield MCP",
+  "buildability": "build-now",
+  "api_breadth": "moderate",
+  "access_tier": "self-serve-trial",
+  "composio_auth_schemes": [
+   "DCR_OAUTH"
+  ],
+  "auth_agrees": null
+ },
+ {
+  "id": 98,
+  "app": "Mermaid CLI",
+  "category": "AI, Research and Media-native",
+  "covered": false,
+  "match": null,
+  "toolkit_slug": null,
+  "toolkit_name": null,
+  "buildability": "build-now",
+  "api_breadth": "narrow",
+  "access_tier": "self-serve-free"
+ },
+ {
+  "id": 99,
+  "app": "YouTube Transcript",
+  "category": "AI, Research and Media-native",
+  "covered": true,
+  "match": "name",
+  "toolkit_slug": "youtube_transcript",
+  "toolkit_name": "YouTube Transcript",
+  "buildability": "build-now",
+  "api_breadth": "narrow",
+  "access_tier": "self-serve-free",
+  "composio_auth_schemes": [
+   "API_KEY"
+  ],
+  "auth_agrees": true
+ },
+ {
+  "id": 100,
+  "app": "Grain",
+  "category": "AI, Research and Media-native",
+  "covered": false,
+  "match": null,
+  "toolkit_slug": null,
+  "toolkit_name": null,
+  "buildability": "build-now",
+  "api_breadth": "broad",
+  "access_tier": "paid-plan-required"
+ }
+]

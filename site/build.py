@@ -17,7 +17,10 @@ links = json.loads((D / "verify" / "link_check.json").read_text(encoding="utf-8"
 recheck = json.loads((D / "verify" / "link_recheck.json").read_text(encoding="utf-8"))
 mcpchk = json.loads((D / "verify" / "mcp_check.json").read_text(encoding="utf-8"))
 adj = json.loads((D / "verify" / "adjudications.json").read_text(encoding="utf-8"))
-corr = json.loads((D / "data" if False else D / "corrections.json").read_text(encoding="utf-8"))
+corr = json.loads((D / "corrections.json").read_text(encoding="utf-8"))
+cov = json.loads((D / "composio_coverage.json").read_text(encoding="utf-8"))
+cmeta = json.loads((D / "composio_meta.json").read_text(encoding="utf-8"))
+catalog_size = cmeta["catalog_size"]
 
 N = len(apps)
 BUILD_ORDER = ["build-now", "build-with-caveats", "needs-outreach", "not-buildable-today"]
@@ -77,6 +80,18 @@ mcp_resolved = sum(1 for m in mcpchk if m["verdict"] in ("RESOLVES", "ENDPOINT-R
 mcp_claims = sum(1 for m in mcpchk if m["verdict"] != "n/a")
 no_api = [a for a in apps if "none" in a["api_protocols"]]
 easy_wins = sum(1 for a in apps if a["buildability"] == "build-now" and a["api_breadth"] == "broad")
+
+# --- Composio catalog join (stage 8) ---
+BREADTH_RANK = {"broad": 0, "moderate": 1, "narrow": 2, "minimal": 3, "none": 4}
+covered = [c for c in cov if c["covered"]]
+uncovered = [c for c in cov if not c["covered"]]
+queue = sorted((c for c in uncovered if c["buildability"] == "build-now"),
+               key=lambda c: BREADTH_RANK.get(c["api_breadth"], 9))
+blocked_apps = [c for c in uncovered if c["buildability"] in ("needs-outreach", "not-buildable-today")]
+auth_cmp = [c for c in cov if c.get("auth_agrees") is not None]
+auth_ok = sum(1 for c in auth_cmp if c["auth_agrees"])
+mcp_toolkits = sum(1 for c in cov if c["match"] == "mcp-toolkit")
+by_id = {a["id"]: a for a in apps}
 
 # --------------------------------------------------------------------- chart
 def bars(counter, order, total, ramp=None, muted="var(--seq-2)"):
@@ -152,6 +167,21 @@ def adj_row(a):
 <td class="dim mono">{esc(a['pass1'])}</td><td class="mono">{esc(a['pass2'])}</td>
 <td><span class="w w-{cls}">{w}</span></td>
 <td class="why">{esc(a['reason'])} {src}</td></tr>"""
+
+
+def queue_rows(items, show_blocker=False):
+    out = []
+    for c in items:
+        a = by_id[c["id"]]
+        right = (f'<span class="blk" style="margin:0">{esc(a["blocker"])}</span>' if show_blocker
+                 else f'<span class="tier tier-{c["access_tier"]}">{TIER_LABEL.get(c["access_tier"], c["access_tier"])}</span>')
+        out.append(
+            f'<tr><td class="num">{c["id"]}</td>'
+            f'<td class="app"><b>{esc(c["app"])}</b><span class="ol">{esc(a["one_liner"])}</span></td>'
+            f'<td class="hide-s dim">{esc(c["category"])}</td>'
+            f'<td class="hide-m"><span class="dim">{esc(c["api_breadth"])}</span></td>'
+            f'<td>{right}</td></tr>')
+    return "".join(out)
 
 
 misses = [a for a in adj if a["winner"] == "pass2"]
@@ -404,6 +434,58 @@ footer{{padding:34px 0 56px;color:var(--muted);font-size:13px;border-top:1px sol
 </section>
 
 <section class="wrap">
+  <h3>The point of all this</h3>
+  <h2 style="margin-top:8px">Joined against Composio's live catalog</h2>
+  <p class="lede">The survey only matters if it produces a decision. Stage&nbsp;8 pulls all
+  {catalog_size:,} toolkits from Composio's API and joins them to the {N},
+  turning the research into a queue: what is already covered, what to build next, and what is not
+  worth writing code for yet.</p>
+
+  <div class="strip" style="margin-top:20px">
+    <div class="stat"><b>{len(covered)}</b><span>of {N} already covered</span></div>
+    <div class="stat"><b>{len(uncovered)}</b><span>gaps</span></div>
+    <div class="stat"><b>{len(queue)}</b><span>ready to build now</span></div>
+    <div class="stat"><b>{len(blocked_apps)}</b><span>blocked on a human</span></div>
+    <div class="stat"><b>{auth_ok}/{len(auth_cmp)}</b><span>auth cross-check</span></div>
+  </div>
+
+  <div class="charts" style="margin-top:20px">
+    <div class="chart" style="padding-bottom:6px"><h3>Build queue &mdash; uncovered, buildable today, widest surface first</h3>
+      <div style="overflow:auto"><table style="margin-top:4px">
+      <thead><tr><th>#</th><th>App</th><th class="hide-s">Category</th><th class="hide-m">Surface</th><th>Credentials</th></tr></thead>
+      <tbody>{queue_rows(queue)}</tbody></table></div>
+    </div>
+    <div class="chart" style="padding-bottom:6px"><h3>Not worth code yet &mdash; uncovered and blocked on a human</h3>
+      <div style="overflow:auto"><table style="margin-top:4px">
+      <thead><tr><th>#</th><th>App</th><th class="hide-s">Category</th><th class="hide-m">Surface</th><th>Blocker</th></tr></thead>
+      <tbody>{queue_rows(blocked_apps, show_blocker=True)}</tbody></table></div>
+    </div>
+  </div>
+
+  <div class="callout" style="border-left-color:var(--good);margin-top:18px">
+    <h4>A fifth verification loop, and the only one not built on a model</h4>
+    <p>Composio records the auth schemes it has actually <em>implemented</em> per toolkit. For the
+    {len(auth_cmp)} apps where that is comparable, it is an independent second opinion on our researched
+    auth &mdash; from a working integration rather than another agent. <b>{auth_ok} of {len(auth_cmp)} agree
+    ({auth_ok/len(auth_cmp)*100:.0f}%).</b> The single disagreement is Coda: we recorded Bearer/PAT&nbsp;+&nbsp;OAuth2,
+    Composio records API_KEY. Both describe the same thing &mdash; a long-lived token sent in an
+    <span class="mono">Authorization: Bearer</span> header &mdash; so it is a vocabulary boundary, not an error.
+    The {mcp_toolkits} apps Composio serves through an MCP toolkit are excluded from this check: those report
+    <span class="mono">DCR_OAUTH</span>, which is how the MCP server authenticates its client and says nothing
+    about the app's own API.</p>
+  </div>
+
+  <div class="callout" style="border-left-color:var(--warn);margin-top:14px">
+    <h4>Two matching traps worth naming</h4>
+    <p>Naive fuzzy matching paired <b>Plaid</b> with <b>placid</b>, an unrelated image-generation toolkit.
+    Blind fuzzy matching is now off; candidates are reported for a human to rule on and promoted into a
+    documented alias list instead. Separately, {mcp_toolkits} apps looked uncovered because Composio ships them
+    as <span class="mono">&lt;app&gt;_mcp</span> toolkits rather than native ones. Both bugs inflated the gap
+    list before they were caught &mdash; coverage moved from 58 to {len(covered)} once fixed.</p>
+  </div>
+</section>
+
+<section class="wrap">
   <h3>The agent</h3>
   <h2 style="margin-top:8px">What ran, and where a human was needed</h2>
   <p class="lede">Ten researcher agents, one per category, each holding a category-specific brief about the
@@ -420,6 +502,8 @@ footer{{padding:34px 0 56px;color:var(--muted);font-size:13px;border-top:1px sol
       and must quote the vendor page.</span><em>verify_blind.py</em></div>
     <div class="step"><b>5 &middot; Score &amp; adjudicate</b><span>Deterministic diff, then every disagreement ruled on against
       primary sources.</span><em>score.py &middot; apply_adjudications.py</em></div>
+    <div class="step"><b>6 &middot; Catalog join</b><span>Joined to Composio's live catalog for a build queue, and an auth
+      cross-check against real implementations.</span><em>composio_coverage.py</em></div>
   </div>
 
   <div style="margin-top:26px" class="charts">
@@ -441,9 +525,11 @@ footer{{padding:34px 0 56px;color:var(--muted);font-size:13px;border-top:1px sol
         Claude Code's subagent runtime. <code class="mono">research_agent.py</code> packages the identical loop to run
         standalone against the Anthropic API.</li>
         <li>Stages 2, 3 and 5 are plain Python. The accuracy figures are not a model grading itself.</li>
-        <li><b>Not run:</b> <code class="mono">composio_coverage.py</code> joins these {N} against Composio's live toolkit catalog
-        to produce a build queue. The catalog needs an API key (it returns 401 without one) and no key was available,
-        so that panel is absent rather than guessed.</li>
+        <li>The catalog join runs against Composio's live API ({catalog_size:,} toolkits) and needs a key, so it is the
+        one stage that cannot be reproduced from this repo alone. Its output is checked in.</li>
+        <li>Two matcher bugs in that join were caught and fixed before the numbers above were trusted &mdash;
+        a fuzzy false positive and a missed naming convention. Both are described in that section rather than
+        quietly corrected.</li>
         <li>{conf['medium']} records carry medium confidence and {conf['low']} low. Those are marked in the data, not hidden.</li>
       </ul>
     </div>
@@ -482,6 +568,8 @@ footer{{padding:34px 0 56px;color:var(--muted);font-size:13px;border-top:1px sol
         <li><b>{mcp_resolved} of {mcp_claims}</b> MCP endpoints resolved. One claim ({', '.join(m['app'] for m in mcpchk if m['verdict']=='NO-URL')})
         had no URL at all: it traces to a one-day-old press report of a Meta announcement, and the WhatsApp docs
         do not mention MCP. Kept, flagged unverified.</li>
+        <li><b>{auth_ok} of {len(auth_cmp)}</b> auth findings match the schemes Composio has actually implemented for the
+        same app &mdash; the only check here whose second opinion comes from a working integration rather than a model.</li>
         <li>All {N} records are schema-valid and ID-complete; the pipeline asserts this on every run.</li>
       </ul>
     </div>

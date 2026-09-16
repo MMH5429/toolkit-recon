@@ -30,7 +30,13 @@ Of 28 disagreements, pass 1 was wrong 17 times, right 7 times, and 4 were rubric
 rather than error. The dominant failure mode was an under-specified rubric, not hallucination.
 Full ruling on every disagreement, with sources: [`data/verify/adjudications.json`](data/verify/adjudications.json).
 
-Three machine checks back this up:
+Composio's own catalog supplies a fifth, and the only check whose second opinion comes from a
+working integration rather than a model: for the 60 apps where the comparison is meaningful,
+**59 of our auth findings match the schemes Composio has actually implemented (98%)**. The one
+disagreement is Coda — we say Bearer/PAT + OAuth2, Composio says API_KEY — which is the same
+long-lived-token-in-a-bearer-header reality under two vocabularies.
+
+Four machine checks back this up:
 
 - **Link check** — all 385 evidence URLs fetched. 382 resolve; 3 were plausible-looking URLs
   on the right domain that do not exist, now traced to the real pages and corrected. A second
@@ -39,6 +45,17 @@ Three machine checks back this up:
 - **MCP check** — every "official MCP" claim must resolve on a vendor-controlled domain.
   88 of 89 did. The one that did not is flagged on the page rather than dropped.
 - **Schema check** — all 100 records schema-valid and ID-complete, asserted on every run.
+
+## Against Composio's catalog
+
+Joined to the live catalog (1,543 toolkits) to turn the survey into a decision:
+
+| | |
+|---|---|
+| Already covered | **66 / 100** |
+| Gaps | **34** |
+| Uncovered and buildable today | **12** — the build queue |
+| Uncovered and blocked on a human | **9** — outreach, not code |
 
 ## Run it
 
@@ -67,7 +84,7 @@ Individual stages:
 | 5. Blind re-research of the sample | `agent/verify_blind.py` | yes |
 | 6. Score pass 1 vs pass 2 | `agent/score.py` | no |
 | 7. Apply adjudications, compute accuracy | `agent/apply_adjudications.py` | no |
-| 8. Composio catalog coverage → build queue | `agent/composio_coverage.py` | Composio key |
+| 8. Composio catalog coverage → build queue + auth cross-check | `agent/composio_coverage.py` | Composio key |
 | 9. Build the page | `site/build.py` | no |
 
 `agent/prompts.py` holds the exact prompts used — including the per-category briefs, which
@@ -80,9 +97,14 @@ are where most of the first-pass accuracy comes from, and the honesty rules that
   Claude Code's subagent runtime. `research_agent.py` packages the identical loop to run
   standalone against the Anthropic API.
 - Stages 2–4 and 6–7 are plain Python, so the accuracy figures are not a model grading itself.
-- **Stage 8 did not run.** It joins the 100 against Composio's live toolkit catalog to emit a
-  build queue, but the catalog returns 401 without an API key and none was available. The panel
-  is absent from the page rather than guessed.
+- Stage 8 hits Composio's live API, so it is the one stage that cannot be reproduced from this repo
+  alone — you need your own `COMPOSIO_API_KEY`. Its output is checked in at
+  [`data/composio_coverage.json`](data/composio_coverage.json).
+- Two matcher bugs in stage 8 were caught and fixed before its numbers were trusted: blind fuzzy
+  matching paired **Plaid** with **placid** (an unrelated image-generation toolkit), and 5 apps looked
+  uncovered because Composio ships them as `<app>_mcp` toolkits. Coverage moved 58 → 66 once fixed.
+  Fuzzy matching is now off; candidates are reported for a human to rule on and promoted into a
+  documented alias list.
 - The rubric was tightened *after* pass 1 and only the 20-app sample was re-ruled under it, so
   the other 80 rows carry pass-1 judgement on multi-tenant buildability.
 - Two apps defeated the pipeline and are documented as such on the page: **Paygent Connect**
